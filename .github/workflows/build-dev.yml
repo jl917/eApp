@@ -13,12 +13,12 @@ on:
         options:
           - web
           - app
-          - web,app
+          - all
 
 jobs:
   ## app빌드
   build-app:
-    if: contains(github.event.inputs.target, 'app') && startsWith(github.ref, 'refs/heads/beta')
+    if: contains(github.event.inputs.target, 'app') || contains(github.event.inputs.target, 'all') && startsWith(github.ref, 'refs/heads/beta')
     name: Build and Upload Artifacts
     permissions:
       contents: write
@@ -85,7 +85,7 @@ jobs:
 
   ## 웹빌드
   build-web:
-    if: contains(github.event.inputs.target, 'web') && startsWith(github.ref, 'refs/heads/beta')
+    if: contains(github.event.inputs.target, 'web') || contains(github.event.inputs.target, 'all') && startsWith(github.ref, 'refs/heads/beta')
     name: Build web
     runs-on: ubuntu-latest
     steps:
