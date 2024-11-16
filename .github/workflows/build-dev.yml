@@ -119,6 +119,7 @@ jobs:
   semantic-release:
     name: Semantic Release
     runs-on: ubuntu-latest
+    needs: [build-web, build-app]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
