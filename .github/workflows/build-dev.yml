@@ -119,7 +119,6 @@ jobs:
   semantic-release:
     name: Semantic Release
     runs-on: ubuntu-latest
-    needs: build-and-upload
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
