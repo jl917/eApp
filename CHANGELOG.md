@@ -1,3 +1,10 @@
+# [1.0.0-beta.5](https://github.com/jl917/eApp/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2024-11-17)
+
+
+### Bug Fixes
+
+* 워크플로우 변경 ([6973239](https://github.com/jl917/eApp/commit/6973239d58d99e73f49069369061cb2dc9685ec8))
+
 # [1.0.0-beta.4](https://github.com/jl917/eApp/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2024-11-17)
 
 
