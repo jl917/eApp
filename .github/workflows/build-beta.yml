@@ -2,21 +2,17 @@ name: BETA Build
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        description: "Branch to build"
-        required: true
-        default: "beta"
       target:
         description: "Target environment (web or app)"
         required: true
-        default: "web"
+        default: "all"
         options:
           - web
           - app
           - all
 
 jobs:
-  ## app빌드
+  ## app 빌드
   build-app:
     if: contains(github.event.inputs.target, 'app') || contains(github.event.inputs.target, 'all') && startsWith(github.ref, 'refs/heads/beta')
     name: Build and Upload Artifacts
@@ -27,11 +23,13 @@ jobs:
         include:
           # - platform: "macos-latest"
           #   args: ""
-          - platform: "ubuntu-latest"
-            args: ""
-          # - platform: "windows-latest"
+          # - platform: "ubuntu-latest"
           #   args: ""
+          - platform: "windows-latest"
+            args: ""
     runs-on: ${{ matrix.platform }}
+    outputs:
+      success: ${{ job.status }} # 빌드 성공 여부를 output으로 저장
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -83,11 +81,13 @@ jobs:
           path: outputs/
           retention-days: 1
 
-  ## 웹빌드
+  ## 웹 빌드
   build-web:
     if: contains(github.event.inputs.target, 'web') || contains(github.event.inputs.target, 'all') && startsWith(github.ref, 'refs/heads/beta')
     name: Build web
     runs-on: ubuntu-latest
+    outputs:
+      success: ${{ job.status }} # 빌드 성공 여부를 output으로 저장
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -116,10 +116,12 @@ jobs:
           github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: ./dist
 
+  ## semantic-release
   semantic-release:
     name: Semantic Release
     runs-on: ubuntu-latest
     needs: [build-web, build-app]
+    if: ${{ needs.build-web.result == 'success' || needs.build-app.result == 'success' }} # 둘 중 하나라도 성공하면 실행
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
