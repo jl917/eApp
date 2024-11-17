@@ -1,20 +1,11 @@
-name: BETA Build
+name: BETA Build All(Web+App)
 on:
   workflow_dispatch:
-    inputs:
-      target:
-        description: "Target environment (web or app)"
-        required: true
-        default: "all"
-        options:
-          - web
-          - app
-          - all
 
 jobs:
   ## app 빌드
   build-app:
-    if: contains(github.event.inputs.target, 'app') || contains(github.event.inputs.target, 'all') && startsWith(github.ref, 'refs/heads/beta')
+    if: startsWith(github.ref, 'refs/heads/beta')
     name: Build and Upload Artifacts
     permissions:
       contents: write
@@ -83,7 +74,7 @@ jobs:
 
   ## 웹 빌드
   build-web:
-    if: contains(github.event.inputs.target, 'web') || contains(github.event.inputs.target, 'all') && startsWith(github.ref, 'refs/heads/beta')
+    if: startsWith(github.ref, 'refs/heads/beta')
     name: Build web
     runs-on: ubuntu-latest
     outputs:
@@ -121,7 +112,6 @@ jobs:
     name: Semantic Release
     runs-on: ubuntu-latest
     needs: [build-web, build-app]
-    if: ${{ needs.build-web.result == 'success' || needs.build-app.result == 'success' }} # 둘 중 하나라도 성공하면 실행
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
