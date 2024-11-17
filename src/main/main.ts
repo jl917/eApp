@@ -1,10 +1,15 @@
 import { app, BrowserWindow, Notification } from "electron";
 import path from "path";
 import started from "electron-squirrel-startup";
+import { updateElectronApp } from "update-electron-app";
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
   app.quit();
 }
+
+// additional configuration options available
+updateElectronApp();
 
 const isDev = process.env.MODE === "dev";
 
