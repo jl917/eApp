@@ -1,3 +1,10 @@
+# [1.0.0-beta.9](https://github.com/jl917/eApp/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2024-11-17)
+
+
+### Bug Fixes
+
+* auto update test ([2dc80ee](https://github.com/jl917/eApp/commit/2dc80ee6ccca1374a3c098c37310a8b89f249b5c))
+
 # [1.0.0-beta.8](https://github.com/jl917/eApp/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2024-11-17)
 
 
