@@ -1,3 +1,10 @@
+# [1.0.0-beta.7](https://github.com/jl917/eApp/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2024-11-17)
+
+
+### Bug Fixes
+
+* entry url update ([cf580cb](https://github.com/jl917/eApp/commit/cf580cbd9107d4b75997adf41196fcdde2afbc6d))
+
 # [1.0.0-beta.6](https://github.com/jl917/eApp/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2024-11-17)
 
 
