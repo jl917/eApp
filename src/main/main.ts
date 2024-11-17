@@ -6,6 +6,8 @@ if (started) {
   app.quit();
 }
 
+const isDev = process.env.MODE === "dev";
+
 function showNotification() {
   const notification = new Notification({
     title: "hello electron",
@@ -24,12 +26,12 @@ const createWindow = () => {
     },
   });
 
-  const loadURL = process.env.MODE === "dev" ? MAIN_WINDOW_VITE_DEV_SERVER_URL : VITE_ENTRY_URL;
+  const loadURL = isDev ? MAIN_WINDOW_VITE_DEV_SERVER_URL : VITE_ENTRY_URL;
   mainWindow.loadURL(loadURL);
   showNotification();
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  isDev && mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
