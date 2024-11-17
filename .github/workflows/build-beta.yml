@@ -25,12 +25,12 @@ jobs:
     strategy:
       matrix:
         include:
-          - platform: "macos-latest"
-            args: ""
+          # - platform: "macos-latest"
+          #   args: ""
           - platform: "ubuntu-latest"
             args: ""
-          - platform: "windows-latest"
-            args: ""
+          # - platform: "windows-latest"
+          #   args: ""
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout repository
@@ -59,7 +59,7 @@ jobs:
         run: |
           npx semantic-release --dry-run
       - name: Build App
-        run: npm run build:beta 
+        run: npm run build:beta
 
       - name: Move artifacts to outputs
         run: |
