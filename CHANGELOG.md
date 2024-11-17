@@ -1,3 +1,10 @@
+# [1.0.0-beta.3](https://github.com/jl917/eApp/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2024-11-17)
+
+
+### Bug Fixes
+
+* 폴더 셋팅 ([97cedb6](https://github.com/jl917/eApp/commit/97cedb6b5fe42f4dd0825a6e755dfa25aac0176d))
+
 # [1.0.0-beta.2](https://github.com/jl917/eApp/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2024-11-17)
 
 
