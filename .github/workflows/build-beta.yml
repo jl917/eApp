@@ -1,4 +1,4 @@
-name: DEV Build
+name: BETA Build
 on:
   workflow_dispatch:
     inputs:
