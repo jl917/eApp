@@ -1,3 +1,10 @@
+# [1.0.0-beta.10](https://github.com/jl917/eapp/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2024-11-17)
+
+
+### Bug Fixes
+
+* package업데이트 ([ddd7a2f](https://github.com/jl917/eapp/commit/ddd7a2f23c5f7b0c0e3242783db29f0358bca357))
+
 # [1.0.0-beta.9](https://github.com/jl917/eApp/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2024-11-17)
 
 
