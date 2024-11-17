@@ -47,5 +47,13 @@
     "name": "jl917",
     "email": "julong1988@naver.com"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jl917/eapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jl917/eapp/issues"
+  },
+  "homepage": "https://github.com/jl917/eapp#readme"
 }
