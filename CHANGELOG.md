@@ -1,3 +1,15 @@
+# [1.0.0-beta.2](https://github.com/jl917/eApp/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2024-11-17)
+
+
+### Bug Fixes
+
+* linux build ([41ac670](https://github.com/jl917/eApp/commit/41ac6705570c265e196c0509657e8ff9f2736aea))
+* linux name 오류 수정 ([6559b7f](https://github.com/jl917/eApp/commit/6559b7fe2ee423bc2035383a3d952e9e3e12677f))
+* window 환경 테스트 ([83c62fc](https://github.com/jl917/eApp/commit/83c62fcc970ca2e884865f74447d3a4dd80193db))
+* 액션 빌드 수정 ([9a7ccc4](https://github.com/jl917/eApp/commit/9a7ccc4d78919c96e58a474f14a18b1fb5def063))
+* 올 플랫폼 빌드 ([ce83555](https://github.com/jl917/eApp/commit/ce83555a02882f14840455ebec6cbc8118e1ec94))
+* 전체 플랫폼 빌드 ([782d106](https://github.com/jl917/eApp/commit/782d106739934c59b184e78fbc9c83a0324e678f))
+
 # 1.0.0-beta.1 (2024-11-17)
 
 
