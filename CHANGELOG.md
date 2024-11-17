@@ -1,3 +1,10 @@
+# [1.0.0-beta.11](https://github.com/jl917/eapp/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2024-11-17)
+
+
+### Bug Fixes
+
+* update test ([a280092](https://github.com/jl917/eapp/commit/a28009210caf15f41e1d6ff5ac83ba1b61af563e))
+
 # [1.0.0-beta.10](https://github.com/jl917/eapp/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2024-11-17)
 
 
