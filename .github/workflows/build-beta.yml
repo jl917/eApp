@@ -23,10 +23,10 @@ jobs:
         include:
           # - platform: "macos-latest"
           #   args: ""
-          - platform: "ubuntu-latest"
-            args: ""
-          # - platform: "windows-latest"
+          # - platform: "ubuntu-latest"
           #   args: ""
+          - platform: "windows-latest"
+            args: ""
     runs-on: ${{ matrix.platform }}
     outputs:
       success: ${{ job.status }} # 빌드 성공 여부를 output으로 저장
