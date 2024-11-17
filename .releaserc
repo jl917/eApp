@@ -25,11 +25,11 @@
       {
         "assets": [
           "eapp-*-*.dmg",
-          "eapp-*-*.deb",
-          "eapp-*-*.rpm",
-          "eapp-*-*.AppImage",
-          "eapp-*-*.msi",
-          "eapp-*-*.exe"
+          "deb/x64/eapp-*-*.deb",
+          "rpm/x64/eapp-*-*.rpm",
+          "squirrel.windows/x64/eapp-*-*.exe",
+          "squirrel.windows/x64/eapp-*-*.unpkg",
+          "squirrel.windows/x64/RELEASE"
         ]
       }
     ],
