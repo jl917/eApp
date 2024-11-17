@@ -27,10 +27,10 @@ jobs:
         include:
           - platform: "macos-latest"
             args: ""
-          - platform: "ubuntu-latest"
-            args: ""
-          - platform: "windows-latest"
-            args: ""
+          # - platform: "ubuntu-latest"
+          #   args: ""
+          # - platform: "windows-latest"
+          #   args: ""
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout repository
