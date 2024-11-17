@@ -1,3 +1,10 @@
+# [1.0.0-beta.4](https://github.com/jl917/eApp/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2024-11-17)
+
+
+### Bug Fixes
+
+* 업로드 파일명 수정 ([b346001](https://github.com/jl917/eApp/commit/b34600159350ad48bdecb4cd3d3b0e1166b2b0ad))
+
 # [1.0.0-beta.3](https://github.com/jl917/eApp/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2024-11-17)
 
 
