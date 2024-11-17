@@ -1,15 +1,12 @@
+// @ts-nocheck
 import { app, BrowserWindow, Notification } from "electron";
 import path from "path";
 import started from "electron-squirrel-startup";
-import { updateElectronApp } from "update-electron-app";
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
   app.quit();
 }
-
-// additional configuration options available
-updateElectronApp();
 
 const isDev = process.env.MODE === "dev";
 
@@ -31,7 +28,7 @@ const createWindow = () => {
     },
   });
 
-  const loadURL = isDev ? MAIN_WINDOW_VITE_DEV_SERVER_URL : VITE_ENTRY_URL;
+  const loadURL = isDev ? MAIN_WINDOW_VITE_DEV_SERVER_URL : import.meta.env.VITE_ENTRY_URL;
   mainWindow.loadURL(loadURL);
   showNotification();
 
