@@ -1,3 +1,10 @@
+# [1.0.0-beta.6](https://github.com/jl917/eApp/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2024-11-17)
+
+
+### Bug Fixes
+
+* only web ([d972aca](https://github.com/jl917/eApp/commit/d972aca273be90923675e3365ad1ab70f94fa734))
+
 # [1.0.0-beta.5](https://github.com/jl917/eApp/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2024-11-17)
 
 
