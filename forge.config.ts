@@ -11,10 +11,13 @@ import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
 import { getName } from "./src/utils";
 
+const name = getName();
+
 const config: ForgeConfig = {
   buildIdentifier: process.env.MODE,
   packagerConfig: {
-    name: getName(),
+    name,
+    executableName: name,
     asar: true,
     appBundleId: utils.fromBuildIdentifier({
       beta: "io.github.jl917.beta",
@@ -27,7 +30,12 @@ const config: ForgeConfig = {
     new MakerZIP({}, ["darwin"]),
     //
     new MakerRpm({}),
-    new MakerDeb({}),
+    new MakerDeb({
+      options: {
+        name,
+        productName: name,
+      },
+    }),
     new MakerDMG(),
   ],
   plugins: [
