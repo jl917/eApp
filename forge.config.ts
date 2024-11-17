@@ -17,7 +17,7 @@ const config: ForgeConfig = {
   buildIdentifier: process.env.MODE,
   packagerConfig: {
     name,
-    executableName: name,
+    executableName: "eapp",
     asar: true,
     appBundleId: utils.fromBuildIdentifier({
       beta: "io.github.jl917.beta",
@@ -33,7 +33,7 @@ const config: ForgeConfig = {
     new MakerDeb({
       options: {
         name,
-        productName: name,
+        productName: "eapp",
       },
     }),
     new MakerDMG(),
