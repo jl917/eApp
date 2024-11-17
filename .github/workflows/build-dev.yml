@@ -67,15 +67,15 @@ jobs:
       - name: Move macOS artifacts to outputs
         if: matrix.platform == 'macos-latest'
         run: |
-          cp -r out/dev/make/* outputs/
+          cp -r out/beta/make/* outputs/
       - name: Move Ubuntu artifacts to outputs
         if: matrix.platform == 'ubuntu-latest'
         run: |
-          cp -r out/dev/make/* outputs/
+          cp -r out/beta/make/* outputs/
       - name: Move Windows artifacts to outputs
         if: matrix.platform == 'windows-latest'
         run: |
-          cp -r out/dev/make/* outputs/
+          cp -r out/beta/make/* outputs/
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
