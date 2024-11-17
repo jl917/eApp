@@ -24,12 +24,12 @@
       "@semantic-release/github",
       {
         "assets": [
-          "eapp-beta-*-*.dmg",
-          "eapp-beta-*-*.deb",
-          "eapp-beta-*-*.rpm",
-          "eapp-beta-*-*.AppImage",
-          "eapp-beta-*-*.msi",
-          "eapp-beta-*-*.exe"
+          "eapp-*-*.dmg",
+          "eapp-*-*.deb",
+          "eapp-*-*.rpm",
+          "eapp-*-*.AppImage",
+          "eapp-*-*.msi",
+          "eapp-*-*.exe"
         ]
       }
     ],
