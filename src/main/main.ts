@@ -1,7 +1,34 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import { app, BrowserWindow, Notification } from "electron";
 import path from "path";
 import started from "electron-squirrel-startup";
+
+// 자동 업데이트
+import { autoUpdater } from "electron-updater";
+
+function setupAutoUpdater() {
+  autoUpdater.setFeedURL({
+    provider: "github",
+    repo: "jl917/eApp",
+    owner: "jl917",
+  });
+
+  autoUpdater.checkForUpdatesAndNotify();
+
+  autoUpdater.on("update-available", () => {
+    // 업데이트 가능할 때 로직
+    showNotification();
+  });
+
+  autoUpdater.on("update-downloaded", () => {
+    // 업데이트 다운로드 완료 시 로직
+    autoUpdater.quitAndInstall();
+  });
+}
+
+// Electron 앱 초기화 시 호출
+app.whenReady().then(setupAutoUpdater);
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
@@ -12,7 +39,7 @@ const isDev = process.env.MODE === "dev";
 
 function showNotification() {
   const notification = new Notification({
-    title: "hello electron",
+    title: "업데이트 필요",
     body: import.meta.env.VITE_ENTRY_URL,
   });
   notification.show();
@@ -30,7 +57,7 @@ const createWindow = () => {
 
   const loadURL = isDev ? MAIN_WINDOW_VITE_DEV_SERVER_URL : import.meta.env.VITE_ENTRY_URL;
   mainWindow.loadURL(loadURL);
-  showNotification();
+  // showNotification();
 
   // Open the DevTools.
   isDev && mainWindow.webContents.openDevTools();
