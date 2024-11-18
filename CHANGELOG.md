@@ -1,3 +1,12 @@
+# [1.0.0-beta.12](https://github.com/jl917/eapp/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2024-11-18)
+
+
+### Bug Fixes
+
+* mac update테스트 하기 ([624eecd](https://github.com/jl917/eapp/commit/624eecd98f8173fa98aae05d0e83d24770fd5547))
+* 업데이트 기능 추가 ([e03711a](https://github.com/jl917/eapp/commit/e03711aef984c0e8f799a251aa8a90db1df82f16))
+* 타입에러 수정 자동 업데이트 제거 ([1683452](https://github.com/jl917/eapp/commit/168345225534c87cfc677f750ff91e416dcf152a))
+
 # [1.0.0-beta.11](https://github.com/jl917/eapp/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2024-11-17)
 
 
