@@ -1,3 +1,10 @@
+# [1.0.0-beta.14](https://github.com/jl917/eapp/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2024-11-18)
+
+
+### Bug Fixes
+
+* update로직 변경 ([e7e6b2b](https://github.com/jl917/eapp/commit/e7e6b2bb3ac5562f098ca7b58db3ec5587a68ae2))
+
 # [1.0.0-beta.13](https://github.com/jl917/eapp/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2024-11-18)
 
 
