@@ -1,3 +1,10 @@
+# [1.0.0-beta.15](https://github.com/jl917/eapp/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2024-11-18)
+
+
+### Bug Fixes
+
+* 버전업 테스트 ([3da28b5](https://github.com/jl917/eapp/commit/3da28b5f539ad7c3f0993b2b59bc6d83c0053b44))
+
 # [1.0.0-beta.14](https://github.com/jl917/eapp/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2024-11-18)
 
 
