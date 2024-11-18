@@ -45,7 +45,7 @@ const createWindow = () => {
 
   const loadURL = isDev ? MAIN_WINDOW_VITE_DEV_SERVER_URL : import.meta.env.VITE_ENTRY_URL;
   mainWindow.loadURL(loadURL);
-  // showNotification();
+  showNotification();
 
   // Open the DevTools.
   isDev && mainWindow.webContents.openDevTools();
