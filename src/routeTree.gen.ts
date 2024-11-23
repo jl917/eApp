@@ -17,7 +17,7 @@ import { Route as rootRoute } from './renderer/routers/__root'
 // Create Virtual Routes
 
 const IndexLazyImport = createFileRoute('/')()
-const SubIndexLazyImport = createFileRoute('/sub/')()
+const SubMonitorIndexLazyImport = createFileRoute('/subMonitor/')()
 
 // Create/Update Routes
 
@@ -29,12 +29,12 @@ const IndexLazyRoute = IndexLazyImport.update({
   import('./renderer/routers/index.lazy').then((d) => d.Route),
 )
 
-const SubIndexLazyRoute = SubIndexLazyImport.update({
-  id: '/sub/',
-  path: '/sub/',
+const SubMonitorIndexLazyRoute = SubMonitorIndexLazyImport.update({
+  id: '/subMonitor/',
+  path: '/subMonitor/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() =>
-  import('./renderer/routers/sub/index.lazy').then((d) => d.Route),
+  import('./renderer/routers/subMonitor/index.lazy').then((d) => d.Route),
 )
 
 // Populate the FileRoutesByPath interface
@@ -48,11 +48,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
-    '/sub/': {
-      id: '/sub/'
-      path: '/sub'
-      fullPath: '/sub'
-      preLoaderRoute: typeof SubIndexLazyImport
+    '/subMonitor/': {
+      id: '/subMonitor/'
+      path: '/subMonitor'
+      fullPath: '/subMonitor'
+      preLoaderRoute: typeof SubMonitorIndexLazyImport
       parentRoute: typeof rootRoute
     }
   }
@@ -62,37 +62,37 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
-  '/sub': typeof SubIndexLazyRoute
+  '/subMonitor': typeof SubMonitorIndexLazyRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
-  '/sub': typeof SubIndexLazyRoute
+  '/subMonitor': typeof SubMonitorIndexLazyRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
-  '/sub/': typeof SubIndexLazyRoute
+  '/subMonitor/': typeof SubMonitorIndexLazyRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sub'
+  fullPaths: '/' | '/subMonitor'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sub'
-  id: '__root__' | '/' | '/sub/'
+  to: '/' | '/subMonitor'
+  id: '__root__' | '/' | '/subMonitor/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
-  SubIndexLazyRoute: typeof SubIndexLazyRoute
+  SubMonitorIndexLazyRoute: typeof SubMonitorIndexLazyRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
-  SubIndexLazyRoute: SubIndexLazyRoute,
+  SubMonitorIndexLazyRoute: SubMonitorIndexLazyRoute,
 }
 
 export const routeTree = rootRoute
@@ -106,14 +106,14 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/sub/"
+        "/subMonitor/"
       ]
     },
     "/": {
       "filePath": "index.lazy.tsx"
     },
-    "/sub/": {
-      "filePath": "sub/index.lazy.tsx"
+    "/subMonitor/": {
+      "filePath": "subMonitor/index.lazy.tsx"
     }
   }
 }
