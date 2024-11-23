@@ -11,8 +11,14 @@
     "outDir": "dist",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "jsx": "react-jsx",
     "typeRoots": ["./node_modules/@types"],
-    "types": []
+    "types": [],
+    "paths": {
+      "@main/*": ["src/main/*"],
+      "@preload/*": ["src/preload/*"],
+      "@renderer/*": ["src/renderer/*"]
+    }
   },
   "include": ["src/**/*", "forge.env.d.ts"],
   "exclude": ["node_modules"]

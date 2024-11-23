@@ -1,0 +1,1 @@
+const isDev = process.env.MODE === "dev";
