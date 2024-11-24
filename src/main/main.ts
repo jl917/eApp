@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from "electron";
 import started from "electron-squirrel-startup";
-import { setupAutoUpdater } from "./fn/autoUpdater";
-import { createWindow } from "@main/fn/window";
+import { setupAutoUpdater } from "@main/service/autoUpdater";
+import { createWindow } from "@main/service/window";
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {

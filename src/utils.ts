@@ -1,3 +1,4 @@
+// build.config용 유틸
 // import { loadEnv } from "vite";
 import { loadEnv } from "@rsbuild/core";
 import packages from "../package.json";
