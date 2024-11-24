@@ -18,3 +18,7 @@
 
 - sudo spctl --master-disable
 - sudo xattr -d com.apple.quarantine /Applications/eapp-beta.app
+
+## vite => rsbuild
+
+- https://github.com/jl917/eApp/pull/48/commits/c959239c7c8d0390f4f5ea1e757b9e75874f3541
