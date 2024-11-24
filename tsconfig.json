@@ -21,6 +21,6 @@
       "@renderer/*": ["src/renderer/*"]
     }
   },
-  "include": ["src/**/*", "forge.env.d.ts"],
+  "include": ["src/**/*", "forge.env.d.ts", "forge.config.ts"],
   "exclude": ["node_modules"]
 }

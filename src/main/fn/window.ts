@@ -17,7 +17,7 @@ export const createWindow = () => {
     },
   });
 
-  const loadURL = isDev ? MAIN_WINDOW_VITE_DEV_SERVER_URL : VITE_ENTRY_URL;
+  const loadURL = isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : VITE_ENTRY_URL;
   mainWindow.loadURL(loadURL);
   showNotification();
 
@@ -58,7 +58,7 @@ export function createExtWindow() {
     });
   }
 
-  const loadURL = `${isDev ? MAIN_WINDOW_VITE_DEV_SERVER_URL : VITE_ENTRY_URL}/subMonitor`;
+  const loadURL = `${isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : VITE_ENTRY_URL}/subMonitor`;
   extWindow.loadURL(loadURL);
 
   extWindow.on("closed", () => {

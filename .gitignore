@@ -87,6 +87,9 @@ typings/
 # Vite
 .vite/
 
+# Rsbuild
+.rsbuild
+
 # Electron-Forge
 out/
 dist/

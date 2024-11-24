@@ -7,6 +7,7 @@ import { MakerRpm } from "@electron-forge/maker-rpm";
 import { MakerDMG } from "@electron-forge/maker-dmg";
 
 import { VitePlugin } from "@electron-forge/plugin-vite";
+import { RsbuildPlugin } from "./src/plugins/electron-forge-plugin-rsbuild";
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
 import { getName } from "./src/utils";
@@ -44,19 +45,19 @@ const config: ForgeConfig = {
     new MakerDMG(),
   ],
   plugins: [
-    new VitePlugin({
+    new RsbuildPlugin({
       // `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.
       // If you are familiar with Vite configuration, it will look really familiar.
       build: [
         {
           // `entry` is just an alias for `build.lib.entry` in the corresponding file of `config`.
           entry: "src/main/main.ts",
-          config: "vite.main.config.ts",
+          config: "rsbuild.main.config.ts",
           target: "main",
         },
         {
           entry: "src/preload/preload.ts",
-          config: "vite.preload.config.ts",
+          config: "rsbuild.preload.config.ts",
           target: "preload",
         },
       ],
@@ -65,12 +66,39 @@ const config: ForgeConfig = {
           ? [
               {
                 name: "main_window",
-                config: "vite.renderer.config.ts",
+                config: "rsbuild.renderer.config.ts",
               },
             ]
           : []),
       ],
     }),
+    // new VitePlugin({
+    //   // `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.
+    //   // If you are familiar with Vite configuration, it will look really familiar.
+    //   build: [
+    //     {
+    //       // `entry` is just an alias for `build.lib.entry` in the corresponding file of `config`.
+    //       entry: "src/main/main.ts",
+    //       config: "vite.main.config.ts",
+    //       target: "main",
+    //     },
+    //     {
+    //       entry: "src/preload/preload.ts",
+    //       config: "vite.preload.config.ts",
+    //       target: "preload",
+    //     },
+    //   ],
+    // renderer: [
+    //   ...(process.env.MODE === "dev"
+    //     ? [
+    //         {
+    //           name: "main_window",
+    //           config: "vite.renderer.config.ts",
+    //         },
+    //       ]
+    //     : []),
+    // ],
+    // }),
     // Fuses are used to enable/disable various Electron functionality
     // at package time, before code signing the application
     new FusesPlugin({
