@@ -1,3 +1,22 @@
+# [1.0.0-beta.16](https://github.com/jl917/eapp/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2024-11-24)
+
+
+### Bug Fixes
+
+* readme 업데이트 ([55d0c36](https://github.com/jl917/eapp/commit/55d0c36263847a1c9769a07f404fdbd72b14cc54))
+* rsdoctor 적용 ([2cb7a82](https://github.com/jl917/eapp/commit/2cb7a82d70f79fb3ab4423c0973d3ecb920cc535))
+* 모니터 기능 개선, antd설치 ([19abaf2](https://github.com/jl917/eapp/commit/19abaf20c972d220c1ebbd8dbd0bd75a7317044a))
+* 타입오류 수정 ([88049d1](https://github.com/jl917/eapp/commit/88049d15c5188dc677aaa3f4f8057c6aff1a5e0f))
+* 타입오류 수정 ([dbb19b5](https://github.com/jl917/eapp/commit/dbb19b54ed3edbe5d5d90ab4a8e7d1a1a63370f5))
+* 통신 bridge 개발 (1/3) ([e56cb1d](https://github.com/jl917/eapp/commit/e56cb1d12a99411ea1bf71c5eccdc666637bf865))
+
+
+### Features
+
+* react 환경 셋팅 ([6ed4f1c](https://github.com/jl917/eapp/commit/6ed4f1c84713bbcfe115ec46bea4719d5b46d3c7))
+* vite => rsbuild 마이그레이션 ([c959239](https://github.com/jl917/eapp/commit/c959239c7c8d0390f4f5ea1e757b9e75874f3541))
+* 듀얼 모니터 기능 구현 ([d3eed2f](https://github.com/jl917/eapp/commit/d3eed2ff9b2a59b35c3296dc6f7f2aa23534063a))
+
 # [1.0.0-beta.15](https://github.com/jl917/eapp/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2024-11-18)
 
 
