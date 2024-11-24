@@ -1,7 +1,7 @@
 import { BrowserWindow, screen, ipcMain } from "electron";
 import path from "path";
 import { showNotification } from "@main/common/notification";
-import { VITE_ENTRY_URL, MAIN_WINDOW_VITE_DEV_SERVER_URL } from "@main/constant";
+import { VITE_ENTRY_URL } from "@/common/constant";
 import { isDev } from "@main/utils";
 
 let mainWindow: BrowserWindow;
@@ -58,7 +58,7 @@ export function createExtWindow() {
     });
   }
 
-  const loadURL = `${isDev ? MAIN_WINDOW_VITE_DEV_SERVER_URL : VITE_ENTRY_URL}/sub`;
+  const loadURL = `${isDev ? MAIN_WINDOW_VITE_DEV_SERVER_URL : VITE_ENTRY_URL}/subMonitor`;
   extWindow.loadURL(loadURL);
 
   extWindow.on("closed", () => {
