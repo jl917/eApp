@@ -25,6 +25,7 @@
       {
         "assets": [
           "eapp-*-*.dmg",
+          "zip/darwin/arm64/eapp-*-*.zip",
           "deb/x64/eapp-*~*_amd64.deb",
           "rpm/x64/eapp-*-*.rpm",
           "squirrel.windows/x64/eapp-*-*.exe",
