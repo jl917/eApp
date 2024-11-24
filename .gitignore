@@ -90,6 +90,9 @@ typings/
 # Rsbuild
 .rsbuild
 
+# Rsdoctor
+.rsdoctor
+
 # Electron-Forge
 out/
 dist/

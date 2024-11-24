@@ -13,6 +13,7 @@
     "buildWeb": "cross-env MODE=production rsbuild build --config rsbuild.renderer.config.ts",
     "buildWeb:beta": "cross-env MODE=beta rsbuild build --config rsbuild.renderer.config.ts",
     "build:dev": "cross-env MODE=dev electron-forge publish",
+    "doctor": "RSDOCTOR=true npm run build && RSDOCTOR=true npm run buildWeb",
     "lint": "eslint --ext .ts,.tsx ."
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "@electron/fuses": "^1.8.0",
     "@rsbuild/core": "^1.1.4",
     "@rsbuild/plugin-react": "^1.0.7",
+    "@rsdoctor/rspack-plugin": "^0.4.8",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^11.0.1",
