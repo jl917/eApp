@@ -21,8 +21,16 @@ export const createWindow = () => {
   mainWindow.loadURL(loadURL);
   showNotification();
 
+  // 모니터가 추가, 삭제되면 mainWindow에 신호보내기
+  screen.on("display-removed", () => {
+    mainWindow.webContents.send("res-displays", getDisplays());
+  });
+  screen.on("display-added", () => {
+    mainWindow.webContents.send("res-displays", getDisplays());
+  });
+
   // Open the DevTools.
-  isDev && mainWindow.webContents.openDevTools();
+  // isDev && mainWindow.webContents.openDevTools();
 };
 
 export function createExtWindow() {
@@ -61,51 +69,22 @@ export function createExtWindow() {
   const loadURL = `${isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : VITE_ENTRY_URL}/subMonitor`;
   extWindow.loadURL(loadURL);
 
-  extWindow.on("closed", () => {
-    extWindow = null;
-    if (mainWindow) {
-      mainWindow.webContents.send("ext-window-status", {
-        isOpen: false,
-        display: null,
-      });
-    }
-  });
-
-  extWindow.webContents.on("did-finish-load", () => {
-    if (mainWindow) {
-      mainWindow.webContents.send("ext-window-status", {
-        isOpen: true,
-        display: externalDisplay ? "external" : "primary",
-      });
-    }
-  });
-
   extWindow.setFullScreenable(false);
 }
 
-ipcMain.on("req-displays", (event) => {
+const getDisplays = () => {
   const displays = screen.getAllDisplays();
-  event.reply(
-    "res-displays",
-    displays.map((display) => ({
-      id: display.id,
-      name: display.label || `Display ${display.id}`,
-      bounds: display.bounds,
-      isPrimary: display.bounds.x === 0 && display.bounds.y === 0,
-    }))
-  );
-});
 
-// 확장 화면 상태 확인 - 수정된 버전
-ipcMain.on("req-ext-window-status", (event) => {
-  event.reply("res-ext-window-status", {
-    isOpen: extWindow !== null,
-    display: extWindow
-      ? extWindow.getBounds().x !== 0 || extWindow.getBounds().y !== 0
-        ? "external"
-        : "primary"
-      : null,
-  });
+  return displays.map((display) => ({
+    id: display.id,
+    name: display.label || `Display ${display.id}`,
+    bounds: display.bounds,
+    isPrimary: display.bounds.x === 0 && display.bounds.y === 0,
+  }));
+};
+
+ipcMain.on("req-displays", (event) => {
+  event.reply("res-displays", getDisplays());
 });
 
 ipcMain.on("req-open-ext-window", (event) => {
