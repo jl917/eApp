@@ -10,6 +10,11 @@ export default defineConfig(() => {
     html: {
       template: "./index.html",
     },
+    server: {
+      publicDir: {
+        name: './src/renderer/public'
+      }
+    },
     source: {
       entry: {
         index: "src/renderer/index.tsx",

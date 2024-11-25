@@ -27,10 +27,8 @@ export const createWindow = () => {
       preload: path.join(__dirname, "preload.js"),
     },
   });
-
   const loadURL = isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : VITE_ENTRY_URL;
   mainWindow.loadURL(loadURL);
-  showNotification();
 
   // 모니터가 추가, 삭제되면 mainWindow에 신호보내기
   screen.on("display-removed", sendDisplays);
