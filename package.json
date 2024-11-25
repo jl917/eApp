@@ -3,14 +3,17 @@
   "productName": "eapp",
   "version": "1.0.0",
   "description": "My Electron application description",
-  "main": ".vite/build/main.js",
+  "main": ".rsbuild/build/main.js",
   "scripts": {
-    "start": "cross-env MODE=dev electron-forge start --inspect-electron",
+    "start": "npm run dev",
+    "dev": "cross-env MODE=dev electron-forge start --inspect-electron",
+    "devWeb": "cross-env MODE=dev rsbuild --config rsbuild.renderer.config.ts",
     "build": "cross-env MODE=production electron-forge publish",
     "build:beta": "cross-env MODE=beta electron-forge publish",
-    "buildWeb": "cross-env MODE=production vite build --config vite.renderer.config.ts",
-    "buildWeb:beta": "cross-env MODE=beta vite build --config vite.renderer.config.ts",
+    "buildWeb": "cross-env MODE=production rsbuild build --config rsbuild.renderer.config.ts",
+    "buildWeb:beta": "cross-env MODE=beta rsbuild build --config rsbuild.renderer.config.ts",
     "build:dev": "cross-env MODE=dev electron-forge publish",
+    "doctor": "RSDOCTOR=true npm run build && RSDOCTOR=true npm run buildWeb",
     "lint": "eslint --ext .ts,.tsx ."
   },
   "devDependencies": {
@@ -24,21 +27,34 @@
     "@electron-forge/plugin-fuses": "^7.5.0",
     "@electron-forge/plugin-vite": "^7.5.0",
     "@electron/fuses": "^1.8.0",
+    "@rsbuild/core": "^1.1.4",
+    "@rsbuild/plugin-react": "^1.0.7",
+    "@rsdoctor/rspack-plugin": "^0.4.8",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^11.0.1",
     "@semantic-release/npm": "^12.0.1",
+    "@tanstack/react-router": "^1.82.2",
+    "@types/debug": "^4.1.12",
     "@types/electron-squirrel-startup": "^1.0.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "@vitejs/plugin-react": "^4.3.3",
     "cross-env": "^7.0.3",
+    "debug": "^4.3.7",
     "electron": "33.2.0",
     "electron-squirrel-startup": "^1.0.1",
+    "electron-updater": "^6.3.9",
     "eslint": "^8.0.1",
     "eslint-plugin-import": "^2.25.0",
+    "fs-extra": "^11.2.0",
+    "listr2": "^8.2.5",
     "semantic-release": "^24.2.0",
     "ts-node": "^10.0.0",
-    "typescript": "~4.5.4",
+    "typescript": "^5.6.3",
+    "update-electron-app": "^3.0.0",
     "vite": "^5.0.12"
   },
   "keywords": [],
@@ -46,5 +62,20 @@
     "name": "jl917",
     "email": "julong1988@naver.com"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jl917/eapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jl917/eapp/issues"
+  },
+  "homepage": "https://github.com/jl917/eapp#readme",
+  "dependencies": {
+    "@tanstack/router": "^0.0.1-beta.53",
+    "@tanstack/router-plugin": "^1.81.9",
+    "antd": "^5.22.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
 }

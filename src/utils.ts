@@ -1,15 +1,24 @@
-import { loadEnv } from "vite";
+// build.config용 유틸
+// import { loadEnv } from "vite";
+import { loadEnv } from "@rsbuild/core";
 import packages from "../package.json";
 
-const mode = process.env.MODE;
+export const mode = process.env.MODE;
+
+// export const getDefine = () => {
+//   const env = loadEnv(mode, process.cwd(), "VITE");
+//   const define: any = {};
+//   for (const [prop, value] of Object.entries(env)) {
+//     define[prop] = JSON.stringify(value);
+//   }
+//   return define;
+// };
 
 export const getDefine = () => {
-  const env = loadEnv(mode, process.cwd(), "VITE");
-  const define: any = {};
-  for (const [prop, value] of Object.entries(env)) {
-    define[prop] = JSON.stringify(value);
-  }
-  return define;
+  const { publicVars } = loadEnv({ prefixes: ["VITE_"], mode });
+  return {
+    ...publicVars,
+  };
 };
 
 export const getName = () => {
