@@ -1,3 +1,11 @@
+# [1.0.0-beta.17](https://github.com/jl917/eapp/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2024-11-25)
+
+
+### Bug Fixes
+
+* netlify redirect오류 수정 ([6fe7ed2](https://github.com/jl917/eapp/commit/6fe7ed27b3db10c5847eaddcba5fff9b754e0724))
+* 환경 오류 수정 ([ef0b175](https://github.com/jl917/eapp/commit/ef0b17578f245f79b2e53fae397779f76263feea))
+
 # [1.0.0-beta.16](https://github.com/jl917/eapp/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2024-11-24)
 
 
