@@ -3,7 +3,7 @@
 import { loadEnv } from "@rsbuild/core";
 import packages from "../package.json";
 
-const mode = process.env.MODE;
+export const mode = process.env.MODE;
 
 // export const getDefine = () => {
 //   const env = loadEnv(mode, process.cwd(), "VITE");
@@ -15,7 +15,7 @@ const mode = process.env.MODE;
 // };
 
 export const getDefine = () => {
-  const { publicVars } = loadEnv({ prefixes: ["VITE_"] });
+  const { publicVars } = loadEnv({ prefixes: ["VITE_"], mode });
   return {
     ...publicVars,
   };
