@@ -10,10 +10,10 @@
 import { dialog } from "electron";
 import { autoUpdater } from "electron-updater";
 
-// autoUpdater.setFeedURL({
-//   provider: 'generic',
-//   url: 'https://your-update-server.com/updates'
-// });
+autoUpdater.setFeedURL({
+  provider: 'generic',
+  url: 'http://localhost:8080/updates'
+});
 
 export const updateAction = () => {
   // 업데이트 로그 설정

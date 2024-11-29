@@ -1,6 +1,6 @@
 import { app, BrowserWindow } from "electron";
 import started from "electron-squirrel-startup";
-import { setupAutoUpdater } from "@main/service/autoUpdater";
+import { updateAction } from "@main/service/autoUpdater";
 import { createWindow } from "@main/service/window";
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -8,7 +8,7 @@ if (started) {
   app.quit();
 }
 
-app.whenReady().then(setupAutoUpdater);
+app.whenReady().then(updateAction);
 
 app.on("ready", createWindow);
 
