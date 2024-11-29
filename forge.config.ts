@@ -45,16 +45,6 @@ const config: ForgeConfig = {
     new MakerDMG(),
   ],
   plugins: [
-    {
-      name: "@electron-forge/plugin-auto-update",
-      config: {
-        // 업데이트 서버 설정
-        updateServerHost: "http://127.0.0.1",
-        updateServerPort: 8080,
-        updateServerProtocol: "http",
-        updatePath: "/updates",
-      },
-    },
     new RsbuildPlugin({
       // `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.
       // If you are familiar with Vite configuration, it will look really familiar.
