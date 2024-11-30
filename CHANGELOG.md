@@ -1,3 +1,10 @@
+# [1.0.0-beta.22](https://github.com/jl917/eapp/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2024-11-30)
+
+
+### Bug Fixes
+
+* dmg 파일명 수정 ([5e6c877](https://github.com/jl917/eapp/commit/5e6c8777430500c460d82927fd54964c16aaa318))
+
 # [1.0.0-beta.21](https://github.com/jl917/eapp/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2024-11-30)
 
 
