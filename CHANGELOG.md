@@ -1,3 +1,10 @@
+# [1.0.0-beta.26](https://github.com/jl917/eapp/compare/v1.0.0-beta.25...v1.0.0-beta.26) (2024-11-30)
+
+
+### Bug Fixes
+
+* 로깅 추가 ([bc629e8](https://github.com/jl917/eapp/commit/bc629e85fd1448b1b2d2885220f647ab92a9d154))
+
 # [1.0.0-beta.25](https://github.com/jl917/eapp/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2024-11-30)
 
 
