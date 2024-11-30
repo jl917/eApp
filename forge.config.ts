@@ -12,11 +12,16 @@ import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
 import { getName, getVersion } from "./src/utils";
 
+const name = getName();
+const appVersion = getVersion();
+
+console.log(appVersion)
+
 const config: ForgeConfig = {
   buildIdentifier: process.env.MODE,
   packagerConfig: {
-    name: getName(),
-    appVersion: getVersion(),
+    name,
+    appVersion,
     executableName: "eapp",
     asar: true,
     appBundleId: utils.fromBuildIdentifier({
