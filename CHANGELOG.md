@@ -1,3 +1,17 @@
+# [1.0.0-beta.19](https://github.com/jl917/eapp/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2024-11-30)
+
+
+### Bug Fixes
+
+* ？스크립트? ([cfa74f1](https://github.com/jl917/eapp/commit/cfa74f1582200f296aa068cda78212e8f5c1ab1f))
+* dryrun에러 수정 ([498f13a](https://github.com/jl917/eapp/commit/498f13aa1509890eafccaf10b9baba5c577ef47a))
+* update추가 ([2720d3b](https://github.com/jl917/eapp/commit/2720d3b4eac5d1608d589b83c4d866570389ea6c))
+* 다음버전 가져오기 테스트 ([55d7a36](https://github.com/jl917/eapp/commit/55d7a36c3a03785ad853c2abd64bc33bbe9d9b4e))
+* 버전 오류 수정 ([30d0aa7](https://github.com/jl917/eapp/commit/30d0aa79c532968a4219fc6558c01d73084cda09))
+* 버전 표기 오류 수정 ([e1c5d3f](https://github.com/jl917/eapp/commit/e1c5d3f03cc7ae353b5dea223fd0e25f2ae4c243))
+* 스크립트 에러 수정 ([61558ad](https://github.com/jl917/eapp/commit/61558adf8b7b181ff73d89f11163bdff2a8f646b))
+* 오류 수정 ([3bc3088](https://github.com/jl917/eapp/commit/3bc30880a95653bc8520e702223866528f23f8f3))
+
 # [1.0.0-beta.18](https://github.com/jl917/eapp/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2024-11-29)
 
 
