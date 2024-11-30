@@ -7,7 +7,9 @@ jobs:
   build-web:
     if: startsWith(github.ref, 'refs/heads/beta')
     name: Build web
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest'
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
     outputs:
       success: ${{ job.status }} # 빌드 성공 여부를 output으로 저장
     steps:
