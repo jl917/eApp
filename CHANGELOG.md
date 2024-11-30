@@ -1,3 +1,13 @@
+# [1.0.0-beta.23](https://github.com/jl917/eapp/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2024-11-30)
+
+
+### Bug Fixes
+
+* 1 ([425a048](https://github.com/jl917/eapp/commit/425a04875be03928ee58646208a0501247dcb14e))
+* console추가 ([a3cc74a](https://github.com/jl917/eapp/commit/a3cc74abdbc1493e8d429b5a29f845af7f2d1a80))
+* 베타 자동 빌드 ([d0b890d](https://github.com/jl917/eapp/commit/d0b890d6cbff44d2d4cfabf03583d9a7d32771ec))
+* 환경 변수 처리 ([064928e](https://github.com/jl917/eapp/commit/064928ed3da6e35176ca6f7756465da4d60ede06))
+
 # [1.0.0-beta.22](https://github.com/jl917/eapp/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2024-11-30)
 
 
