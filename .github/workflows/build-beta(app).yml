@@ -42,15 +42,11 @@ jobs:
         run: echo 'npm cache missed!'
       - run: npm install
 
-      # - name: Get next version
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      #   run: |
-      #     NEXT_VERSION=$(npx semantic-release --dry-run | grep 'The next release version is' | awk '{print $NF}')
-      #     echo "Next version is $NEXT_VERSION"
-      #     echo "NEXT_VERSION=$NEXT_VERSION" >> $GITHUB_ENV
-      # - name: Use next version
-      #   run: echo "The next version is $NEXT_VERSION"
+      - name: Update version declarations
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          npx semantic-release --dry-run
 
       - name: Build App
         run: npm run build:beta
