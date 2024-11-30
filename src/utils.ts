@@ -27,8 +27,12 @@ export const getName = () => {
 };
 
 export const getVersion = () => {
-  const output = execSync("npx semantic-release --dry-run", { encoding: "utf-8" });
-  const match = output.match(/The next release version is (\d+\.\d+\.\d+)/);
-  const nextVersion = match?.[1];
-  return nextVersion || packages.version;
+  try {
+    const output = execSync("npx semantic-release --dry-run", { encoding: "utf-8" });
+    const match = output.match(/The next release version is (\d+\.\d+\.\d+)/);
+    const nextVersion = match?.[1];
+    return nextVersion || packages.version;
+  } catch {
+    return packages.version;
+  }
 };
