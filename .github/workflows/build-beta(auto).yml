@@ -1,7 +1,8 @@
 name: BETA Build All(Web+App)
 on:
   push:
-    branches: ["beta"]
+    branches:
+      - beta
 
 jobs:
   ## app 빌드
