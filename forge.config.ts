@@ -10,14 +10,13 @@ import { VitePlugin } from "@electron-forge/plugin-vite";
 import { RsbuildPlugin } from "./src/plugins/electron-forge-plugin-rsbuild";
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
-import { getName } from "./src/utils";
-
-const name = getName();
+import { getName, getVersion } from "./src/utils";
 
 const config: ForgeConfig = {
   buildIdentifier: process.env.MODE,
   packagerConfig: {
-    name,
+    name: getName(),
+    appVersion: getVersion(),
     executableName: "eapp",
     asar: true,
     appBundleId: utils.fromBuildIdentifier({
