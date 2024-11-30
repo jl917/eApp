@@ -1,3 +1,12 @@
+# [1.0.0-beta.24](https://github.com/jl917/eapp/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2024-11-30)
+
+
+### Bug Fixes
+
+*  mac ([0eb634a](https://github.com/jl917/eapp/commit/0eb634aa6ac90762b6e38689ffe466e1f780874c))
+* mac환경만 ([ee4575e](https://github.com/jl917/eapp/commit/ee4575e3572ac8d6291c3f7d26c66c8d69fb2b44))
+* test ([6a8ae62](https://github.com/jl917/eapp/commit/6a8ae621ee64aa13245a86ddd5e970a9714c2880))
+
 # [1.0.0-beta.23](https://github.com/jl917/eapp/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2024-11-30)
 
 
