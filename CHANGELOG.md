@@ -1,3 +1,10 @@
+# [1.0.0-beta.20](https://github.com/jl917/eapp/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2024-11-30)
+
+
+### Bug Fixes
+
+* 생성된 파일 네임 처리 ([9304179](https://github.com/jl917/eapp/commit/93041792f013d097f0e83e3270984ed15f2cafee))
+
 # [1.0.0-beta.19](https://github.com/jl917/eapp/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2024-11-30)
 
 
