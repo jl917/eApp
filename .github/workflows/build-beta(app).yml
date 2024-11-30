@@ -42,12 +42,14 @@ jobs:
         run: echo 'npm cache missed!'
       - run: npm install
 
-      - name: Update version declarations
+      # - name: Update version declarations
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      #   run: |
+      #     npx semantic-release --dry-run
+      - name: Build App
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          npx semantic-release --dry-run
-      - name: Build App
         run: npm run build:beta
 
       - name: Move artifacts to outputs
