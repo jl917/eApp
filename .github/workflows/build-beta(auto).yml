@@ -21,6 +21,8 @@ jobs:
           - platform: "windows-latest"
             args: ""
     runs-on: ${{ matrix.platform }}
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
     outputs:
       success: ${{ job.status }} # 빌드 성공 여부를 output으로 저장
     steps:
@@ -50,8 +52,6 @@ jobs:
       #   run: |
       #     npx semantic-release --dry-run
       - name: Build App
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm run build:beta
 
       - name: Move artifacts to outputs
@@ -81,6 +81,8 @@ jobs:
     if: startsWith(github.ref, 'refs/heads/beta')
     name: Build web
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
     outputs:
       success: ${{ job.status }} # 빌드 성공 여부를 output으로 저장
     steps:
