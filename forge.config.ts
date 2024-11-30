@@ -4,22 +4,23 @@ import { MakerSquirrel } from "@electron-forge/maker-squirrel";
 import { MakerZIP } from "@electron-forge/maker-zip";
 import { MakerDeb } from "@electron-forge/maker-deb";
 import { MakerRpm } from "@electron-forge/maker-rpm";
+import { MakerDMG } from "@electron-forge/maker-dmg";
 
 import { VitePlugin } from "@electron-forge/plugin-vite";
 import { RsbuildPlugin } from "./src/plugins/electron-forge-plugin-rsbuild";
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
 import { getName, getVersion } from "./src/utils";
-import MakerDMG from "./src/plugins/makerDMG/MakerDMG";
 
+const name = getName();
 const appVersion = getVersion();
 
-const name = `${getName()}-${appVersion}`;
+console.log(appVersion)
 
 const config: ForgeConfig = {
   buildIdentifier: process.env.MODE,
   packagerConfig: {
-    name: `${name}`,
+    name,
     appVersion,
     executableName: "eapp",
     asar: true,
@@ -30,19 +31,22 @@ const config: ForgeConfig = {
   },
   rebuildConfig: {},
   makers: [
-    new MakerSquirrel({ name: `${name}` }),
-    new MakerZIP({}, ["darwin"]),
+    new MakerSquirrel({}),
+    new MakerZIP(
+      {
+        macUpdateManifestBaseUrl: "https://github.com/jl917/eApp/releases/download/",
+      },
+      ["darwin"]
+    ),
     //
-    new MakerRpm({
-      options: { name: `${name}`, productName: `${name}` },
-    }),
+    new MakerRpm({}),
     new MakerDeb({
       options: {
         name,
-        productName: name,
+        productName: "eapp",
       },
     }),
-    new MakerDMG({ appPath: "", name: `${name}` }),
+    new MakerDMG(),
   ],
   plugins: [
     new RsbuildPlugin({
