@@ -29,7 +29,8 @@ export const getName = () => {
 const getVersion = () => {
   const output = execSync("npx semantic-release --dry-run", { encoding: "utf-8" });
   const match = output.match(/The next release version is (\d+\.\d+\.\d+)/);
-  console.log(match)
+  console.log('output', output)
+  console.log("match", match)
   const nextVersion = match?.[1];
   return nextVersion || packages.version;
 };
