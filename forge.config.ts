@@ -27,21 +27,21 @@ const config: ForgeConfig = {
   },
   rebuildConfig: {},
   makers: [
-    new MakerSquirrel({}),
-    new MakerZIP(
-      {
-        macUpdateManifestBaseUrl: "https://github.com/jl917/eApp/releases/download/",
-      },
-      ["darwin"]
-    ),
-    //
-    new MakerRpm({}),
-    new MakerDeb({
-      options: {
-        name,
-        productName: "eapp",
-      },
-    }),
+    // new MakerSquirrel({}),
+    // new MakerZIP(
+    //   {
+    //     macUpdateManifestBaseUrl: "https://github.com/jl917/eApp/releases/download/",
+    //   },
+    //   ["darwin"]
+    // ),
+    // //
+    // new MakerRpm({}),
+    // new MakerDeb({
+    //   options: {
+    //     name,
+    //     productName: "eapp",
+    //   },
+    // }),
     new MakerDMG(),
   ],
   plugins: [

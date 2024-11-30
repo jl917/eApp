@@ -3,8 +3,6 @@ import { getDefine, mode } from "./src/utils";
 import path from "path";
 import { RsdoctorRspackPlugin } from "@rsdoctor/rspack-plugin";
 
-console.log(mode)
-
 export default defineConfig({
   source: {
     define: getDefine(),
