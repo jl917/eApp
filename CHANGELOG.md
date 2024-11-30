@@ -1,3 +1,10 @@
+# [1.0.0-beta.25](https://github.com/jl917/eapp/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2024-11-30)
+
+
+### Bug Fixes
+
+* 버전가져오기 패턴 변경 ([7753109](https://github.com/jl917/eapp/commit/7753109a207c3d1739c6c2717449f7a8f84584b9))
+
 # [1.0.0-beta.24](https://github.com/jl917/eapp/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2024-11-30)
 
 
