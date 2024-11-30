@@ -47,7 +47,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           npx semantic-release --dry-run
-
       - name: Build App
         run: npm run build:beta
 
