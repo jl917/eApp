@@ -1,3 +1,10 @@
+# [1.0.0-beta.21](https://github.com/jl917/eapp/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2024-11-30)
+
+
+### Reverts
+
+* Revert "fix: 생성된 파일 네임 처리" ([26c01fe](https://github.com/jl917/eapp/commit/26c01fec6d2d30df5ae1748347fb465210208974))
+
 # [1.0.0-beta.20](https://github.com/jl917/eapp/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2024-11-30)
 
 
