@@ -1,3 +1,10 @@
+# [1.0.0-beta.34](https://github.com/jl917/eapp/compare/v1.0.0-beta.33...v1.0.0-beta.34) (2024-12-01)
+
+
+### Bug Fixes
+
+* main, web 버전 분리 ([a7ebb0d](https://github.com/jl917/eapp/commit/a7ebb0d84eb3238111797617707c6f50bf5d3a1b))
+
 # [1.0.0-beta.33](https://github.com/jl917/eapp/compare/v1.0.0-beta.32...v1.0.0-beta.33) (2024-12-01)
 
 
