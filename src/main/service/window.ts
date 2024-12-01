@@ -1,7 +1,7 @@
 import { BrowserWindow, screen, ipcMain } from "electron";
 import path from "path";
 import { showNotification } from "@/main/utils/notification";
-import { VITE_ENTRY_URL } from "@/common/constant";
+import { RSBUILD_ENTRY_URL } from "@/common/constant";
 import { isDev } from "@/common/utils";
 import { receiveMessage, sendMessage } from "../utils/bridge";
 
@@ -27,7 +27,7 @@ export const createWindow = () => {
       preload: path.join(__dirname, "preload.js"),
     },
   });
-  const loadURL = isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : VITE_ENTRY_URL;
+  const loadURL = isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : RSBUILD_ENTRY_URL;
   mainWindow.loadURL(loadURL);
 
   // 모니터가 추가, 삭제되면 mainWindow에 신호보내기
@@ -58,7 +58,7 @@ export function createExtWindow() {
     alwaysOnTop: true,
   });
 
-  const loadURL = `${isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : VITE_ENTRY_URL}/subMonitor`;
+  const loadURL = `${isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : RSBUILD_ENTRY_URL}/subMonitor`;
   extWindow.loadURL(loadURL);
 
   extWindow.setFullScreenable(false);

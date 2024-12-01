@@ -16,9 +16,10 @@ export const mode = process.env.MODE;
 // };
 
 export const getDefine = () => {
-  const { publicVars } = loadEnv({ prefixes: ["VITE_"], mode });
+  const { publicVars, rawPublicVars } = loadEnv({ prefixes: ["RSBUILD_"], mode });
   return {
     ...publicVars,
+    ...rawPublicVars,
   };
 };
 
