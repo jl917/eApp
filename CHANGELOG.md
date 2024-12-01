@@ -1,3 +1,10 @@
+# [1.0.0-beta.33](https://github.com/jl917/eapp/compare/v1.0.0-beta.32...v1.0.0-beta.33) (2024-12-01)
+
+
+### Bug Fixes
+
+* log테스트 ([9a5d8b5](https://github.com/jl917/eapp/commit/9a5d8b586aec8a27e2a34c840d2ca1e968a719d4))
+
 # [1.0.0-beta.32](https://github.com/jl917/eapp/compare/v1.0.0-beta.31...v1.0.0-beta.32) (2024-12-01)
 
 
