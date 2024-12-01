@@ -1,3 +1,10 @@
+# [1.0.0-beta.28](https://github.com/jl917/eapp/compare/v1.0.0-beta.27...v1.0.0-beta.28) (2024-12-01)
+
+
+### Bug Fixes
+
+* 정규식 수정 ([31b7891](https://github.com/jl917/eapp/commit/31b789152f6b3ca827e1e5a2c792354b7d8f08af))
+
 # [1.0.0-beta.27](https://github.com/jl917/eapp/compare/v1.0.0-beta.26...v1.0.0-beta.27) (2024-12-01)
 
 
