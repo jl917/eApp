@@ -3,6 +3,7 @@ import Monitor from "./Monitor";
 
 function Main() {
   console.log(VERSION)
+  console.log('hello')
   return (
     <div>
       {VERSION}
