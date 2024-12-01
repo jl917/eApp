@@ -1,24 +1,24 @@
-import { Button, Card, List, Space } from "antd";
-import { useEffect, useState } from "react";
+import { Button, Card, List, Space } from 'antd';
+import { useEffect, useState } from 'react';
 
 function Monitor() {
   const [displays, setDisplays] = useState<DisplayInfo[]>([]);
   const getInfo = () => {
-    window?.electron?.sendMessage("displays");
+    window?.electron?.sendMessage('displays');
   };
 
   const onOpenExtMonitor = () => {
-    window?.electron?.sendMessage("open-ext-window");
+    window?.electron?.sendMessage('open-ext-window');
   };
 
   const onCloseExtMonitor = () => {
-    window?.electron?.sendMessage("close-ext-window");
+    window?.electron?.sendMessage('close-ext-window');
   };
 
   useEffect(() => {
-    window?.electron?.receiveMessage("displays", (message: DisplayInfo[]) => {
+    window?.electron?.receiveMessage('displays', (message: DisplayInfo[]) => {
       setDisplays(message);
-      console.log("Received reply from main process:", message);
+      console.log('Received reply from main process:', message);
     });
   }, []);
 
@@ -34,7 +34,7 @@ function Monitor() {
         itemLayout="horizontal"
         dataSource={displays}
         renderItem={(item, index) => (
-          <List.Item title={item.name}>
+          <List.Item title={item.name} key={index}>
             <List.Item.Meta
               title={item.name}
               description={
@@ -46,7 +46,7 @@ function Monitor() {
                   <div>
                     위치: {item.bounds.x}, {item.bounds.y}
                   </div>
-                  <div>주모니터: {item.isPrimary ? "Y" : "N"}</div>
+                  <div>주모니터: {item.isPrimary ? 'Y' : 'N'}</div>
                 </>
               }
             />

@@ -1,14 +1,14 @@
-import { utils } from "@electron-forge/core";
-import type { ForgeConfig } from "@electron-forge/shared-types";
-import { MakerDeb } from "@electron-forge/maker-deb";
-import { MakerRpm } from "@electron-forge/maker-rpm";
-import { RsbuildPlugin } from "./src/plugins/electron-forge-plugin-rsbuild";
-import { FusesPlugin } from "@electron-forge/plugin-fuses";
-import { FuseV1Options, FuseVersion } from "@electron/fuses";
-import { getName } from "./src/utils";
-import MakerDMG from "./src/plugins/makeDMG/MakerDMG";
-import MakerZIP from "./src/plugins/maker-zip/MakerZIP";
-import MakerSquirrel from "./src/plugins/maker-squirrel/MakerSquirrel";
+import { utils } from '@electron-forge/core';
+import type { ForgeConfig } from '@electron-forge/shared-types';
+import { MakerDeb } from '@electron-forge/maker-deb';
+import { MakerRpm } from '@electron-forge/maker-rpm';
+import { FusesPlugin } from '@electron-forge/plugin-fuses';
+import { FuseV1Options, FuseVersion } from '@electron/fuses';
+import { RsbuildPlugin } from './plugins/electron-forge-plugin-rsbuild';
+import { getName } from './build/utils';
+import MakerDMG from './plugins/makeDMG/MakerDMG';
+import MakerZIP from './plugins/maker-zip/MakerZIP';
+import MakerSquirrel from './plugins/maker-squirrel/MakerSquirrel';
 
 const name = getName();
 
@@ -16,23 +16,23 @@ const config: ForgeConfig = {
   buildIdentifier: process.env.MODE,
   packagerConfig: {
     name,
-    executableName: "eapp",
+    executableName: 'eapp',
     asar: true,
     appBundleId: utils.fromBuildIdentifier({
-      beta: "io.github.jl917.beta",
-      production: "io.github.jl917",
+      beta: 'io.github.jl917.beta',
+      production: 'io.github.jl917',
     }) as any,
   },
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({}),
-    new MakerZIP({}, ["darwin"]),
+    new MakerZIP({}, ['darwin']),
     //
     new MakerRpm({}),
     new MakerDeb({
       options: {
         name,
-        productName: "eapp",
+        productName: 'eapp',
       },
     }),
     new MakerDMG(),
@@ -41,22 +41,22 @@ const config: ForgeConfig = {
     new RsbuildPlugin({
       build: [
         {
-          entry: "src/main/main.ts",
-          config: "rsbuild.main.config.ts",
-          target: "main",
+          entry: 'src/main/main.ts',
+          config: 'rsbuild.main.config.ts',
+          target: 'main',
         },
         {
-          entry: "src/preload/preload.ts",
-          config: "rsbuild.preload.config.ts",
-          target: "preload",
+          entry: 'src/preload/preload.ts',
+          config: 'rsbuild.preload.config.ts',
+          target: 'preload',
         },
       ],
       renderer: [
-        ...(process.env.MODE === "dev"
+        ...(process.env.MODE === 'dev'
           ? [
               {
-                name: "main_window",
-                config: "rsbuild.renderer.config.ts",
+                name: 'main_window',
+                config: 'rsbuild.renderer.config.ts',
               },
             ]
           : []),

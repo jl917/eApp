@@ -1,8 +1,8 @@
 // build.config용 유틸
 // import { loadEnv } from "vite";
-import { loadEnv } from "@rsbuild/core";
-import { execSync } from "child_process";
-import packages from "../package.json";
+import { loadEnv } from '@rsbuild/core';
+import { execSync } from 'child_process';
+import packages from '../package.json';
 
 export const mode = process.env.MODE;
 
@@ -16,23 +16,29 @@ export const mode = process.env.MODE;
 // };
 
 export const getDefine = () => {
-  const { publicVars, rawPublicVars } = loadEnv({ prefixes: ["RSBUILD_"], mode });
+  const { publicVars, rawPublicVars } = loadEnv({
+    prefixes: ['RSBUILD_'],
+    mode,
+  });
+
   return {
-    ...publicVars,
     ...rawPublicVars,
+    ...publicVars,
   };
 };
 
 export const getName = () => {
-  return `${packages.productName}${mode !== "production" ? `-${mode}` : ""}`;
+  return `${packages.productName}${mode !== 'production' ? `-${mode}` : ''}`;
 };
 
 export const getVersion = () => {
-  if (process.env.MODE === "dev") {
+  if (process.env.MODE === 'dev') {
     return `dev-${packages.version}`;
   }
 
-  const output = execSync("npx semantic-release --dry-run", { encoding: "utf-8" });
+  const output = execSync('npx semantic-release --dry-run', {
+    encoding: 'utf-8',
+  });
   const match = output.match(/next release version is (\S+)/);
   const nextVersion = match?.[1];
 

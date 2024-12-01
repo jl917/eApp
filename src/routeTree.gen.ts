@@ -8,16 +8,16 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
 
 // Import Routes
 
-import { Route as rootRoute } from './renderer/routers/__root'
+import { Route as rootRoute } from './renderer/routers/__root';
 
 // Create Virtual Routes
 
-const IndexLazyImport = createFileRoute('/')()
-const SubMonitorIndexLazyImport = createFileRoute('/subMonitor/')()
+const IndexLazyImport = createFileRoute('/')();
+const SubMonitorIndexLazyImport = createFileRoute('/subMonitor/')();
 
 // Create/Update Routes
 
@@ -26,78 +26,78 @@ const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() =>
-  import('./renderer/routers/index.lazy').then((d) => d.Route),
-)
+  import('./renderer/routers/index.lazy').then((d) => d.Route)
+);
 
 const SubMonitorIndexLazyRoute = SubMonitorIndexLazyImport.update({
   id: '/subMonitor/',
   path: '/subMonitor/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() =>
-  import('./renderer/routers/subMonitor/index.lazy').then((d) => d.Route),
-)
+  import('./renderer/routers/subMonitor/index.lazy').then((d) => d.Route)
+);
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexLazyImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/';
+      path: '/';
+      fullPath: '/';
+      preLoaderRoute: typeof IndexLazyImport;
+      parentRoute: typeof rootRoute;
+    };
     '/subMonitor/': {
-      id: '/subMonitor/'
-      path: '/subMonitor'
-      fullPath: '/subMonitor'
-      preLoaderRoute: typeof SubMonitorIndexLazyImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/subMonitor/';
+      path: '/subMonitor';
+      fullPath: '/subMonitor';
+      preLoaderRoute: typeof SubMonitorIndexLazyImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexLazyRoute
-  '/subMonitor': typeof SubMonitorIndexLazyRoute
+  '/': typeof IndexLazyRoute;
+  '/subMonitor': typeof SubMonitorIndexLazyRoute;
 }
 
 export interface FileRoutesByTo {
-  '/': typeof IndexLazyRoute
-  '/subMonitor': typeof SubMonitorIndexLazyRoute
+  '/': typeof IndexLazyRoute;
+  '/subMonitor': typeof SubMonitorIndexLazyRoute;
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute
-  '/': typeof IndexLazyRoute
-  '/subMonitor/': typeof SubMonitorIndexLazyRoute
+  __root__: typeof rootRoute;
+  '/': typeof IndexLazyRoute;
+  '/subMonitor/': typeof SubMonitorIndexLazyRoute;
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/subMonitor'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/subMonitor'
-  id: '__root__' | '/' | '/subMonitor/'
-  fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths: '/' | '/subMonitor';
+  fileRoutesByTo: FileRoutesByTo;
+  to: '/' | '/subMonitor';
+  id: '__root__' | '/' | '/subMonitor/';
+  fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
-  IndexLazyRoute: typeof IndexLazyRoute
-  SubMonitorIndexLazyRoute: typeof SubMonitorIndexLazyRoute
+  IndexLazyRoute: typeof IndexLazyRoute;
+  SubMonitorIndexLazyRoute: typeof SubMonitorIndexLazyRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
   SubMonitorIndexLazyRoute: SubMonitorIndexLazyRoute,
-}
+};
 
 export const routeTree = rootRoute
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
 /* ROUTE_MANIFEST_START
 {
