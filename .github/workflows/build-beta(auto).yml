@@ -1,4 +1,4 @@
-name: BETA Build All(Web+App)
+name: BETA Build Auto(Web+App)
 on:
   push:
     branches:
