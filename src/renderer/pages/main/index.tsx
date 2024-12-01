@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 function Main() {
   const [MAIN_VERSION, setMainVersion] = useState<string | null>(null);
   console.log(WEB_VERSION);
-  console.log("hello");
+  console.log("hello2");
 
   useEffect(() => {
     window?.electron?.sendMessage("version");
