@@ -1,3 +1,11 @@
+# [1.0.0-beta.27](https://github.com/jl917/eapp/compare/v1.0.0-beta.26...v1.0.0-beta.27) (2024-12-01)
+
+
+### Bug Fixes
+
+* rollback ([b6fe4ff](https://github.com/jl917/eapp/commit/b6fe4ff32681dd5fd91744bc00ca931a0e5f9204))
+* 빌드 테스트 ([ea23bc3](https://github.com/jl917/eapp/commit/ea23bc3af2cae3dd711d2fb8a48dc3be4e2ac19a))
+
 # [1.0.0-beta.26](https://github.com/jl917/eapp/compare/v1.0.0-beta.25...v1.0.0-beta.26) (2024-11-30)
 
 
