@@ -1,7 +1,7 @@
-import { rendererToMain, mainToRenderer } from "@main/common/bridge";
+import { receiveMessage, sendMessage } from "@/main/utils/bridge";
 
 export const getMainVersion = () => {
-  rendererToMain("version", () => {
-    mainToRenderer("version", MAIN_VERSION);
+  receiveMessage("version", () => {
+    sendMessage("version", MAIN_VERSION);
   });
 };

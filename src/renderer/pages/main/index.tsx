@@ -1,6 +1,7 @@
 import { Button, Card, Space } from "antd";
 import Monitor from "./Monitor";
 import { useEffect, useState } from "react";
+import { receiveMessage, sendMessage } from "@/renderer/utils/bridge";
 
 function Main() {
   const [MAIN_VERSION, setMainVersion] = useState<string | null>(null);
@@ -8,8 +9,8 @@ function Main() {
   console.log("hello2");
 
   useEffect(() => {
-    window?.electron?.sendMessage("version");
-    window?.electron?.receiveMessage("version", (version: string) => {
+    sendMessage("version");
+    receiveMessage("version", (version: string) => {
       setMainVersion(version);
     });
   }, []);

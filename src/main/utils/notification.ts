@@ -1,5 +1,5 @@
 import { Notification } from "electron";
-import { VITE_ENTRY_URL } from "../../common/constant";
+import { VITE_ENTRY_URL } from "@/common/constant";
 
 export function showNotification() {
   const notification = new Notification({
