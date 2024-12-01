@@ -1,11 +1,16 @@
 import { defineConfig } from "@rsbuild/core";
-import { getDefine, mode } from "./src/utils";
+import { getDefine, getVersion, mode } from "./src/utils";
 import path from "path";
 import { RsdoctorRspackPlugin } from "@rsdoctor/rspack-plugin";
 
+const version = getVersion();
+
 export default defineConfig({
   source: {
-    define: getDefine(),
+    define: {
+      ...getDefine(),
+      MAIN_VERSION: JSON.stringify(version),
+    },
     alias: {
       "@": path.resolve(__dirname, "./src"),
       "@main": path.resolve(__dirname, "./src/main"),
