@@ -4,19 +4,19 @@ import { useEffect, useState } from "react";
 function Monitor() {
   const [displays, setDisplays] = useState<DisplayInfo[]>([]);
   const getInfo = () => {
-    window.electron.sendMessage("req-displays");
+    window?.electron?.sendMessage("displays");
   };
 
   const onOpenExtMonitor = () => {
-    window.electron.sendMessage("req-open-ext-window");
+    window?.electron?.sendMessage("open-ext-window");
   };
 
   const onCloseExtMonitor = () => {
-    window.electron.sendMessage("req-close-ext-window");
+    window?.electron?.sendMessage("close-ext-window");
   };
 
   useEffect(() => {
-    window.electron.receiveMessage("res-displays", (message: DisplayInfo[]) => {
+    window?.electron?.receiveMessage("displays", (message: DisplayInfo[]) => {
       setDisplays(message);
       console.log("Received reply from main process:", message);
     });

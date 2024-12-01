@@ -27,6 +27,10 @@ export const getName = () => {
 };
 
 export const getVersion = () => {
+  if (process.env.MODE === "dev") {
+    return `dev-${packages.version}`;
+  }
+
   const output = execSync("npx semantic-release --dry-run", { encoding: "utf-8" });
   const match = output.match(/next release version is (\S+)/);
   const nextVersion = match?.[1];

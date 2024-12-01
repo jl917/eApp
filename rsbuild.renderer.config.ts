@@ -23,7 +23,7 @@ export default defineConfig(() => {
       },
       define: {
         ...getDefine(),
-        VERSION: JSON.stringify(version),
+        WEB_VERSION: JSON.stringify(version),
       },
       alias: {
         "@": path.resolve(__dirname, "./src"),
