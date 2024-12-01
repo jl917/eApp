@@ -6,7 +6,9 @@ import fs from "fs-extra";
 import { createDMG } from "electron-installer-dmg";
 
 import { MakerDMGConfig } from "./Config";
-import { version } from "../../utils";
+import { getVersion } from "../../utils";
+
+const version = getVersion();
 
 export default class MakerDMG extends MakerBase<MakerDMGConfig> {
   name = "dmg";

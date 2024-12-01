@@ -1,9 +1,11 @@
 import { defineConfig } from "@rsbuild/core";
 import { pluginReact } from "@rsbuild/plugin-react";
 import { TanStackRouterRspack } from "@tanstack/router-plugin/rspack";
-import { getDefine } from "./src/utils";
+import { getDefine, getVersion } from "./src/utils";
 import path from "path";
 import { RsdoctorRspackPlugin } from "@rsdoctor/rspack-plugin";
+
+const version = getVersion();
 
 export default defineConfig(() => {
   return {
@@ -12,14 +14,17 @@ export default defineConfig(() => {
     },
     server: {
       publicDir: {
-        name: './src/renderer/public'
-      }
+        name: "./src/renderer/public",
+      },
     },
     source: {
       entry: {
         index: "src/renderer/index.tsx",
       },
-      define: getDefine(),
+      define: {
+        ...getDefine(),
+        VERSION: JSON.stringify(version),
+      },
       alias: {
         "@": path.resolve(__dirname, "./src"),
         "@renderer": path.resolve(__dirname, "./src/renderer"),
