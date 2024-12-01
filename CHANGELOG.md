@@ -1,3 +1,11 @@
+# [1.0.0-beta.29](https://github.com/jl917/eapp/compare/v1.0.0-beta.28...v1.0.0-beta.29) (2024-12-01)
+
+
+### Bug Fixes
+
+* dmg, zip, squirrel  네임 처리 ([a20381b](https://github.com/jl917/eapp/commit/a20381b1954119bf181c832f11f54cce9b8e7fb4))
+* 경로 오류 수정 ([acba9c0](https://github.com/jl917/eapp/commit/acba9c087ca907f3ec9b38aecfb06d88ef99edf8))
+
 # [1.0.0-beta.28](https://github.com/jl917/eapp/compare/v1.0.0-beta.27...v1.0.0-beta.28) (2024-12-01)
 
 
