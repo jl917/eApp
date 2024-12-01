@@ -21,6 +21,14 @@
       "@renderer/*": ["src/renderer/*"]
     }
   },
-  "include": ["src/**/*", "forge.env.d.ts", "forge.config.ts"],
+  "include": [
+    "src/**/*",
+    "forge.env.d.ts",
+    "forge.config.ts",
+    "build/utils.ts",
+    "rsbuild.main.config.ts",
+    "rsbuild.preload.config.ts",
+    "rsbuild.renderer.config.ts"
+, "plugins"  ],
   "exclude": ["node_modules"]
 }

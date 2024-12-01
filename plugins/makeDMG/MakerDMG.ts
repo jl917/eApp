@@ -6,7 +6,7 @@ import fs from "fs-extra";
 import { createDMG } from "electron-installer-dmg";
 
 import { MakerDMGConfig } from "./Config";
-import { getVersion } from "../../utils";
+import { getVersion } from "../../build/utils";
 
 const version = getVersion();
 

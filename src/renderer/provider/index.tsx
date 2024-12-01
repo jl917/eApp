@@ -1,7 +1,7 @@
-import RouterProvider from "./RouterProvider";
+import RouterProvider from './RouterProvider';
 
-const Provider = () => {
+function Provider() {
   return <RouterProvider />;
-};
+}
 
 export default Provider;

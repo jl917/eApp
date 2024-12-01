@@ -1,10 +1,10 @@
-import { mainWindow } from "@main/service/window";
-import { ipcMain } from "electron";
+import windowProcess from '@main/service/window';
+import { ipcMain } from 'electron';
 
-export const sendMessage = (channel: string, data?: any) => {
-  mainWindow.webContents.send(`${channel}`, data);
+export const sendMessage = (channel: Channel, data?: any) => {
+  windowProcess.mainWindow.webContents.send(`${channel}`, data);
 };
 
-export const receiveMessage = (channel: string, cb: () => void) => {
+export const receiveMessage = (channel: Channel, cb: () => void) => {
   ipcMain.on(`${channel}`, cb);
 };

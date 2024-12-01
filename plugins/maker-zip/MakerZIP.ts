@@ -8,7 +8,7 @@ import got from "got";
 import { zip } from "cross-zip";
 
 import { MakerZIPConfig } from "./Config";
-import { getVersion } from "../../utils";
+import { getVersion } from "../../build/utils";
 
 type SquirrelMacRelease = {
   version: string;
