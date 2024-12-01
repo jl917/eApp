@@ -4,6 +4,7 @@ import Monitor from "./Monitor";
 function Main() {
   return (
     <div>
+      {VERSION}
       <Space
         direction="vertical"
         style={{ width: 1000 }}

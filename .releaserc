@@ -8,6 +8,11 @@
       "name": "beta",
       "channel": "beta",
       "prerelease": "beta"
+    },
+    {
+      "name": "dev",
+      "channel": "dev",
+      "prerelease": "dev"
     }
   ],
   "plugins": [
