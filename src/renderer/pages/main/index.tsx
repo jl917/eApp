@@ -1,33 +1,18 @@
-import { Button, Card, Space } from "antd";
+import { Space } from "antd";
+import Version from "./Version";
 import Monitor from "./Monitor";
-import { useEffect, useState } from "react";
-import { receiveMessage, sendMessage } from "@/renderer/utils/bridge";
 
 function Main() {
-  const [MAIN_VERSION, setMainVersion] = useState<string | null>(null);
-  console.log(WEB_VERSION);
-  console.log("hello2");
-
-  useEffect(() => {
-    sendMessage("version");
-    receiveMessage("version", (version: string) => {
-      setMainVersion(version);
-    });
-  }, []);
-
   return (
-    <div>
-      <Space direction="vertical">
-        <h3>main: {MAIN_VERSION}</h3>
-        <h3>web: {WEB_VERSION}</h3>
-      </Space>
+    <Space direction="vertical">
+      <Version />
       <Space
         direction="vertical"
         style={{ width: 1000 }}
       >
         <Monitor />
       </Space>
-    </div>
+    </Space>
   );
 }
 
