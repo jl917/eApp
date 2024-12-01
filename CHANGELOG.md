@@ -1,3 +1,11 @@
+# [1.0.0-beta.32](https://github.com/jl917/eapp/compare/v1.0.0-beta.31...v1.0.0-beta.32) (2024-12-01)
+
+
+### Bug Fixes
+
+* 1 ([a049ac8](https://github.com/jl917/eapp/commit/a049ac8382f84ead50b42eb246012a59663b9208))
+* 버전 로그 보기 ([056b7b7](https://github.com/jl917/eapp/commit/056b7b71eb1d0b5ab53da4f6c27ff51c60980060))
+
 # [1.0.0-beta.31](https://github.com/jl917/eapp/compare/v1.0.0-beta.30...v1.0.0-beta.31) (2024-12-01)
 
 
