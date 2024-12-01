@@ -36,7 +36,7 @@ export default class MakerSquirrel extends MakerBase<MakerSquirrelConfig> {
 
     await createWindowsInstaller(winstallerConfig);
 
-    const nupkgVersion = convertVersion(packageJSON.version);
+    const nupkgVersion = convertVersion(version);
 
     const artifacts = [
       path.resolve(outPath, "RELEASES"),
