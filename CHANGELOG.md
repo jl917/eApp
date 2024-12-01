@@ -1,3 +1,10 @@
+# [1.0.0-beta.31](https://github.com/jl917/eapp/compare/v1.0.0-beta.30...v1.0.0-beta.31) (2024-12-01)
+
+
+### Bug Fixes
+
+* nupkg버전 오류 수정2 ([ab552f6](https://github.com/jl917/eapp/commit/ab552f696380f8e07e2a325d2075839ea388201a))
+
 # [1.0.0-beta.30](https://github.com/jl917/eapp/compare/v1.0.0-beta.29...v1.0.0-beta.30) (2024-12-01)
 
 
