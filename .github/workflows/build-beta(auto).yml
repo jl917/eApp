@@ -18,8 +18,8 @@ jobs:
             args: ""
           # - platform: "ubuntu-latest"
           #   args: ""
-          # - platform: "windows-latest"
-          #   args: ""
+          - platform: "windows-latest"
+            args: ""
     runs-on: ${{ matrix.platform }}
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}

@@ -1,16 +1,15 @@
 import { utils } from "@electron-forge/core";
 import type { ForgeConfig } from "@electron-forge/shared-types";
-import { MakerSquirrel } from "@electron-forge/maker-squirrel";
-import { MakerZIP } from "@electron-forge/maker-zip";
 import { MakerDeb } from "@electron-forge/maker-deb";
 import { MakerRpm } from "@electron-forge/maker-rpm";
-// import { MakerDMG } from "@electron-forge/maker-dmg";
 import { VitePlugin } from "@electron-forge/plugin-vite";
 import { RsbuildPlugin } from "./src/plugins/electron-forge-plugin-rsbuild";
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
 import { FuseV1Options, FuseVersion } from "@electron/fuses";
 import { getName } from "./src/utils";
 import MakerDMG from "./src/plugins/makeDMG/MakerDMG";
+import MakerZIP from "./src/plugins/maker-zip/MakerZIP";
+import MakerSquirrel from "./src/plugins/maker-squirrel/MakerSquirrel";
 
 const name = getName();
 
