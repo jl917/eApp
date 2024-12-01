@@ -1,15 +1,15 @@
 import { BrowserWindow, screen, ipcMain } from "electron";
 import path from "path";
-import { showNotification } from "@main/common/notification";
-import { VITE_ENTRY_URL } from "@/common/constant";
+import { showNotification } from "@/main/utils/notification";
+import { RSBUILD_ENTRY_URL } from "@/common/constant";
 import { isDev } from "@/common/utils";
-import { mainToRenderer, rendererToMain } from "../common/bridge";
+import { receiveMessage, sendMessage } from "../utils/bridge";
 
 export let mainWindow: BrowserWindow;
 let extWindow: BrowserWindow;
 
 const sendDisplays = () => {
-  mainToRenderer("displays", getDisplays());
+  sendMessage("displays", getDisplays());
 };
 
 export const createWindow = () => {
@@ -27,7 +27,7 @@ export const createWindow = () => {
       preload: path.join(__dirname, "preload.js"),
     },
   });
-  const loadURL = isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : VITE_ENTRY_URL;
+  const loadURL = isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : RSBUILD_ENTRY_URL;
   mainWindow.loadURL(loadURL);
 
   // 모니터가 추가, 삭제되면 mainWindow에 신호보내기
@@ -58,7 +58,7 @@ export function createExtWindow() {
     alwaysOnTop: true,
   });
 
-  const loadURL = `${isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : VITE_ENTRY_URL}/subMonitor`;
+  const loadURL = `${isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : RSBUILD_ENTRY_URL}/subMonitor`;
   extWindow.loadURL(loadURL);
 
   extWindow.setFullScreenable(false);
@@ -75,9 +75,9 @@ const getDisplays = () => {
   }));
 };
 
-rendererToMain("displays", sendDisplays);
+receiveMessage("displays", sendDisplays);
 
-rendererToMain("open-ext-window", () => {
+receiveMessage("open-ext-window", () => {
   if (!extWindow) {
     try {
       createExtWindow();
@@ -85,13 +85,13 @@ rendererToMain("open-ext-window", () => {
       showNotification();
     }
   }
-  mainToRenderer("displays", getDisplays());
+  sendMessage("displays", getDisplays());
 });
 
-rendererToMain("close-ext-window", () => {
+receiveMessage("close-ext-window", () => {
   if (extWindow) {
     extWindow.close();
     extWindow = null;
   }
-  mainToRenderer("displays", getDisplays());
+  sendMessage("displays", getDisplays());
 });

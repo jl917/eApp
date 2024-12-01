@@ -13,7 +13,6 @@ export default defineConfig(() => {
       template: "./index.html",
     },
     server: {
-      base: process.env.MODE === "beta" ? "/eapp/" : "/",
       publicDir: {
         name: "./src/renderer/public",
       },
