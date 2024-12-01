@@ -1,3 +1,19 @@
+# [1.0.0-beta.35](https://github.com/jl917/eapp/compare/v1.0.0-beta.34...v1.0.0-beta.35) (2024-12-01)
+
+
+### Bug Fixes
+
+* 2 ([5a62e97](https://github.com/jl917/eapp/commit/5a62e972137f5fb927f5edc610b03012c84cf705))
+* beta url변경 ([6a84533](https://github.com/jl917/eapp/commit/6a84533ac351c2857bda92b5e0f455af63325b57))
+* githubio제거 ([b21ef6b](https://github.com/jl917/eapp/commit/b21ef6be9c753d485633e433df75270ce82c6a21))
+* gitpage ([3525591](https://github.com/jl917/eapp/commit/3525591da9f8f699336c2c6aafe6311db5f73a5d))
+* vite제거 ([84645fb](https://github.com/jl917/eapp/commit/84645fbfb83c5b2bc666148bbde800859f0aab88))
+* 유틸 밑 타입 정리 ([29811c6](https://github.com/jl917/eapp/commit/29811c6c54f295b0632fc52b9d8759363c478235))
+* 자동 빌드 금지 ([7594a1a](https://github.com/jl917/eapp/commit/7594a1a3900635222dce126cf36bce6e16470433))
+* 코드 정리 ([6606664](https://github.com/jl917/eapp/commit/6606664df5947243c6deb1dafa1dcd3dfdebed9f))
+* 코드 정리 ([3fd13a6](https://github.com/jl917/eapp/commit/3fd13a6b883b518cd007ec359cde90ae814f1c84))
+* 환경 설정 변경 ([198e5c3](https://github.com/jl917/eapp/commit/198e5c32737ebb692d09be46b2420f432cb07e62))
+
 # [1.0.0-beta.34](https://github.com/jl917/eapp/compare/v1.0.0-beta.33...v1.0.0-beta.34) (2024-12-01)
 
 
