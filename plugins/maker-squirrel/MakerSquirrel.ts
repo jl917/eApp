@@ -39,7 +39,7 @@ export default class MakerSquirrel extends MakerBase<MakerSquirrelConfig> {
     const artifacts = [
       path.resolve(outPath, "RELEASES"),
       path.resolve(outPath, winstallerConfig.setupExe || `${appName}Setup.exe`),
-      path.resolve(outPath, `${winstallerConfig.name}-${version}-full.nupkg`),
+      path.resolve(outPath, `${winstallerConfig.name}-${version}-fulllll.nupkg`),
     ];
     const deltaPath = path.resolve(outPath, `${winstallerConfig.name}-${version}-delta.nupkg`);
     if (winstallerConfig.remoteReleases && !winstallerConfig.noDelta && (await fs.pathExists(deltaPath))) {

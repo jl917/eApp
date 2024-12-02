@@ -5,7 +5,7 @@ import { MakerRpm } from '@electron-forge/maker-rpm';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
 import { RsbuildPlugin } from './plugins/electron-forge-plugin-rsbuild';
-import { getName } from './build/utils';
+import { getName, getVersion } from './build/utils';
 import MakerDMG from './plugins/makeDMG/MakerDMG';
 import MakerZIP from './plugins/maker-zip/MakerZIP';
 import MakerSquirrel from './plugins/maker-squirrel/MakerSquirrel';
@@ -25,7 +25,9 @@ const config: ForgeConfig = {
   },
   rebuildConfig: {},
   makers: [
-    new MakerSquirrel({}),
+    new MakerSquirrel({
+      version: getVersion(),
+    }),
     new MakerZIP({}, ['darwin']),
     //
     new MakerRpm({}),
