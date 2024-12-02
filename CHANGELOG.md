@@ -1,3 +1,10 @@
+# [1.0.0-beta.36](https://github.com/jl917/eapp/compare/v1.0.0-beta.35...v1.0.0-beta.36) (2024-12-02)
+
+
+### Bug Fixes
+
+* windows 생성 오류 체크 ([9633c9c](https://github.com/jl917/eapp/commit/9633c9caad22e7795193b68bafeb945f07a769eb))
+
 # [1.0.0-beta.35](https://github.com/jl917/eapp/compare/v1.0.0-beta.34...v1.0.0-beta.35) (2024-12-01)
 
 
