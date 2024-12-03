@@ -1,3 +1,11 @@
+# [1.0.0-beta.37](https://github.com/jl917/eapp/compare/v1.0.0-beta.36...v1.0.0-beta.37) (2024-12-03)
+
+
+### Bug Fixes
+
+* .env.beta ([f3202ce](https://github.com/jl917/eapp/commit/f3202ce0803cbf7dcbbab4a6d5c334debc99dbdb))
+* 플러그인 셋팅 ([b1093a2](https://github.com/jl917/eapp/commit/b1093a2ee615820fd1938f88be1b7ab4850d52d3))
+
 # [1.0.0-beta.36](https://github.com/jl917/eapp/compare/v1.0.0-beta.35...v1.0.0-beta.36) (2024-12-02)
 
 
