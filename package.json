@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env MODE=dev electron-forge start --inspect-electron",
-    "devWeb": "cross-env MODE=dev rsbuild --config rsbuild.renderer.config.ts",
+    "devWeb": "cross-env MODE=dev rsbuild dev --config rsbuild.renderer.config.ts",
     "build": "cross-env MODE=production electron-forge publish",
     "build:beta": "cross-env MODE=beta electron-forge publish --enable-logging",
     "buildWeb": "cross-env MODE=production rsbuild build --config rsbuild.renderer.config.ts",

@@ -22,6 +22,12 @@ const config: ForgeConfig = {
       beta: 'io.github.jl917.beta',
       production: 'io.github.jl917',
     }) as any,
+    protocols: [
+      {
+        name: 'Electron Fiddle',
+        schemes: ['e-app'],
+      },
+    ],
   },
   rebuildConfig: {},
   makers: [

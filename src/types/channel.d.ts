@@ -1,1 +1,6 @@
-type Channel = 'version' | 'displays' | 'open-ext-window' | 'close-ext-window';
+type Channel =
+  | 'version'
+  | 'displays'
+  | 'open-ext-window'
+  | 'close-ext-window'
+  | 'shell:open';
