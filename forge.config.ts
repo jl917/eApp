@@ -19,12 +19,13 @@ const config: ForgeConfig = {
     executableName: 'eapp',
     asar: true,
     appBundleId: utils.fromBuildIdentifier({
+      dev: 'io.github.jl917.dev',
       beta: 'io.github.jl917.beta',
       production: 'io.github.jl917',
     }) as any,
     protocols: [
       {
-        name: 'Electron Fiddle',
+        name: 'Eapp Deeplink',
         schemes: ['e-app'],
       },
     ],

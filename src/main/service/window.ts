@@ -5,6 +5,8 @@ import { RSBUILD_ENTRY_URL } from '@/common/constant';
 import { isDev } from '@/common/utils';
 import { receiveMessage, sendMessage } from '../utils/bridge';
 
+const loadURL = isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : RSBUILD_ENTRY_URL;
+
 interface WindowProcess {
   mainWindow: null | BrowserWindow;
   extWindow: null | BrowserWindow;
@@ -45,9 +47,6 @@ export const createWindow = () => {
       preload: path.join(__dirname, 'preload.js'),
     },
   });
-  const loadURL = isDev
-    ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL
-    : RSBUILD_ENTRY_URL;
   windowProcess.mainWindow.loadURL(loadURL);
 
   // 모니터가 추가, 삭제되면 mainWindow에 신호보내기
@@ -78,8 +77,7 @@ export function createExtWindow() {
     alwaysOnTop: true,
   });
 
-  const loadURL = `${isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : RSBUILD_ENTRY_URL}/subMonitor`;
-  windowProcess.extWindow.loadURL(loadURL);
+  windowProcess.extWindow.loadURL(`${loadURL}/subMonitor`);
 
   windowProcess.extWindow.setFullScreenable(false);
 }

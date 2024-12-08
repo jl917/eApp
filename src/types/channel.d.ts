@@ -3,4 +3,4 @@ type Channel =
   | 'displays'
   | 'open-ext-window'
   | 'close-ext-window'
-  | 'shell:open';
+  | 'deeplink';
