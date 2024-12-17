@@ -3,4 +3,5 @@ type Channel =
   | 'displays'
   | 'open-ext-window'
   | 'close-ext-window'
-  | 'deeplink';
+  | 'deeplink'
+  | 'no-channel';

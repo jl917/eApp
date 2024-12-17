@@ -4,6 +4,7 @@ declare interface ElectronAPI {
     channel: Channel,
     callback: (...args: any[]) => void
   ) => void;
+  safeSend: (channel: Channel, data?: any) => void;
 }
 
 // window 객체에 electron을 추가하는 전역 타입 선언

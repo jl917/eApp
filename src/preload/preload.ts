@@ -10,4 +10,8 @@ contextBridge.exposeInMainWorld('electron', {
   receiveMessage: (channel: Channel, callback: (...args: any) => void) => {
     ipcRenderer.on(channel, (event, ...args) => callback(...args));
   },
+
+  safeSend: (channel: Channel, data: any) => {
+    ipcRenderer.send('wrapped-ipc', { channel, data });
+  },
 });
