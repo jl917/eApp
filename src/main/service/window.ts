@@ -80,6 +80,10 @@ export function createExtWindow() {
   windowProcess.extWindow.loadURL(`${loadURL}/subMonitor`);
 
   windowProcess.extWindow.setFullScreenable(false);
+  windowProcess.extWindow.on('closed', () => {
+    windowProcess.extWindow = null;
+    sendMessage('displays', getDisplays());
+  });
 }
 
 receiveMessage('displays', sendDisplays);
