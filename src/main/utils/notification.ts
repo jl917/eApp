@@ -1,10 +1,8 @@
-import { Notification } from 'electron';
-import { RSBUILD_ENTRY_URL } from '@/common/constant';
+import { Notification, NotificationConstructorOptions } from 'electron';
 
-export function showNotification() {
+export function showNotification(config: NotificationConstructorOptions) {
   const notification = new Notification({
-    title: '업데이트 필요',
-    body: RSBUILD_ENTRY_URL,
+    ...config,
     silent: true,
   });
   notification.show();

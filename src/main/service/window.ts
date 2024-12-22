@@ -12,7 +12,7 @@ interface WindowProcess {
   extWindow: null | BrowserWindow;
 }
 
-const windowProcess: WindowProcess = {
+export const windowProcess: WindowProcess = {
   mainWindow: null,
   extWindow: null,
 };
@@ -93,7 +93,10 @@ receiveMessage('open-ext-window', () => {
     try {
       createExtWindow();
     } catch {
-      showNotification();
+      showNotification({
+        title: '화면 열기 오류',
+        body: '확장 모니터 확인 필요',
+      });
     }
   }
   sendMessage('displays', getDisplays());

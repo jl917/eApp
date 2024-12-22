@@ -4,4 +4,4 @@ type Channel =
   | 'open-ext-window'
   | 'close-ext-window'
   | 'deeplink'
-  | 'no-channel';
+  | 'message';
