@@ -1,7 +1,8 @@
 import { Space } from 'antd';
 import Version from './Version';
 import Monitor from './Monitor';
-import Message from './message';
+import Message from './Message';
+import Communication from './Communication';
 
 function Main() {
   return (
@@ -11,6 +12,7 @@ function Main() {
         <Monitor />
       </Space>
       <Message />
+      <Communication />
     </Space>
   );
 }

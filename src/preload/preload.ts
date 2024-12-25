@@ -11,3 +11,9 @@ contextBridge.exposeInMainWorld('electron', {
     ipcRenderer.on(channel, (event, ...args) => callback(...args));
   },
 });
+
+contextBridge.exposeInMainWorld('api', {
+  sendMessage: async (type: string, data: any) => {
+    return ipcRenderer.invoke('custom-ipc', { type, data });
+  },
+});
