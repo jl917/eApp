@@ -88,7 +88,7 @@ export function createExtWindow() {
 
 receiveMessage('displays', sendDisplays);
 
-receiveMessage('open-ext-window', () => {
+export const openExtWindow = () => {
   if (!windowProcess.extWindow) {
     try {
       createExtWindow();
@@ -100,14 +100,16 @@ receiveMessage('open-ext-window', () => {
     }
   }
   sendMessage('displays', getDisplays());
-});
-
-receiveMessage('close-ext-window', () => {
+};
+export const closeExtWindow = () => {
   if (windowProcess.extWindow) {
     windowProcess.extWindow.close();
     windowProcess.extWindow = null;
   }
   sendMessage('displays', getDisplays());
-});
+};
+
+receiveMessage('open-ext-window', openExtWindow);
+receiveMessage('close-ext-window', closeExtWindow);
 
 export default windowProcess;
