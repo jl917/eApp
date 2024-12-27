@@ -1,31 +1,24 @@
 import { Button, Card, List, Space } from 'antd';
-import { useEffect, useState } from 'react';
+import { useAtom } from 'jotai';
+import { displaysAtom } from '@/renderer/store';
 
 function Monitor() {
-  const [displays, setDisplays] = useState<DisplayInfo[]>([]);
-  const getInfo = () => {
-    window?.electron?.sendMessage('displays');
+  const [displays] = useAtom(displaysAtom);
+
+  const onOpenExtMonitor = async () => {
+    const response = await window.api.sendMessage('openExtWindow');
+    console.log(response);
   };
 
-  const onOpenExtMonitor = () => {
-    window?.electron?.sendMessage('open-ext-window');
+  const onCloseExtMonitor = async () => {
+    const response = await window.api.sendMessage('closeExtWindow');
+    console.log(response);
   };
-
-  const onCloseExtMonitor = () => {
-    window?.electron?.sendMessage('close-ext-window');
-  };
-
-  useEffect(() => {
-    window?.electron?.receiveMessage('displays', (message: DisplayInfo[]) => {
-      setDisplays(message);
-      console.log('Received reply from main process:', message);
-    });
-  }, []);
 
   return (
     <Card title="모니터">
       <Space>
-        <Button onClick={getInfo}>모니터 정보 가져오기</Button>
+        {/* <Button onClick={getInfo}>모니터 정보 가져오기</Button> */}
         <Button onClick={onOpenExtMonitor}>확장모니터 열기</Button>
         <Button onClick={onCloseExtMonitor}>확장모니터 닫기</Button>
       </Space>

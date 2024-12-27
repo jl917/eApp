@@ -1,78 +1,73 @@
 import {
   closeExtWindow,
+  getDisplays,
   openExtWindow,
-  windowProcess,
 } from '@main/service/window';
+import { getMainVersion } from '../service/version';
+import { systemMessage } from '../service/message';
 
 type ChannelMain = { type: Channel; data: ChannelCommunicationSuccess };
 
-const typeLimits: Record<Channel, number> = {
+const typeLimits: Partial<Record<Channel, number>> = {
   displays: 1,
   version: 1,
-  'open-ext-window': 1,
-  'close-ext-window': 1,
   deeplink: 2,
   message: 5,
   openExtWindow: 1,
   closeExtWindow: 1,
 };
 
-const typeFn: Record<Channel, (...args: any[]) => void | Promise<void>> = {
-  openExtWindow,
-  closeExtWindow,
-  displays: () => {},
-  version: () => {},
-  'open-ext-window': () => {},
-  'close-ext-window': () => {},
-  deeplink: () => {},
-  message: () => {},
-};
+const typeFn: Partial<Record<Channel, (...args: any[]) => any | Promise<any>>> =
+  {
+    openExtWindow,
+    closeExtWindow,
+    displays: getDisplays,
+    version: getMainVersion,
+    message: systemMessage,
+  };
 
-export const ipcFnWrap = (
-  fn: (...args: any[]) => void | Promise<void>,
-  cb: () => void
-) => {
+export const ipcFnWrap = async (fn: any | Promise<any>, cb: () => void) => {
   try {
-    const result = fn();
+    const result = fn;
 
     if (result instanceof Promise) {
-      result.then(() => cb()).catch(() => cb()); // 에러가 발생해도 cb를 실행
-    } else {
-      cb();
+      return await result.then(() => cb()).catch(() => cb()); // 에러가 발생해도 cb를 실행
     }
+    cb();
+    return result;
   } catch {
     cb();
+    return 'error';
   }
 };
-export const ipcUtils = (
+
+export const ipcUtils = async (
   event: Electron.IpcMainInvokeEvent,
-  { type, data }: ChannelMain
+  { type, data: renderrerData }: ChannelMain
 ) => {
   // 한도가 없으면
   if (typeLimits[type] === 0) {
-    windowProcess.mainWindow.webContents.send('custom-ipc', {
+    return {
       type,
       error: '채널 한도를 초과했습니다.',
       success: false,
-    });
-    return '';
+    };
   }
 
+  // 지원하지 않는 채널인 경우
   if (typeLimits[type] === undefined) {
-    windowProcess.mainWindow.webContents.send('custom-ipc', {
+    return {
       type,
       error: '지원하지 않는 채널입니다.',
       success: false,
-    });
-    return '';
+    };
   }
-  typeLimits[type] -= 1;
 
-  ipcFnWrap(typeFn[type], () => {
-    console.log('실행완료');
-    windowProcess.mainWindow.webContents.send('custom-ipc', { type, data });
-    // typeLimits[type] += 1;
+  // 성공 할 경우.
+  typeLimits[type] -= 1;
+  const resultData = await ipcFnWrap(typeFn[type](renderrerData), () => {
+    typeLimits[type] += 1;
   });
-  // typeLimits[type] += 1;
-  return '';
+
+  return { type, data: resultData, success: true };
 };

@@ -3,7 +3,6 @@ import path from 'path';
 import { showNotification } from '@/main/utils/notification';
 import { RSBUILD_ENTRY_URL } from '@/common/constant';
 import { isDev } from '@/common/utils';
-import { receiveMessage, sendMessage } from '../utils/bridge';
 
 const loadURL = isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : RSBUILD_ENTRY_URL;
 
@@ -17,19 +16,19 @@ export const windowProcess: WindowProcess = {
   extWindow: null,
 };
 
-const getDisplays = () => {
+export const getDisplays = () => {
   const displays = screen.getAllDisplays();
-
-  return displays.map((display) => ({
+  const data = displays.map((display) => ({
     id: display.id,
     name: display.label || `Display ${display.id}`,
     bounds: display.bounds,
     isPrimary: display.bounds.x === 0 && display.bounds.y === 0,
   }));
-};
-
-const sendDisplays = () => {
-  sendMessage('displays', getDisplays());
+  windowProcess.mainWindow.webContents.send('custom-ipc', {
+    type: 'displays',
+    data,
+  });
+  return data;
 };
 
 export const createWindow = () => {
@@ -50,8 +49,8 @@ export const createWindow = () => {
   windowProcess.mainWindow.loadURL(loadURL);
 
   // 모니터가 추가, 삭제되면 mainWindow에 신호보내기
-  screen.on('display-removed', sendDisplays);
-  screen.on('display-added', sendDisplays);
+  screen.on('display-removed', getDisplays);
+  screen.on('display-added', getDisplays);
 
   // Open the DevTools.
   // isDev && mainWindow.webContents.openDevTools();
@@ -82,11 +81,10 @@ export function createExtWindow() {
   windowProcess.extWindow.setFullScreenable(false);
   windowProcess.extWindow.on('closed', () => {
     windowProcess.extWindow = null;
-    sendMessage('displays', getDisplays());
   });
 }
 
-receiveMessage('displays', sendDisplays);
+// receiveMessage('displays', sendDisplays);
 
 export const openExtWindow = () => {
   if (!windowProcess.extWindow) {
@@ -99,17 +97,15 @@ export const openExtWindow = () => {
       });
     }
   }
-  sendMessage('displays', getDisplays());
+  getDisplays();
 };
+
 export const closeExtWindow = () => {
   if (windowProcess.extWindow) {
     windowProcess.extWindow.close();
     windowProcess.extWindow = null;
   }
-  sendMessage('displays', getDisplays());
+  getDisplays();
 };
-
-receiveMessage('open-ext-window', openExtWindow);
-receiveMessage('close-ext-window', closeExtWindow);
 
 export default windowProcess;

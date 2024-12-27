@@ -1,3 +1,5 @@
+// import { MessageBoxOptions, NotificationConstructorOptions } from 'electron';
+
 interface ChannelCommunicationSuccess {
   channel: Channel;
   success: true;
@@ -14,7 +16,27 @@ type Channel =
   | 'displays'
   | 'openExtWindow'
   | 'closeExtWindow'
-  | 'open-ext-window'
-  | 'close-ext-window'
   | 'deeplink'
   | 'message';
+
+interface ChannelDisplay {
+  id: number;
+  name: string;
+  bounds: Electron.Rectangle;
+  isPrimary: boolean;
+}
+
+type TriggerResponse =
+  | {
+      type: 'displays';
+      data: ChannelDisplay[];
+    }
+  | {
+      type: 'version';
+      data: string;
+    }
+  | {
+      type: 'message';
+      data: any;
+    }
+  | undefined;

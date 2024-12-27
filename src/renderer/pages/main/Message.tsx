@@ -1,20 +1,20 @@
 import { Button, Card, message, Space } from 'antd';
-import { sendMessage } from '@/renderer/utils/bridge';
 
 function Message() {
   const getMessage = () => {
     message.info('일반 message');
   };
 
-  const getSystemMessage = () => {
-    sendMessage('message', {
+  const getSystemMessage = async () => {
+    const response = await window.api.sendMessage('message', {
       type: 'notification',
       config: { title: 'string', body: 'hello world' },
     });
+    console.log(response);
   };
 
-  const getSystemDialog = () => {
-    sendMessage('message', {
+  const getSystemDialog = async () => {
+    const response = await window.api.sendMessage('message', {
       type: 'dialog',
       config: {
         type: 'info',
@@ -24,6 +24,12 @@ function Message() {
         message: 'This is a sample dialog box.',
       },
     });
+    console.log(response);
+  };
+
+  const noChannel = async () => {
+    const response = await window.api.sendMessage('type1');
+    console.log(response);
   };
 
   return (
@@ -32,6 +38,7 @@ function Message() {
         <Button onClick={getMessage}>일반 메시지</Button>
         <Button onClick={getSystemMessage}>시스템 알림 메시지</Button>
         <Button onClick={getSystemDialog}>시스템 dialog 메시지</Button>
+        <Button onClick={noChannel}>없는 채널로 전송</Button>
       </Space>
     </Card>
   );
