@@ -1,5 +1,5 @@
 import { dialog } from 'electron';
-import { showNotification } from '../utils/notification';
+import { showNotification } from '@main/utils/notification';
 
 export const systemMessage = (data: any) => {
   if (data?.type === 'notification') {

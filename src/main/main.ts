@@ -3,7 +3,6 @@ import started from 'electron-squirrel-startup';
 import { updateAction } from '@main/service/autoUpdater';
 import { createWindow } from '@main/service/window';
 import { getMainVersion } from './service/version';
-import { systemMessage } from './service/message';
 import { ipcUtils } from './utils/ipc';
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -16,7 +15,6 @@ app.whenReady().then(updateAction);
 app.on('ready', () => {
   createWindow();
   getMainVersion();
-  systemMessage();
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common

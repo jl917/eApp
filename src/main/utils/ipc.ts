@@ -3,8 +3,8 @@ import {
   getDisplays,
   openExtWindow,
 } from '@main/service/window';
-import { getMainVersion } from '../service/version';
-import { systemMessage } from '../service/message';
+import { getMainVersion } from '@main/service/version';
+import { systemMessage } from '@main/service/message';
 
 type ChannelMain = { type: Channel; data: ChannelCommunicationSuccess };
 
