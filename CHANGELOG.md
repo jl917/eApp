@@ -1,3 +1,10 @@
+# [1.0.0-beta.39](https://github.com/jl917/eapp/compare/v1.0.0-beta.38...v1.0.0-beta.39) (2025-01-04)
+
+
+### Bug Fixes
+
+* 아이콘 업데이트 ([fb34c1f](https://github.com/jl917/eapp/commit/fb34c1f7b6dbc3be7415f28020cea18226b20aa2))
+
 # [1.0.0-beta.38](https://github.com/jl917/eapp/compare/v1.0.0-beta.37...v1.0.0-beta.38) (2025-01-04)
 
 
