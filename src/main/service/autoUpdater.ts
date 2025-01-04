@@ -1,5 +1,6 @@
 import { dialog } from 'electron';
 import { autoUpdater } from 'electron-updater';
+import { sendToSentry } from '../utils/sentry';
 
 autoUpdater.setFeedURL({
   provider: 'generic',
@@ -13,6 +14,7 @@ export const updateAction = () => {
   // 업데이트 이벤트 핸들러
   autoUpdater.on('checking-for-update', () => {
     console.log('Checking for update...');
+    sendToSentry('info', 'Checking for update...');
   });
 
   autoUpdater.on('update-available', (info) => {
@@ -27,6 +29,7 @@ export const updateAction = () => {
       })
       .then((result) => {
         if (result.response === 0) {
+          sendToSentry('info', '업데이트 다운로드');
           autoUpdater.downloadUpdate();
         }
       });
@@ -42,6 +45,7 @@ export const updateAction = () => {
   });
 
   autoUpdater.on('update-downloaded', () => {
+    sendToSentry('info', '업데이트 완료');
     // 업데이트 설치 확인 대화상자 또는 자동 설치
     autoUpdater.quitAndInstall();
   });
