@@ -1,18 +1,16 @@
+import { useEffect } from 'react';
+import { useAtom } from 'jotai';
 import { Card, Space, Statistic } from 'antd';
-import { useEffect, useState } from 'react';
-import { receiveMessage, sendMessage } from '@/renderer/utils/bridge';
+import { versionAtom } from '@/renderer/store';
 
 function Version() {
-  const [MAIN_VERSION, setMainVersion] = useState<string | null>(null);
-  console.log(WEB_VERSION);
-
+  const [MAIN_VERSION, setVersion] = useAtom(versionAtom);
   useEffect(() => {
-    sendMessage('version');
-    receiveMessage('version', (version: string) => {
-      setMainVersion(version);
-    });
+    (async () => {
+      const response = await window.api.sendMessage('version');
+      setVersion(response.data);
+    })();
   }, []);
-
   return (
     <Card title="버전">
       <Space>

@@ -1,8 +1,9 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import started from 'electron-squirrel-startup';
 import { updateAction } from '@main/service/autoUpdater';
 import { createWindow } from '@main/service/window';
 import { getMainVersion } from './service/version';
+import { ipcUtils } from './utils/ipc';
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
@@ -32,3 +33,5 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+ipcMain.handle('custom-ipc', ipcUtils);

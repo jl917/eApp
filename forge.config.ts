@@ -19,14 +19,24 @@ const config: ForgeConfig = {
     executableName: 'eapp',
     asar: true,
     appBundleId: utils.fromBuildIdentifier({
+      dev: 'io.github.jl917.dev',
       beta: 'io.github.jl917.beta',
       production: 'io.github.jl917',
     }) as any,
+    protocols: [
+      {
+        name: 'Eapp Deeplink',
+        schemes: ['e-app'],
+      },
+    ],
+    icon: 'src/renderer/public/eapp.ico',
   },
   rebuildConfig: {},
   makers: [
     new MakerSquirrel({
       version: getVersion(),
+      iconUrl: 'https://jl917eapp-beta.netlify.app/eapp.ico',
+      setupIcon: 'src/renderer/public/eapp.ico',
     }),
     new MakerZIP({}, ['darwin']),
     //
@@ -37,7 +47,9 @@ const config: ForgeConfig = {
         productName: 'eapp',
       },
     }),
-    new MakerDMG(),
+    new MakerDMG({
+      icon: 'src/renderer/public/eapp.ico',
+    } as any),
   ],
   plugins: [
     new RsbuildPlugin({

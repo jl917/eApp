@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env MODE=dev electron-forge start --inspect-electron",
-    "devWeb": "cross-env MODE=dev rsbuild --config rsbuild.renderer.config.ts",
+    "devWeb": "cross-env MODE=dev rsbuild dev --config rsbuild.renderer.config.ts",
     "build": "cross-env MODE=production electron-forge publish",
     "build:beta": "cross-env MODE=beta electron-forge publish --enable-logging",
     "buildWeb": "cross-env MODE=production rsbuild build --config rsbuild.renderer.config.ts",
@@ -84,6 +84,7 @@
     "@tanstack/router": "^0.0.1-beta.53",
     "@tanstack/router-plugin": "^1.81.9",
     "antd": "^5.22.2",
+    "jotai": "^2.11.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }

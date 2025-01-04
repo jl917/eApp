@@ -8,3 +8,7 @@ export const receiveMessage = (
 ) => {
   window?.electron?.receiveMessage(channel, cb);
 };
+
+export const safeSend = (channel: Channel, data?: any) => {
+  window?.electron?.safeSend(channel, data);
+};
