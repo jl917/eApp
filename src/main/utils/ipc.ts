@@ -43,7 +43,7 @@ export const ipcFnWrap = async (fn: any | Promise<any>, cb: () => void) => {
 
 export const ipcUtils = async (
   event: Electron.IpcMainInvokeEvent,
-  { type, data: renderrerData }: ChannelMain
+  { type, data: rendererData }: ChannelMain
 ) => {
   // 한도가 없으면
   if (typeLimits[type] === 0) {
@@ -65,7 +65,7 @@ export const ipcUtils = async (
 
   // 성공 할 경우.
   typeLimits[type] -= 1;
-  const resultData = await ipcFnWrap(typeFn[type](renderrerData), () => {
+  const resultData = await ipcFnWrap(typeFn[type](rendererData), () => {
     typeLimits[type] += 1;
   });
 
