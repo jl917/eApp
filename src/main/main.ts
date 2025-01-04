@@ -13,9 +13,8 @@ if (started) {
 
 initSentry();
 
-app.whenReady().then(updateAction);
-
 app.on('ready', () => {
+  updateAction();
   createWindow();
   getMainVersion();
 });
