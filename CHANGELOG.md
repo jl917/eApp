@@ -1,3 +1,10 @@
+# [1.0.0-beta.42](https://github.com/jl917/eapp/compare/v1.0.0-beta.41...v1.0.0-beta.42) (2025-01-04)
+
+
+### Bug Fixes
+
+* error tracking test ([86dfcb2](https://github.com/jl917/eapp/commit/86dfcb2ec524584d3e3cfcbc667f86d0724514e2))
+
 # [1.0.0-beta.41](https://github.com/jl917/eapp/compare/v1.0.0-beta.40...v1.0.0-beta.41) (2025-01-04)
 
 
