@@ -7,9 +7,8 @@ const RSBUILD_SENTRY_DSN = import.meta.env.RSBUILD_SENTRY_DSN;
 const environment = process.env.MODE;
 
 export const initSentry = () => {
-  if (environment === 'production' || environment === 'beta')
-    Sentry.init({
-      dsn: RSBUILD_SENTRY_DSN,
-      environment,
-    });
+  Sentry.init({
+    dsn: RSBUILD_SENTRY_DSN,
+    environment,
+  });
 };
