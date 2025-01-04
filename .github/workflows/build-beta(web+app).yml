@@ -20,6 +20,7 @@ jobs:
             args: ''
     runs-on: ${{ matrix.platform }}
     env:
+      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     outputs:
       success: ${{ job.status }} # 빌드 성공 여부를 output으로 저장
@@ -80,6 +81,7 @@ jobs:
     name: Build web
     runs-on: ubuntu-latest
     env:
+      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
     outputs:
       success: ${{ job.status }} # 빌드 성공 여부를 output으로 저장
@@ -145,5 +147,6 @@ jobs:
 
       - name: Run Semantic Release
         env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release

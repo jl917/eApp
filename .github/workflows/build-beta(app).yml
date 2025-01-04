@@ -49,6 +49,7 @@ jobs:
       #     npx semantic-release --dry-run
       - name: Build App
         env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm run build:beta
 
@@ -108,5 +109,6 @@ jobs:
 
       - name: Run Semantic Release
         env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
