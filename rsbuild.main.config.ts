@@ -25,18 +25,23 @@ export default defineConfig({
   tools: {
     rspack(config, { appendPlugins }) {
       if (process.env.RSDOCTOR) {
-        appendPlugins([
+        appendPlugins(
           new RsdoctorRspackPlugin({
             disableClientServer: true,
             mode: 'brief',
             reportDir: './.rsdoctor/main',
-          }),
+          })
+        );
+      }
+
+      if (isSourceMap) {
+        appendPlugins(
           sentryWebpackPlugin({
             org: 'julong',
             project: 'electron',
             authToken: process.env.SENTRY_AUTH_TOKEN,
-          }),
-        ]);
+          })
+        );
       }
     },
   },
