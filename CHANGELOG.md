@@ -1,3 +1,16 @@
+# [1.0.0-beta.40](https://github.com/jl917/eapp/compare/v1.0.0-beta.39...v1.0.0-beta.40) (2025-01-04)
+
+
+### Bug Fixes
+
+* mode import 오류 수정 ([6039cbd](https://github.com/jl917/eapp/commit/6039cbd80c86dc60331f66d790dd7d7c08f000ef))
+* sentry오류 수정 ([d5b925a](https://github.com/jl917/eapp/commit/d5b925a70b04bd4516153320643f8398592a05fd))
+
+
+### Features
+
+* sourcemap추가 ([a8ba3a4](https://github.com/jl917/eapp/commit/a8ba3a44dac4607886f266fc357184b438fbba68))
+
 # [1.0.0-beta.39](https://github.com/jl917/eapp/compare/v1.0.0-beta.38...v1.0.0-beta.39) (2025-01-04)
 
 
