@@ -7,4 +7,5 @@ export const sendToSentry = (type: CaptureContext | 'error', data: any) => {
   } else {
     captureMessage(data, type);
   }
+  throw new Error(data);
 };
