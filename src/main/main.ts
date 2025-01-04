@@ -4,11 +4,14 @@ import { updateAction } from '@main/service/autoUpdater';
 import { createWindow } from '@main/service/window';
 import { getMainVersion } from './service/version';
 import { ipcUtils } from './utils/ipc';
+import { initSentry } from './service/sentry';
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
   app.quit();
 }
+
+initSentry();
 
 app.whenReady().then(updateAction);
 
