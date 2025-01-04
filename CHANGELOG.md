@@ -1,3 +1,10 @@
+# [1.0.0-beta.41](https://github.com/jl917/eapp/compare/v1.0.0-beta.40...v1.0.0-beta.41) (2025-01-04)
+
+
+### Bug Fixes
+
+* sentry 기능 오픈 ([289af82](https://github.com/jl917/eapp/commit/289af822c0f79cf6238974135f25e77600f9cbca))
+
 # [1.0.0-beta.40](https://github.com/jl917/eapp/compare/v1.0.0-beta.39...v1.0.0-beta.40) (2025-01-04)
 
 
