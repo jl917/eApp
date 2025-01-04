@@ -1,3 +1,10 @@
+# [1.0.0-beta.44](https://github.com/jl917/eapp/compare/v1.0.0-beta.43...v1.0.0-beta.44) (2025-01-04)
+
+
+### Bug Fixes
+
+* update테스트 ([bbabf21](https://github.com/jl917/eapp/commit/bbabf212900dcde753da25d864bbc43cb98abd5b))
+
 # [1.0.0-beta.43](https://github.com/jl917/eapp/compare/v1.0.0-beta.42...v1.0.0-beta.43) (2025-01-04)
 
 
