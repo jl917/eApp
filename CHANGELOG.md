@@ -1,3 +1,11 @@
+# [1.0.0-beta.46](https://github.com/jl917/eapp/compare/v1.0.0-beta.45...v1.0.0-beta.46) (2025-01-04)
+
+
+### Bug Fixes
+
+* 센트리 오류 수정 ([7346b6c](https://github.com/jl917/eapp/commit/7346b6c06de2699d92066a37fb931d036b24263d))
+* 업데이트 테스트 ([4320368](https://github.com/jl917/eapp/commit/43203681b8b37ec2215c365e40a7904ff3ecae3c))
+
 # [1.0.0-beta.45](https://github.com/jl917/eapp/compare/v1.0.0-beta.44...v1.0.0-beta.45) (2025-01-04)
 
 
