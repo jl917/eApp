@@ -5,6 +5,7 @@ import {
 } from '@main/service/window';
 import { getMainVersion } from '@main/service/version';
 import { systemMessage } from '@main/service/message';
+import { sendToSentry } from './sentry';
 
 type ChannelMain = { type: Channel; data: ChannelCommunicationSuccess };
 
@@ -47,20 +48,24 @@ export const ipcUtils = async (
 ) => {
   // 한도가 없으면
   if (typeLimits[type] === 0) {
-    return {
+    const data = {
       type,
       error: '채널 한도를 초과했습니다.',
       success: false,
     };
+    sendToSentry('error', data);
+    return data;
   }
 
   // 지원하지 않는 채널인 경우
   if (typeLimits[type] === undefined) {
-    return {
+    const data = {
       type,
       error: '지원하지 않는 채널입니다.',
       success: false,
     };
+    sendToSentry('error', data);
+    return data;
   }
 
   // 성공 할 경우.
