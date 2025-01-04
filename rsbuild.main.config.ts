@@ -3,8 +3,8 @@ import path from 'path';
 import { sentryWebpackPlugin } from '@sentry/webpack-plugin';
 import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
 import { getDefine, getVersion } from './build/utils';
-import { mode } from '@/common/utils';
 
+const mode = process.env.NODE_ENV;
 const version = getVersion();
 const isSourceMap = mode === 'beta' || mode === 'production';
 
