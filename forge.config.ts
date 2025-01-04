@@ -1,4 +1,5 @@
 import { utils } from '@electron-forge/core';
+import * as os from 'os';
 import type { ForgeConfig } from '@electron-forge/shared-types';
 import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerRpm } from '@electron-forge/maker-rpm';
@@ -9,6 +10,8 @@ import { getName, getVersion } from './build/utils';
 import MakerDMG from './plugins/makeDMG/MakerDMG';
 import MakerZIP from './plugins/maker-zip/MakerZIP';
 import MakerSquirrel from './plugins/maker-squirrel/MakerSquirrel';
+
+const isMac = os.platform() === 'darwin';
 
 const name = getName();
 
@@ -29,7 +32,9 @@ const config: ForgeConfig = {
         schemes: ['e-app'],
       },
     ],
-    icon: 'src/renderer/public/eapp.ico',
+    icon: isMac
+      ? 'src/renderer/public/eapp.ico'
+      : 'src/renderer/public/eapp.icns',
   },
   rebuildConfig: {},
   makers: [
@@ -48,7 +53,7 @@ const config: ForgeConfig = {
       },
     }),
     new MakerDMG({
-      icon: 'src/renderer/public/eapp.ico',
+      icon: 'src/renderer/public/eapp.icns',
     } as any),
   ],
   plugins: [
