@@ -50,6 +50,7 @@ export const updateAction = () => {
     autoUpdater.quitAndInstall();
   });
 
+  autoUpdater.forceDevUpdateConfig = true;
   // 앱 시작 시 업데이트 확인
   autoUpdater.checkForUpdatesAndNotify();
 };
