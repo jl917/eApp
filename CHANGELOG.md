@@ -1,3 +1,10 @@
+# [1.0.0-beta.43](https://github.com/jl917/eapp/compare/v1.0.0-beta.42...v1.0.0-beta.43) (2025-01-04)
+
+
+### Bug Fixes
+
+* 센트리 셋팅 ([83ef7df](https://github.com/jl917/eapp/commit/83ef7df27a13339859b32bc6f00c1866cb7e3967))
+
 # [1.0.0-beta.42](https://github.com/jl917/eapp/compare/v1.0.0-beta.41...v1.0.0-beta.42) (2025-01-04)
 
 
