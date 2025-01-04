@@ -1,3 +1,25 @@
+# [1.0.0-beta.38](https://github.com/jl917/eapp/compare/v1.0.0-beta.37...v1.0.0-beta.38) (2025-01-04)
+
+
+### Bug Fixes
+
+* icon 처리 ([c3238aa](https://github.com/jl917/eapp/commit/c3238aa16fb8576cd96e1f4623bf587d3b9148c8))
+* ipc통신 개발중 ([8a23b71](https://github.com/jl917/eapp/commit/8a23b71ad61b88a31d599daa82484c1125d565f6))
+* safe send ([5bb3e2f](https://github.com/jl917/eapp/commit/5bb3e2fed89b32358c9011be415c3684ac6d1cd8))
+* 부화면 닫기 오류 수정 ([075d33a](https://github.com/jl917/eapp/commit/075d33ad82d81d709c065341d2950588d3fac612))
+* 시스템 메시지, 웹메시지 추가 ([87b2d6b](https://github.com/jl917/eapp/commit/87b2d6b7cc8fdb1c8f118303745ae4b4396455eb))
+* 자동 빌드 제거 ([ff675c3](https://github.com/jl917/eapp/commit/ff675c3e54ae4d8e9b568a836a2614649443d420))
+* 채널 로직 구현 ([5e8183f](https://github.com/jl917/eapp/commit/5e8183f9b911f1938a5fc48715a3f21ff951aff0))
+* 커뮤니케이션 채널 제거 ([21a8705](https://github.com/jl917/eapp/commit/21a870545d63b93532ae08291beb970eea3a9dba))
+* 코드 정리 ([ffbd8f2](https://github.com/jl917/eapp/commit/ffbd8f2a00632767b294a8ee4a020b56fa947089))
+* 코드 정리 ([d1d2195](https://github.com/jl917/eapp/commit/d1d21955dc28cdcd18699135bf66f3ab27da7dfc))
+
+
+### Features
+
+* deeplink기능 추가 ([52951e7](https://github.com/jl917/eapp/commit/52951e7bceed49b3ef93c869aed0b32bfd3c5d77))
+* 통신 로직 기본 구현(고도화 작업 필요) ([85cfd9a](https://github.com/jl917/eapp/commit/85cfd9aae438a72b8c3202180b07fd53857f1bca))
+
 # [1.0.0-beta.37](https://github.com/jl917/eapp/compare/v1.0.0-beta.36...v1.0.0-beta.37) (2024-12-03)
 
 
