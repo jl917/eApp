@@ -12,7 +12,7 @@ export const updateAction = () => {
   updateElectronApp({
     updateSource: {
       type: UpdateSourceType.StaticStorage,
-      baseUrl: `https://my-bucket.s3.amazonaws.com/my-app-updates/${process.platform}/${process.arch}`, // 교체 필요
+      baseUrl: `https://eapp-beta.s3.ap-northeast-2.amazonaws.com/eapp/${process.platform}/${process.arch}`, // 교체 필요
     },
   });
   // // 업데이트 로그 설정
