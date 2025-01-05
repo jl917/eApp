@@ -56,6 +56,17 @@ const config: ForgeConfig = {
       icon: 'src/renderer/public/eapp.icns',
     } as any),
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-s3',
+      config: {
+        bucket: 'eapp-beta',
+        public: true,
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      },
+    },
+  ],
   plugins: [
     new RsbuildPlugin({
       build: [
