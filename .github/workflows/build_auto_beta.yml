@@ -5,6 +5,45 @@ on:
       - beta
 
 jobs:
+  ## semantic-release
+  semantic-release:
+    name: Semantic Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        uses: actions/cache@v3
+        id: npm-cache
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - if: steps.npm-cache.outputs.cache-hit == 'true'
+        run: echo 'npm cache hit!'
+      - if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: echo 'npm cache missed!'
+      - run: npm install
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: electron-artifacts-*
+          merge-multiple: true
+
+      - name: Run Semantic Release
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: npx semantic-release
+
   ## app 빌드
   build-app:
     if: startsWith(github.ref, 'refs/heads/beta')
@@ -21,6 +60,7 @@ jobs:
           - platform: 'windows-latest'
             args: ''
     runs-on: ${{ matrix.platform }}
+    needs: [semantic-release]
     env:
       SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -84,6 +124,7 @@ jobs:
     if: startsWith(github.ref, 'refs/heads/beta')
     name: Build web
     runs-on: ubuntu-latest
+    needs: [semantic-release]
     env:
       SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -118,43 +159,3 @@ jobs:
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: ./dist
-
-  ## semantic-release
-  semantic-release:
-    name: Semantic Release
-    runs-on: ubuntu-latest
-    needs: [build-web, build-app]
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        uses: actions/cache@v3
-        id: npm-cache
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - if: steps.npm-cache.outputs.cache-hit == 'true'
-        run: echo 'npm cache hit!'
-      - if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: echo 'npm cache missed!'
-      - run: npm install
-
-      - name: Download artifacts
-        uses: actions/download-artifact@v4
-        with:
-          pattern: electron-artifacts-*
-          merge-multiple: true
-
-      - name: Run Semantic Release
-        env:
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        run: npx semantic-release

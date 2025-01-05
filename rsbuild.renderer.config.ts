@@ -3,9 +3,8 @@ import { pluginReact } from '@rsbuild/plugin-react';
 import { TanStackRouterRspack } from '@tanstack/router-plugin/rspack';
 import path from 'path';
 import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
-import { getDefine, getVersion } from './build/utils';
-
-const version = getVersion();
+import { getDefine } from './build/utils';
+import { version } from './package.json';
 
 export default defineConfig(() => {
   return {
