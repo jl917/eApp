@@ -1,3 +1,10 @@
+# [1.0.0-beta.60](https://github.com/jl917/eapp/compare/v1.0.0-beta.59...v1.0.0-beta.60) (2025-01-05)
+
+
+### Bug Fixes
+
+* power 서비스 추가 ([5b3f471](https://github.com/jl917/eapp/commit/5b3f471d96e748a3471ae15a1bb9baf7a5e8feb3))
+
 # [1.0.0-beta.59](https://github.com/jl917/eapp/compare/v1.0.0-beta.58...v1.0.0-beta.59) (2025-01-05)
 
 
