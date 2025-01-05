@@ -23,6 +23,7 @@
     "@electron-forge/maker-deb": "^7.5.0",
     "@electron-forge/maker-rpm": "^7.5.0",
     "@electron-forge/plugin-fuses": "^7.5.0",
+    "@electron-forge/publisher-s3": "^7.6.0",
     "@electron/fuses": "^1.8.0",
     "@rsbuild/core": "^1.1.6",
     "@rsbuild/plugin-react": "^1.0.7",
