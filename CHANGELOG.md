@@ -1,3 +1,10 @@
+# [1.0.0-beta.58](https://github.com/jl917/eapp/compare/v1.0.0-beta.57...v1.0.0-beta.58) (2025-01-05)
+
+
+### Bug Fixes
+
+* 빌드 스크립트 업데이트 ([4c16243](https://github.com/jl917/eapp/commit/4c16243527b8519e69759accd16ab3a31f9ed2ed))
+
 # [1.0.0-beta.57](https://github.com/jl917/eapp/compare/v1.0.0-beta.56...v1.0.0-beta.57) (2025-01-05)
 
 
