@@ -1,15 +1,10 @@
 import { utils } from '@electron-forge/core';
 import * as os from 'os';
 import type { ForgeConfig } from '@electron-forge/shared-types';
-import { MakerDeb } from '@electron-forge/maker-deb';
-import { MakerRpm } from '@electron-forge/maker-rpm';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
 import { RsbuildPlugin } from './plugins/electron-forge-plugin-rsbuild';
-import { getName, getVersion } from './build/utils';
-import MakerDMG from './plugins/makeDMG/MakerDMG';
-import MakerZIP from './plugins/maker-zip/MakerZIP';
-import MakerSquirrel from './plugins/maker-squirrel/MakerSquirrel';
+import { getName } from './build/utils';
 
 const isMac = os.platform() === 'darwin';
 
@@ -38,28 +33,28 @@ const config: ForgeConfig = {
   },
   rebuildConfig: {},
   makers: [
-    new MakerSquirrel({
-      version: getVersion(),
-      iconUrl: 'https://jl917eapp-beta.netlify.app/eapp.ico',
-      setupIcon: 'src/renderer/public/eapp.ico',
-    }),
-    new MakerZIP(
-      {
+    {
+      name: '@electron-forge/maker-zip',
+      config: () => ({
         macUpdateManifestBaseUrl: `https://eapp-beta.s3.ap-northeast-2.amazonaws.com/eapp/${process.platform}/${process.arch}`,
+      }),
+      platforms: ['darwin'],
+    },
+    {
+      name: '@electron-forge/maker-dmg',
+      config: {
+        icon: 'src/renderer/public/eapp.icns',
       },
-      ['darwin']
-    ),
-    //
-    new MakerRpm({}),
-    new MakerDeb({
-      options: {
-        name,
-        productName: 'eapp',
+    },
+    {
+      name: '@electron-forge/maker-squirrel',
+      config: {
+        iconUrl: 'https://jl917eapp-beta.netlify.app/eapp.ico',
+        setupIcon: 'src/renderer/public/eapp.ico',
+        // certificateFile: './cert.pfx',
+        // certificatePassword: process.env.CERTIFICATE_PASSWORD
       },
-    }),
-    new MakerDMG({
-      icon: 'src/renderer/public/eapp.icns',
-    } as any),
+    },
   ],
   publishers: [
     {

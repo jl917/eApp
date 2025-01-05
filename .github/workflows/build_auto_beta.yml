@@ -18,8 +18,8 @@ jobs:
             args: ''
           # - platform: 'ubuntu-latest'
           #   args: ''
-          # - platform: 'windows-latest'
-          #   args: ''
+          - platform: 'windows-latest'
+            args: ''
     runs-on: ${{ matrix.platform }}
     env:
       SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
