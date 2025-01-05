@@ -60,6 +60,7 @@ const config: ForgeConfig = {
     {
       name: '@electron-forge/publisher-s3',
       config: {
+        region: 'ap-northeast-2',
         bucket: 'eapp-beta',
         public: true,
         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
