@@ -1,3 +1,10 @@
+# [1.0.0-beta.54](https://github.com/jl917/eapp/compare/v1.0.0-beta.53...v1.0.0-beta.54) (2025-01-05)
+
+
+### Bug Fixes
+
+* update로직 변경 ([2fa2700](https://github.com/jl917/eapp/commit/2fa2700067a748fd3b2a6bc4cb4590296353c64c))
+
 # [1.0.0-beta.53](https://github.com/jl917/eapp/compare/v1.0.0-beta.52...v1.0.0-beta.53) (2025-01-05)
 
 
