@@ -1,3 +1,10 @@
+# [1.0.0-beta.51](https://github.com/jl917/eapp/compare/v1.0.0-beta.50...v1.0.0-beta.51) (2025-01-05)
+
+
+### Bug Fixes
+
+* baseUrl 교체 ([4467dd7](https://github.com/jl917/eapp/commit/4467dd7729bf2ab4c1f17f55e01f1411f8d7793d))
+
 # [1.0.0-beta.50](https://github.com/jl917/eapp/compare/v1.0.0-beta.49...v1.0.0-beta.50) (2025-01-05)
 
 
