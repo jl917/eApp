@@ -1,3 +1,14 @@
+# [1.0.0-beta.49](https://github.com/jl917/eapp/compare/v1.0.0-beta.48...v1.0.0-beta.49) (2025-01-05)
+
+
+### Bug Fixes
+
+* auto ([9306fd4](https://github.com/jl917/eapp/commit/9306fd435191a8165d6e1e6cdcc3c066ba50a4e0))
+* only mac ([8721d41](https://github.com/jl917/eapp/commit/8721d4127a13ea8d66c5556c5a7dc0fdde9e118b))
+* region추가 ([0b5ab96](https://github.com/jl917/eapp/commit/0b5ab968ed70874847377f38ca349ae1c477b4ff))
+* update 패키지 변경 ([bb457d3](https://github.com/jl917/eapp/commit/bb457d36a6e5b5e8c98e01715841e874e8975dbc))
+* 환경 변수 조정 ([7324407](https://github.com/jl917/eapp/commit/73244078ac971ecf4dd0faa0a3b6d7008896d9b9))
+
 # [1.0.0-beta.48](https://github.com/jl917/eapp/compare/v1.0.0-beta.47...v1.0.0-beta.48) (2025-01-05)
 
 
