@@ -30,11 +30,11 @@ jobs:
         run: echo 'npm cache missed!'
       - run: npm install
 
-      - name: Download artifacts
-        uses: actions/download-artifact@v4
-        with:
-          pattern: electron-artifacts-*
-          merge-multiple: true
+      # - name: Download artifacts
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     pattern: electron-artifacts-*
+      #     merge-multiple: true
 
       - name: Run Semantic Release
         env:
@@ -72,6 +72,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Pull latest changes
+        run: |
+          git pull origin beta
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -97,27 +101,27 @@ jobs:
       - name: Build App
         run: npm run build:beta
 
-      - name: Move artifacts to outputs
-        run: |
-          mkdir outputs
-      - name: Move macOS artifacts to outputs
-        if: matrix.platform == 'macos-latest'
-        run: |
-          cp -r out/beta/make/* outputs/
-      - name: Move Ubuntu artifacts to outputs
-        if: matrix.platform == 'ubuntu-latest'
-        run: |
-          cp -r out/beta/make/* outputs/
-      - name: Move Windows artifacts to outputs
-        if: matrix.platform == 'windows-latest'
-        run: |
-          cp -r out/beta/make/* outputs/
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: electron-artifacts-${{ strategy.job-index }}
-          path: outputs/
-          retention-days: 1
+      # - name: Move artifacts to outputs
+      #   run: |
+      #     mkdir outputs
+      # - name: Move macOS artifacts to outputs
+      #   if: matrix.platform == 'macos-latest'
+      #   run: |
+      #     cp -r out/beta/make/* outputs/
+      # - name: Move Ubuntu artifacts to outputs
+      #   if: matrix.platform == 'ubuntu-latest'
+      #   run: |
+      #     cp -r out/beta/make/* outputs/
+      # - name: Move Windows artifacts to outputs
+      #   if: matrix.platform == 'windows-latest'
+      #   run: |
+      #     cp -r out/beta/make/* outputs/
+      # - name: Upload artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: electron-artifacts-${{ strategy.job-index }}
+      #     path: outputs/
+      #     retention-days: 1
 
   ## 웹 빌드
   build-web:
@@ -135,6 +139,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Pull latest changes
+        run: |
+          git pull origin beta
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
