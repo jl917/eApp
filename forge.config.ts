@@ -43,7 +43,12 @@ const config: ForgeConfig = {
       iconUrl: 'https://jl917eapp-beta.netlify.app/eapp.ico',
       setupIcon: 'src/renderer/public/eapp.ico',
     }),
-    new MakerZIP({}, ['darwin']),
+    new MakerZIP(
+      {
+        macUpdateManifestBaseUrl: `https://eapp-beta.s3.ap-northeast-2.amazonaws.com/eapp/${process.platform}/${process.arch}`,
+      },
+      ['darwin']
+    ),
     //
     new MakerRpm({}),
     new MakerDeb({
