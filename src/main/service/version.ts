@@ -1,1 +1,1 @@
-export const getMainVersion = () => MAIN_VERSION;
+export const getMainVersion = () => `${MAIN_VERSION}+hello240105`;
