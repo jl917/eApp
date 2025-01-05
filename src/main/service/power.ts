@@ -1,4 +1,4 @@
-import { powerSaveBlocker } from 'electron/main';
+import { powerSaveBlocker } from 'electron';
 
 export const powerSystem = () => {
   let id = 0;
