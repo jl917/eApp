@@ -1,3 +1,10 @@
+# [1.0.0-beta.56](https://github.com/jl917/eapp/compare/v1.0.0-beta.55...v1.0.0-beta.56) (2025-01-05)
+
+
+### Bug Fixes
+
+* 릴리즈 순서 변경 ([1900331](https://github.com/jl917/eapp/commit/1900331c9ee4a27998a6d5200cd4206c37990691))
+
 # [1.0.0-beta.55](https://github.com/jl917/eapp/compare/v1.0.0-beta.54...v1.0.0-beta.55) (2025-01-05)
 
 
