@@ -1,3 +1,10 @@
+# [1.0.0-beta.48](https://github.com/jl917/eapp/compare/v1.0.0-beta.47...v1.0.0-beta.48) (2025-01-05)
+
+
+### Bug Fixes
+
+* 버전업 ([6ff7f8f](https://github.com/jl917/eapp/commit/6ff7f8ff4d9d1b7dd03ddd71c91b3bd89eb523ee))
+
 # [1.0.0-beta.47](https://github.com/jl917/eapp/compare/v1.0.0-beta.46...v1.0.0-beta.47) (2025-01-05)
 
 
