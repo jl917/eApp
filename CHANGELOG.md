@@ -1,3 +1,10 @@
+# [1.0.0-beta.52](https://github.com/jl917/eapp/compare/v1.0.0-beta.51...v1.0.0-beta.52) (2025-01-05)
+
+
+### Bug Fixes
+
+* maker 추가 ([52e404a](https://github.com/jl917/eapp/commit/52e404aac89305d69156a093afc503ae8fbd1e42))
+
 # [1.0.0-beta.51](https://github.com/jl917/eapp/compare/v1.0.0-beta.50...v1.0.0-beta.51) (2025-01-05)
 
 
