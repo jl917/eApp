@@ -1,3 +1,10 @@
+# [1.0.0-beta.62](https://github.com/jl917/eapp/compare/v1.0.0-beta.61...v1.0.0-beta.62) (2025-01-06)
+
+
+### Bug Fixes
+
+* mac App 인증 제거 ([bb263e5](https://github.com/jl917/eapp/commit/bb263e5e3fb3d84379833b01041afc236cf91287))
+
 # [1.0.0-beta.61](https://github.com/jl917/eapp/compare/v1.0.0-beta.60...v1.0.0-beta.61) (2025-01-05)
 
 
