@@ -5,6 +5,7 @@ import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
 import { RsbuildPlugin } from './plugins/electron-forge-plugin-rsbuild';
 import { getName } from './build/utils';
+import MakerDMG from './plugins/maker-dmg';
 
 const isMac = os.platform() === 'darwin';
 
@@ -40,12 +41,7 @@ const config: ForgeConfig = {
       }),
       platforms: ['darwin'],
     },
-    {
-      name: '@electron-forge/maker-dmg',
-      config: {
-        icon: 'src/renderer/public/eapp.icns',
-      },
-    },
+    new MakerDMG({ icon: 'src/renderer/public/eapp.icns' } as any),
     {
       name: '@electron-forge/maker-squirrel',
       config: {
