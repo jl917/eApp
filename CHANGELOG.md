@@ -1,3 +1,10 @@
+# [1.0.0-beta.63](https://github.com/jl917/eapp/compare/v1.0.0-beta.62...v1.0.0-beta.63) (2025-01-07)
+
+
+### Features
+
+* s3폴더 변경 + mac sign ([e6b46d2](https://github.com/jl917/eapp/commit/e6b46d27a0feaddd7469a16de231bd19ca087d61))
+
 # [1.0.0-beta.62](https://github.com/jl917/eapp/compare/v1.0.0-beta.61...v1.0.0-beta.62) (2025-01-06)
 
 
