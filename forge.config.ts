@@ -40,7 +40,7 @@ const config: ForgeConfig = {
     {
       name: '@electron-forge/maker-zip',
       config: () => ({
-        macUpdateManifestBaseUrl: `https://eapp-beta.s3.ap-northeast-2.amazonaws.com/${process.NODE_ENV.MODE}/${process.platform}/${process.arch}`,
+        macUpdateManifestBaseUrl: `https://eapp-beta.s3.ap-northeast-2.amazonaws.com/${process.env.MODE}/${process.platform}/${process.arch}`,
       }),
       platforms: ['darwin'],
     },
