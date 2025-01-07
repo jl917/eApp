@@ -47,8 +47,8 @@ const config: ForgeConfig = {
       config: {
         iconUrl: 'https://jl917eapp-beta.netlify.app/eapp.ico',
         setupIcon: 'src/renderer/public/eapp.ico',
-        // certificateFile: './cert.pfx',
-        // certificatePassword: process.env.CERTIFICATE_PASSWORD
+        certificateFile: './cert.pfx',
+        certificatePassword: process.env.CERTIFICATE_PASSWORD,
       },
     },
   ],
