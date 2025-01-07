@@ -1,3 +1,10 @@
+# [1.0.0-beta.64](https://github.com/jl917/eapp/compare/v1.0.0-beta.63...v1.0.0-beta.64) (2025-01-07)
+
+
+### Bug Fixes
+
+* env변수 처리 ([b78c60b](https://github.com/jl917/eapp/commit/b78c60b2727c5c3159eef9bac24081a2155a2935))
+
 # [1.0.0-beta.63](https://github.com/jl917/eapp/compare/v1.0.0-beta.62...v1.0.0-beta.63) (2025-01-07)
 
 
