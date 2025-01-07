@@ -1,3 +1,10 @@
+# [1.0.0-beta.65](https://github.com/jl917/eapp/compare/v1.0.0-beta.64...v1.0.0-beta.65) (2025-01-07)
+
+
+### Bug Fixes
+
+* folder 셋팅 테스트 ([6180939](https://github.com/jl917/eapp/commit/6180939d602f95f7154fe823a4074f4e5f64969f))
+
 # [1.0.0-beta.64](https://github.com/jl917/eapp/compare/v1.0.0-beta.63...v1.0.0-beta.64) (2025-01-07)
 
 
