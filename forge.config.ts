@@ -17,9 +17,6 @@ const config: ForgeConfig = {
     name,
     executableName: 'eapp',
     asar: true,
-    osxSign: {
-      identityValidation: false,
-    },
     appBundleId: utils.fromBuildIdentifier({
       dev: 'io.github.jl917.dev',
       beta: 'io.github.jl917.beta',
@@ -64,6 +61,7 @@ const config: ForgeConfig = {
         public: true,
         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        folder: `${process.env.MODE}/${process.platform}/${process.arch}`,
       },
     },
   ],
