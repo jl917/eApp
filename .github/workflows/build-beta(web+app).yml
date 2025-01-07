@@ -40,6 +40,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
         run: npx semantic-release
 
   ## app 빌드
@@ -64,6 +65,7 @@ jobs:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
     outputs:
       success: ${{ job.status }} # 빌드 성공 여부를 output으로 저장
     steps:
@@ -132,6 +134,7 @@ jobs:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
     outputs:
       success: ${{ job.status }} # 빌드 성공 여부를 output으로 저장
     steps:
