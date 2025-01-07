@@ -17,6 +17,9 @@ const config: ForgeConfig = {
     name,
     executableName: 'eapp',
     asar: true,
+    osxSign: {
+      identityValidation: false,
+    },
     appBundleId: utils.fromBuildIdentifier({
       dev: 'io.github.jl917.dev',
       beta: 'io.github.jl917.beta',
@@ -37,7 +40,7 @@ const config: ForgeConfig = {
     {
       name: '@electron-forge/maker-zip',
       config: () => ({
-        macUpdateManifestBaseUrl: `https://eapp-beta.s3.ap-northeast-2.amazonaws.com/eapp/${process.platform}/${process.arch}`,
+        macUpdateManifestBaseUrl: `https://eapp-beta.s3.ap-northeast-2.amazonaws.com/${process.NODE_ENV.MODE}/${process.platform}/${process.arch}`,
       }),
       platforms: ['darwin'],
     },

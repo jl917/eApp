@@ -3,7 +3,7 @@ import path from 'path';
 import { MakerBase, MakerOptions } from '@electron-forge/maker-base';
 import { ForgePlatform } from '@electron-forge/shared-types';
 import fs from 'fs-extra';
-import { execSync } from 'child_process';
+// import { execSync } from 'child_process';
 import type { ElectronInstallerDMGOptions } from 'electron-installer-dmg';
 
 type MakerDMGConfig = Omit<ElectronInstallerDMGOptions, 'name'> & {
@@ -36,9 +36,9 @@ export default class MakerDMG extends MakerBase<MakerDMGConfig> {
 
     await this.ensureFile(outPath);
     // app에 대해서 강제 서명을 해줍니다.
-    execSync(
-      `codesign --deep --force --sign - ${path.resolve(dir, `${appName}.app`)}`
-    );
+    // execSync(
+    //   `codesign --deep --force --sign - ${path.resolve(dir, `${appName}.app`)}`
+    // );
     const dmgConfig = {
       overwrite: true,
       name: appName,
