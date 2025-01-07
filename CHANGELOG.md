@@ -1,3 +1,11 @@
+# [1.0.0-beta.67](https://github.com/jl917/eapp/compare/v1.0.0-beta.66...v1.0.0-beta.67) (2025-01-07)
+
+
+### Bug Fixes
+
+* win app cert ([2d7256c](https://github.com/jl917/eapp/commit/2d7256c64c594d2b1f35d48f326ec13c21d76dcd))
+* 빌드 파일 수정 ([a9df3ce](https://github.com/jl917/eapp/commit/a9df3ced13551f081a9a755ae2b4417b027b5039))
+
 # [1.0.0-beta.66](https://github.com/jl917/eapp/compare/v1.0.0-beta.65...v1.0.0-beta.66) (2025-01-07)
 
 
