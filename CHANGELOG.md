@@ -1,3 +1,10 @@
+# [1.0.0-beta.66](https://github.com/jl917/eapp/compare/v1.0.0-beta.65...v1.0.0-beta.66) (2025-01-07)
+
+
+### Bug Fixes
+
+* build ([924729e](https://github.com/jl917/eapp/commit/924729eb92c6ed19e4d6688023b59a1b8fe47ceb))
+
 # [1.0.0-beta.65](https://github.com/jl917/eapp/compare/v1.0.0-beta.64...v1.0.0-beta.65) (2025-01-07)
 
 
