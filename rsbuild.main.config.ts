@@ -24,6 +24,8 @@ export default defineConfig({
   },
   tools: {
     rspack(config, { appendPlugins }) {
+      const newConfig = { ...config };
+      newConfig.resolve.extensions = [...newConfig.resolve.extensions, '.node'];
       if (process.env.RSDOCTOR) {
         appendPlugins(
           new RsdoctorRspackPlugin({
@@ -43,6 +45,7 @@ export default defineConfig({
           })
         );
       }
+      return newConfig;
     },
   },
 });

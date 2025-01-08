@@ -28,6 +28,8 @@ function Message() {
   };
 
   const noChannel = async () => {
+    // eslint-disable-next-line
+    // @ts-ignore
     const response = await window.api.sendMessage('type1');
     console.log(response);
   };

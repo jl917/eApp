@@ -5,6 +5,7 @@ import Version from './Version';
 import Message from './Message';
 import Monitor from './Monitor';
 import { displaysAtom } from '@/renderer/store';
+import SystemInfo from './SystemInfo';
 
 function Main() {
   const [, setDisplays] = useAtom(displaysAtom);
@@ -23,6 +24,7 @@ function Main() {
       <Space direction="vertical" style={{ width: 1000 }}>
         <Monitor />
       </Space>
+      <SystemInfo />
     </Space>
   );
 }

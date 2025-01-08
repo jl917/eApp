@@ -8,7 +8,7 @@ declare interface ElectronAPI {
 }
 
 declare interface ElectronAPI2 {
-  sendMessage: (type, data?: any) => any;
+  sendMessage: (type: Channel, data?: any) => any;
   triggerMessage: (response?: any) => any;
 }
 
