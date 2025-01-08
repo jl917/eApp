@@ -3,7 +3,7 @@
 import { contextBridge, ipcRenderer } from 'electron';
 
 contextBridge.exposeInMainWorld('api', {
-  sendMessage: async (type: string, data: any) => {
+  sendMessage: async (type: Channel, data: any) => {
     return ipcRenderer.invoke('custom-ipc', { type, data });
   },
   triggerMessage: (callback: (...args: any) => void) => {

@@ -5,6 +5,7 @@ import {
 } from '@main/service/window';
 import { getMainVersion } from '@main/service/version';
 import { systemMessage } from '@main/service/message';
+import { systemInfo } from '@main/service/systemInfo';
 import { sendToSentry } from './sentry';
 
 type ChannelMain = { type: Channel; data: ChannelCommunicationSuccess };
@@ -16,6 +17,7 @@ const typeLimits: Partial<Record<Channel, number>> = {
   message: 5,
   openExtWindow: 1,
   closeExtWindow: 1,
+  systemInfo: 2,
 };
 
 const typeFn: Partial<Record<Channel, (...args: any[]) => any | Promise<any>>> =
@@ -25,6 +27,7 @@ const typeFn: Partial<Record<Channel, (...args: any[]) => any | Promise<any>>> =
     displays: getDisplays,
     version: getMainVersion,
     message: systemMessage,
+    systemInfo,
   };
 
 export const ipcFnWrap = async (fn: any | Promise<any>, cb: () => void) => {
@@ -32,7 +35,12 @@ export const ipcFnWrap = async (fn: any | Promise<any>, cb: () => void) => {
     const result = fn;
 
     if (result instanceof Promise) {
-      return await result.then(() => cb()).catch(() => cb()); // 에러가 발생해도 cb를 실행
+      return await result
+        .then((res: any) => {
+          cb();
+          return res;
+        })
+        .catch(() => cb()); // 에러가 발생해도 cb를 실행
     }
     cb();
     return result;

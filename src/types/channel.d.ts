@@ -17,7 +17,8 @@ type Channel =
   | 'openExtWindow'
   | 'closeExtWindow'
   | 'deeplink'
-  | 'message';
+  | 'message'
+  | 'systemInfo';
 
 interface ChannelDisplay {
   id: number;
