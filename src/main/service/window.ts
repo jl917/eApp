@@ -63,6 +63,7 @@ export function createExtWindow() {
   });
 
   windowProcess.extWindow = new BrowserWindow({
+    kiosk: true,
     x: externalDisplay.bounds.x,
     y: externalDisplay.bounds.y,
     width: externalDisplay.bounds.width,
