@@ -5,6 +5,7 @@ import { systemInfoAtom } from '@/renderer/store';
 
 function SystemInfo() {
   const [systemInfo, setSystemInfo] = useAtom(systemInfoAtom);
+
   useEffect(() => {
     (async () => {
       const response = await window.api.sendMessage('systemInfo');
@@ -16,7 +17,7 @@ function SystemInfo() {
     ([key, value]) => ({
       key,
       label: key,
-      children: <div>{JSON.stringify(value, null, 2)}</div>,
+      children: <pre>{JSON.stringify(value, null, 2)}</pre>,
     })
   );
 

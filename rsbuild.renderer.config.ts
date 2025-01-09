@@ -6,6 +6,7 @@ import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
 import { getDefine } from './build/utils';
 import { version } from './package.json';
 
+const mode = process.env.MODE;
 export default defineConfig(() => {
   return {
     html: {
@@ -22,7 +23,9 @@ export default defineConfig(() => {
       },
       define: {
         ...getDefine(),
-        WEB_VERSION: JSON.stringify(version),
+        WEB_VERSION: JSON.stringify(
+          `${mode === 'dev' ? 'dev-' : ''}${version}`
+        ),
       },
       alias: {
         '@': path.resolve(__dirname, './src'),
