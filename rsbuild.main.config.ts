@@ -5,14 +5,14 @@ import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
 import { getDefine } from './build/utils';
 import { version } from './package.json';
 
-const mode = process.env.NODE_ENV;
+const mode = process.env.MODE;
 const isSourceMap = mode === 'beta' || mode === 'production';
 
 export default defineConfig({
   source: {
     define: {
       ...getDefine(),
-      MAIN_VERSION: JSON.stringify(version),
+      MAIN_VERSION: JSON.stringify(`${mode === 'dev' ? 'dev-' : ''}${version}`),
     },
     alias: {
       '@': path.resolve(__dirname, './src'),

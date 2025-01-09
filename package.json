@@ -63,7 +63,6 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "fs-extra": "^11.2.0",
     "listr2": "^8.2.5",
-    "osx-temperature-sensor": "^1.0.8",
     "prettier": "^3.4.1",
     "semantic-release": "^24.2.0",
     "systeminformation": "^5.25.5",
