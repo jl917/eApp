@@ -1,3 +1,12 @@
+# [1.0.0-beta.68](https://github.com/jl917/eapp/compare/v1.0.0-beta.67...v1.0.0-beta.68) (2025-01-09)
+
+
+### Bug Fixes
+
+* systemInfo 추가 ([a278cbc](https://github.com/jl917/eapp/commit/a278cbc56f7b30a589d16cb7dd759a9aa6b79ca1))
+* 오류 수정 ([c8acc9f](https://github.com/jl917/eapp/commit/c8acc9f1ed29b53a0f46c43002a9868afdb2e6d0))
+* 오류 수정 및 스크린 키오스크 모드 추가 ([58c964f](https://github.com/jl917/eapp/commit/58c964fb8f1a7527259b2383691d95c984cb5a2f))
+
 # [1.0.0-beta.67](https://github.com/jl917/eapp/compare/v1.0.0-beta.66...v1.0.0-beta.67) (2025-01-07)
 
 
