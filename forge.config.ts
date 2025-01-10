@@ -51,13 +51,6 @@ const config: ForgeConfig = {
         certificatePassword: process.env.CERTIFICATE_PASSWORD,
       },
     },
-    {
-      name: '@electron-forge/maker-wix',
-      config: {
-        language: 1033,
-        manufacturer: 'Eapp',
-      },
-    },
   ],
   publishers: [
     {
