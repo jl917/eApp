@@ -64,6 +64,16 @@ const config: ForgeConfig = {
         folder: process.env.MODE,
       },
     },
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'jl917',
+          name: 'eapp',
+        },
+        prerelease: true,
+      },
+    },
   ],
   plugins: [
     new RsbuildPlugin({
