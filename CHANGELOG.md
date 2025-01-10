@@ -1,3 +1,10 @@
+# [1.0.0-beta.70](https://github.com/jl917/eapp/compare/v1.0.0-beta.69...v1.0.0-beta.70) (2025-01-10)
+
+
+### Bug Fixes
+
+* add authToken ([d44e094](https://github.com/jl917/eapp/commit/d44e0941ee21cad4efd13bfba82184893cf14d87))
+
 # [1.0.0-beta.69](https://github.com/jl917/eapp/compare/v1.0.0-beta.68...v1.0.0-beta.69) (2025-01-10)
 
 
