@@ -67,6 +67,7 @@ const config: ForgeConfig = {
     {
       name: '@electron-forge/publisher-github',
       config: {
+        authToken: process.env.GH_TOKEN,
         repository: {
           owner: 'jl917',
           name: 'eapp',
