@@ -1,3 +1,10 @@
+# [1.0.0-beta.73](https://github.com/jl917/eapp/compare/v1.0.0-beta.72...v1.0.0-beta.73) (2025-01-11)
+
+
+### Bug Fixes
+
+* 시스템 정보 업데이트 ([1071737](https://github.com/jl917/eapp/commit/107173703e463bf764afd36557adfa04616fadaf))
+
 # [1.0.0-beta.72](https://github.com/jl917/eapp/compare/v1.0.0-beta.71...v1.0.0-beta.72) (2025-01-11)
 
 
