@@ -91,14 +91,14 @@ const config: ForgeConfig = {
         },
       ],
       renderer: [
-        ...(process.env.MODE === 'dev'
-          ? [
-              {
-                name: 'main_window',
-                config: 'rsbuild.renderer.config.ts',
-              },
-            ]
-          : []),
+        // ...(process.env.MODE === 'dev'
+        //   ? [
+        //       {
+        //         name: 'main_window',
+        //         config: 'rsbuild.renderer.config.ts',
+        //       },
+        //     ]
+        //   : []),
       ],
     }),
     // Fuses are used to enable/disable various Electron functionality
