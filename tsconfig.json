@@ -20,16 +20,11 @@
       "@preload/*": ["src/preload/*"],
       "@renderer/*": ["src/renderer/*"]
     },
-    "strictNullChecks": false,
+    "strictNullChecks": false
   },
-  "include": [
-    "src/**/*",
-    "forge.env.d.ts",
-    "forge.config.ts",
-    "build/utils.ts",
-    "rsbuild.main.config.ts",
-    "rsbuild.preload.config.ts",
-    "rsbuild.renderer.config.ts"
-, "plugins"  ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "references": [
+    { "path": "./tsconfig.electron.json" },
+    { "path": "./tsconfig.web.json" }
+  ]
 }
