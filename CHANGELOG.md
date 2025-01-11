@@ -1,3 +1,10 @@
+# [1.0.0-beta.72](https://github.com/jl917/eapp/compare/v1.0.0-beta.71...v1.0.0-beta.72) (2025-01-11)
+
+
+### Bug Fixes
+
+* web 앱 빌드 분리 ([441b582](https://github.com/jl917/eapp/commit/441b5829d2378929afc501cc9ad917e68bcbcdb5))
+
 # [1.0.0-beta.71](https://github.com/jl917/eapp/compare/v1.0.0-beta.70...v1.0.0-beta.71) (2025-01-10)
 
 
