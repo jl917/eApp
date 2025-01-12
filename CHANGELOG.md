@@ -1,3 +1,10 @@
+# [1.0.0-beta.77](https://github.com/jl917/eapp/compare/v1.0.0-beta.76...v1.0.0-beta.77) (2025-01-12)
+
+
+### Bug Fixes
+
+* app경로 지정 ([1699673](https://github.com/jl917/eapp/commit/16996736f1c8e02179a400360190f65ecb7c4459))
+
 # [1.0.0-beta.76](https://github.com/jl917/eapp/compare/v1.0.0-beta.75...v1.0.0-beta.76) (2025-01-12)
 
 
