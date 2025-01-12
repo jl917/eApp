@@ -1,3 +1,12 @@
+# [1.0.0-beta.75](https://github.com/jl917/eapp/compare/v1.0.0-beta.74...v1.0.0-beta.75) (2025-01-12)
+
+
+### Bug Fixes
+
+* realm 추가 ([4855be4](https://github.com/jl917/eapp/commit/4855be46779fc4720c2ffae09a581c04f0594bf4))
+* realm버전 업데이트 ([8141656](https://github.com/jl917/eapp/commit/81416564b7a84bc18cb38de3bc2fa2a71b32662c))
+* unpack-natives적용 ([cdd47b9](https://github.com/jl917/eapp/commit/cdd47b9b30e085ac96b48a1c695d94c1dd98a17b))
+
 # [1.0.0-beta.74](https://github.com/jl917/eapp/compare/v1.0.0-beta.73...v1.0.0-beta.74) (2025-01-12)
 
 
