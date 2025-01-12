@@ -1,3 +1,10 @@
+# [1.0.0-beta.81](https://github.com/jl917/eapp/compare/v1.0.0-beta.80...v1.0.0-beta.81) (2025-01-12)
+
+
+### Bug Fixes
+
+* appset 보류 ([01ba3e1](https://github.com/jl917/eapp/commit/01ba3e1315e590e07fa27b11dac879e47c731ca4))
+
 # [1.0.0-beta.80](https://github.com/jl917/eapp/compare/v1.0.0-beta.79...v1.0.0-beta.80) (2025-01-12)
 
 
