@@ -4,18 +4,19 @@ import type { ForgeConfig } from '@electron-forge/shared-types';
 import { FusesPlugin } from '@electron-forge/plugin-fuses';
 import { FuseV1Options, FuseVersion } from '@electron/fuses';
 import { RsbuildPlugin } from './plugins/electron-forge-plugin-rsbuild';
-import { getName } from './build/utils';
+import { getName, mode } from './build/utils';
 import MakerDMG from './plugins/maker-dmg';
+import { productName } from './package.json';
 
 const isMac = os.platform() === 'darwin';
 
 const name = getName();
 
 const config: ForgeConfig = {
-  buildIdentifier: process.env.MODE,
+  buildIdentifier: mode,
   packagerConfig: {
     name,
-    executableName: 'eapp',
+    executableName: productName,
     asar: true,
     appBundleId: utils.fromBuildIdentifier({
       dev: 'io.github.jl917.dev',
@@ -25,12 +26,14 @@ const config: ForgeConfig = {
     protocols: [
       {
         name: 'Eapp Deeplink',
-        schemes: ['e-app'],
+        schemes: [
+          mode === 'production' ? productName : `${productName}-${mode}`,
+        ],
       },
     ],
     icon: isMac
-      ? 'src/renderer/public/eapp.ico'
-      : 'src/renderer/public/eapp.icns',
+      ? `src/renderer/public/${productName}.ico`
+      : `src/renderer/public/${productName}.icns'`,
   },
   rebuildConfig: {},
   makers: [
@@ -41,12 +44,12 @@ const config: ForgeConfig = {
       }),
       platforms: ['darwin'],
     },
-    new MakerDMG({ icon: 'src/renderer/public/eapp.icns' } as any),
+    new MakerDMG({ icon: `src/renderer/public/${productName}.icns` } as any),
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        iconUrl: 'https://jl917eapp-beta.netlify.app/eapp.ico',
-        setupIcon: 'src/renderer/public/eapp.ico',
+        iconUrl: `https://jl917eapp-beta.netlify.app/${productName}.ico`,
+        setupIcon: `src/renderer/public/${productName}.ico`,
         certificateFile: './cert.pfx',
         certificatePassword: process.env.CERTIFICATE_PASSWORD,
       },
@@ -57,7 +60,7 @@ const config: ForgeConfig = {
       name: '@electron-forge/publisher-s3',
       config: {
         region: 'ap-northeast-2',
-        bucket: 'eapp-beta',
+        bucket: 'eapp-beta', // 버켓 이름
         public: true,
         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
@@ -70,7 +73,7 @@ const config: ForgeConfig = {
         authToken: process.env.GH_TOKEN,
         repository: {
           owner: 'jl917',
-          name: 'eapp',
+          name: productName,
         },
         prerelease: true,
       },
