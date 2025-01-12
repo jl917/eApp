@@ -67,7 +67,7 @@
     "fs-extra": "^11.2.0",
     "listr2": "^8.2.5",
     "prettier": "^3.4.1",
-    "realm": "^12.14.0",
+    "realm": "^20.1.0",
     "semantic-release": "^24.2.0",
     "systeminformation": "^5.25.5",
     "ts-node": "^10.0.0",
