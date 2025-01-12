@@ -11,8 +11,7 @@ import { initDeeplink } from './service/deeplink';
 import { genTrayMenu } from './service/trayMenu';
 
 const powerService = powerSystem();
-
-app.setPath('userData', path.join(app.getPath('userData'), process.env.mode));
+app.setPath('userData', path.join(app.getPath('userData'), process.env.MODE));
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
