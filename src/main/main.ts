@@ -9,9 +9,9 @@ import { initSentry } from './service/sentry';
 import { powerSystem } from './service/power';
 import { initDeeplink } from './service/deeplink';
 import { genTrayMenu } from './service/trayMenu';
+import { name } from '../../package.json';
 
 const powerService = powerSystem();
-app.setPath('userData', path.join(app.getPath('userData'), process.env.MODE));
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
@@ -27,6 +27,14 @@ app.on('ready', () => {
   initDeeplink();
   genTrayMenu();
   powerService.start();
+
+  app.setPath(
+    'userData',
+    path.join(
+      app.getPath('userData') || `${app.getPath('appData')}/${name}}`,
+      process.env.MODE
+    )
+  );
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
