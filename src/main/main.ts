@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain } from 'electron';
+import { app, BrowserWindow, dialog, ipcMain } from 'electron';
 import started from 'electron-squirrel-startup';
 import { updateAction } from '@main/service/autoUpdater';
 import { createWindow } from '@main/service/window';
@@ -6,6 +6,7 @@ import { getMainVersion } from './service/version';
 import { ipcUtils } from './utils/ipc';
 import { initSentry } from './service/sentry';
 import { powerSystem } from './service/power';
+import { initDeeplink } from './service/deeplink';
 
 const powerService = powerSystem();
 
@@ -20,6 +21,7 @@ app.on('ready', () => {
   updateAction();
   createWindow();
   getMainVersion();
+  initDeeplink();
   powerService.start();
 });
 

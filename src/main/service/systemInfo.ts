@@ -1,4 +1,7 @@
 import si from 'systeminformation';
+import Store from 'electron-store';
+
+const store = new Store();
 
 const sortObjectByKeys = (obj: Record<string, any>) => {
   const sortedKeys = Object.keys(obj).sort(); // 키를 알파벳 순으로 정렬
@@ -14,6 +17,10 @@ const sortObjectByKeys = (obj: Record<string, any>) => {
 };
 
 export const systemInfo = async () => {
+  if (store.has('systemInfo')) {
+    return store.get('systemInfo');
+  }
+
   const defaultData = await si.getAllData();
   const audio = await si.audio();
   const usb = await si.usb();
@@ -29,5 +36,7 @@ export const systemInfo = async () => {
     networkInterfaces,
     bluetoothDevices,
   };
+
+  store.set('systemInfo', result);
   return sortObjectByKeys(result);
 };

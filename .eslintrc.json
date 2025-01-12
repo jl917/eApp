@@ -28,5 +28,6 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
-  }
+  },
+  "include": ["src/**/*.ts", "forge.config.ts"]
 }
