@@ -12,7 +12,7 @@ import { genTrayMenu } from './service/trayMenu';
 
 const powerService = powerSystem();
 
-app.setPath('userData', path.join(app.getPath('home'), process.env.mode));
+app.setPath('userData', path.join(app.getPath('userData'), process.env.mode));
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
