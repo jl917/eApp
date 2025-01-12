@@ -1,4 +1,5 @@
 import { app, BrowserWindow, dialog, ipcMain } from 'electron';
+import path from 'path';
 import started from 'electron-squirrel-startup';
 import { updateAction } from '@main/service/autoUpdater';
 import { createWindow } from '@main/service/window';
@@ -10,6 +11,8 @@ import { initDeeplink } from './service/deeplink';
 import { genTrayMenu } from './service/trayMenu';
 
 const powerService = powerSystem();
+
+app.setPath('userData', path.join(app.getPath('home'), process.env.mode));
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
