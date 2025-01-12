@@ -1,3 +1,10 @@
+# [1.0.0-beta.78](https://github.com/jl917/eapp/compare/v1.0.0-beta.77...v1.0.0-beta.78) (2025-01-12)
+
+
+### Bug Fixes
+
+* 경로 수정 ([e5943c2](https://github.com/jl917/eapp/commit/e5943c270868087bdb62c4dae10041f627862490))
+
 # [1.0.0-beta.77](https://github.com/jl917/eapp/compare/v1.0.0-beta.76...v1.0.0-beta.77) (2025-01-12)
 
 
