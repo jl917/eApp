@@ -80,6 +80,10 @@ const config: ForgeConfig = {
     },
   ],
   plugins: [
+    {
+      name: '@electron-forge/plugin-auto-unpack-natives',
+      config: {},
+    },
     new RsbuildPlugin({
       build: [
         {

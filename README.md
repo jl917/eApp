@@ -23,13 +23,8 @@
 - https://github.com/jl917/eApp/pull/48/commits/c959239c7c8d0390f4f5ea1e757b9e75874f3541
 
 
-## cert관련
+## deeplink
 
-```bash
-# private.key 생성
-openssl genrsa -out private.key 2048
-# certificate.csr 생성
-openssl req -x509 -newkey rsa:2048 -keyout private.key -out certificate.crt -days 36500 -nodes
-# cert.pfx
-openssl pkcs12 -export -out cert.pfx -inkey private.key -in certificate.crt
+```
+eapp-beta://a=1&b=3
 ```
