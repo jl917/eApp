@@ -1,3 +1,15 @@
+# [1.0.0-beta.74](https://github.com/jl917/eapp/compare/v1.0.0-beta.73...v1.0.0-beta.74) (2025-01-12)
+
+
+### Bug Fixes
+
+* store 적용 ([607fdd1](https://github.com/jl917/eapp/commit/607fdd177168fc003e0e726796b2dadcc29776c7))
+
+
+### Features
+
+* deeplink 기능 추가 ([641a3fa](https://github.com/jl917/eapp/commit/641a3fa129d7c99d4b72a3db9328f8dec95c1cf2))
+
 # [1.0.0-beta.73](https://github.com/jl917/eapp/compare/v1.0.0-beta.72...v1.0.0-beta.73) (2025-01-11)
 
 
