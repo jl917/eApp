@@ -1,3 +1,10 @@
+# [1.0.0-beta.76](https://github.com/jl917/eapp/compare/v1.0.0-beta.75...v1.0.0-beta.76) (2025-01-12)
+
+
+### Features
+
+* tray메뉴 추가 ([57ad94b](https://github.com/jl917/eapp/commit/57ad94b740e743c009c57b8c652991fa1c6514cd))
+
 # [1.0.0-beta.75](https://github.com/jl917/eapp/compare/v1.0.0-beta.74...v1.0.0-beta.75) (2025-01-12)
 
 
