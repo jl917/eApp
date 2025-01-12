@@ -1,3 +1,10 @@
+# [1.0.0-beta.79](https://github.com/jl917/eapp/compare/v1.0.0-beta.78...v1.0.0-beta.79) (2025-01-12)
+
+
+### Bug Fixes
+
+* mode에러 수정 ([dd0052d](https://github.com/jl917/eapp/commit/dd0052d1a39597c24369914f2a722cb5ffd6c72a))
+
 # [1.0.0-beta.78](https://github.com/jl917/eapp/compare/v1.0.0-beta.77...v1.0.0-beta.78) (2025-01-12)
 
 
