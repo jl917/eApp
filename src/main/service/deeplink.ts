@@ -19,6 +19,7 @@ export const initDeeplink = () => {
     app.setAsDefaultProtocolClient(scheme);
   }
 
+  // 어플은 한개만 지원하기
   const gotTheLock = app.requestSingleInstanceLock();
 
   if (!gotTheLock) {
