@@ -9,7 +9,7 @@ import MakerDMG from './plugins/maker-dmg';
 import { productName } from './package.json';
 
 const isMac = os.platform() === 'darwin';
-
+const isPublish = process.argv[1].endsWith('publish.js');
 const name = getName();
 
 const config: ForgeConfig = {
@@ -80,10 +80,14 @@ const config: ForgeConfig = {
     },
   ],
   plugins: [
-    {
-      name: '@electron-forge/plugin-auto-unpack-natives',
-      config: {},
-    },
+    ...(isPublish
+      ? [
+          {
+            name: '@electron-forge/plugin-auto-unpack-natives',
+            config: {},
+          },
+        ]
+      : []),
     new RsbuildPlugin({
       build: [
         {
