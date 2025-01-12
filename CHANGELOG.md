@@ -1,3 +1,10 @@
+# [1.0.0-beta.80](https://github.com/jl917/eapp/compare/v1.0.0-beta.79...v1.0.0-beta.80) (2025-01-12)
+
+
+### Bug Fixes
+
+* setPath 위치 변경 ([012ac6c](https://github.com/jl917/eapp/commit/012ac6c4656a8ff428f253b1f3d5dff5dd2f448b))
+
 # [1.0.0-beta.79](https://github.com/jl917/eapp/compare/v1.0.0-beta.78...v1.0.0-beta.79) (2025-01-12)
 
 
