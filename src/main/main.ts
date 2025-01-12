@@ -7,6 +7,7 @@ import { ipcUtils } from './utils/ipc';
 import { initSentry } from './service/sentry';
 import { powerSystem } from './service/power';
 import { initDeeplink } from './service/deeplink';
+import { genTrayMenu } from './service/trayMenu';
 
 const powerService = powerSystem();
 
@@ -22,6 +23,7 @@ app.on('ready', () => {
   createWindow();
   getMainVersion();
   initDeeplink();
+  genTrayMenu();
   powerService.start();
 });
 
