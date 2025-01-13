@@ -6,7 +6,7 @@
   "main": ".rsbuild/build/main.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "npm run devWeb & cross-env MODE=dev electron-forge start --inspect-electron",
+    "dev": "cross-env MODE=dev electron-forge start --inspect-electron",
     "devWeb": "cross-env MODE=dev rsbuild dev --config rsbuild.renderer.config.ts",
     "build": "cross-env MODE=production electron-forge publish",
     "build:beta": "cross-env MODE=beta electron-forge publish --enable-logging",

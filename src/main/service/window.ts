@@ -2,10 +2,9 @@ import { BrowserWindow, screen } from 'electron';
 import path from 'path';
 import { showNotification } from '@/main/utils/notification';
 import { RSBUILD_ENTRY_URL } from '@/common/constant';
-// import { isDev } from '@/common/utils';
+import { isDev } from '@/common/utils';
 
-const loadURL = RSBUILD_ENTRY_URL;
-// const loadURL = isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : RSBUILD_ENTRY_URL;
+const loadURL = isDev ? MAIN_WINDOW_RSBUILD_DEV_SERVER_URL : RSBUILD_ENTRY_URL;
 
 interface WindowProcess {
   mainWindow: null | BrowserWindow;
