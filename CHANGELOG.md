@@ -1,3 +1,10 @@
+# [1.0.0-beta.85](https://github.com/jl917/eapp/compare/v1.0.0-beta.84...v1.0.0-beta.85) (2025-01-13)
+
+
+### Bug Fixes
+
+* systemInfo check ([158ec9c](https://github.com/jl917/eapp/commit/158ec9c9dec38006dfb766913f3740cbabcdefba))
+
 # [1.0.0-beta.84](https://github.com/jl917/eapp/compare/v1.0.0-beta.83...v1.0.0-beta.84) (2025-01-13)
 
 
