@@ -37,6 +37,6 @@ export const systemInfo = async () => {
     bluetoothDevices,
   };
 
-  store.set('systemInfo', result);
+  // store.set('systemInfo', result);
   return sortObjectByKeys(result);
 };
