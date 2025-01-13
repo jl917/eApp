@@ -9,21 +9,13 @@ import { initSentry } from './service/sentry';
 import { powerSystem } from './service/power';
 import { initDeeplink } from './service/deeplink';
 import { genTrayMenu } from './service/trayMenu';
+// import { writeFileSync } from 'fs';
+import { RSBUILD_MODE } from '@/common/constant';
 
 const powerService = powerSystem();
 
 // Set userData path
-// writeFileSync(
-//   path.join(app.getPath('downloads'), 'test'),
-//   'tes3t',
-// );
-// app.setPath(
-//   'userData',
-//   path.join(
-//     app.getPath('userData') || `${app.getPath('appData')}/${name}}`,
-//     process.env.mode
-//   )
-// );
+app.setPath('userData', path.join(app.getPath('userData'), RSBUILD_MODE));
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
   app.quit();
