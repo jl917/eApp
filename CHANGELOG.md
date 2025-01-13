@@ -1,3 +1,10 @@
+# [1.0.0-beta.83](https://github.com/jl917/eapp/compare/v1.0.0-beta.82...v1.0.0-beta.83) (2025-01-13)
+
+
+### Bug Fixes
+
+* store disable처리 ([2f5b783](https://github.com/jl917/eapp/commit/2f5b7836141b3d15ea74287620f2f988340e286e))
+
 # [1.0.0-beta.82](https://github.com/jl917/eapp/compare/v1.0.0-beta.81...v1.0.0-beta.82) (2025-01-13)
 
 
