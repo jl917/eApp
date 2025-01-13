@@ -52,6 +52,7 @@
     "electron": "33.2.0",
     "electron-installer-dmg": "^5.0.1",
     "electron-squirrel-startup": "^1.0.1",
+    "electron-store": "^8.2.0",
     "electron-updater": "^6.3.9",
     "electron-winstaller": "^5.4.0",
     "eslint": "^8.0.1",
