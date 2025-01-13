@@ -22,19 +22,19 @@ export const systemInfo = async () => {
   // }
 
   const defaultData = await si.getAllData();
-  const audio = await si.audio();
-  const usb = await si.usb();
-  const printer = await si.printer();
-  const networkInterfaces = await si.networkInterfaces();
-  const bluetoothDevices = await si.bluetoothDevices();
+  // const audio = await si.audio();
+  // const usb = await si.usb();
+  // const printer = await si.printer();
+  // const networkInterfaces = await si.networkInterfaces();
+  // const bluetoothDevices = await si.bluetoothDevices();
 
   const result = {
     ...defaultData,
-    audio,
-    usb,
-    printer,
-    networkInterfaces,
-    bluetoothDevices,
+    // audio,
+    // usb,
+    // printer,
+    // networkInterfaces,
+    // bluetoothDevices,
   };
 
   // store.set('systemInfo', result);
