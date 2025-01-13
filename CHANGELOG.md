@@ -1,3 +1,10 @@
+# [1.0.0-beta.82](https://github.com/jl917/eapp/compare/v1.0.0-beta.81...v1.0.0-beta.82) (2025-01-13)
+
+
+### Bug Fixes
+
+* userdata폴더 오류 수정 ([b1e6da1](https://github.com/jl917/eapp/commit/b1e6da127a8a3dee0c5f417a1c482430188ad2d9))
+
 # [1.0.0-beta.81](https://github.com/jl917/eapp/compare/v1.0.0-beta.80...v1.0.0-beta.81) (2025-01-12)
 
 
