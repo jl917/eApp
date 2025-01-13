@@ -1,3 +1,11 @@
+# [1.0.0-beta.84](https://github.com/jl917/eapp/compare/v1.0.0-beta.83...v1.0.0-beta.84) (2025-01-13)
+
+
+### Bug Fixes
+
+* error 수정 ([ae1917c](https://github.com/jl917/eapp/commit/ae1917cfd721dc837a2cee5e47cf574a44cebbaf))
+* package롤백 ([1e2e741](https://github.com/jl917/eapp/commit/1e2e741df55ca6eef827b16e58f05f238de6cdc6))
+
 # [1.0.0-beta.83](https://github.com/jl917/eapp/compare/v1.0.0-beta.82...v1.0.0-beta.83) (2025-01-13)
 
 
