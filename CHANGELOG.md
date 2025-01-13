@@ -1,3 +1,11 @@
+# [1.0.0-beta.86](https://github.com/jl917/eapp/compare/v1.0.0-beta.85...v1.0.0-beta.86) (2025-01-13)
+
+
+### Bug Fixes
+
+* test ([47be1e1](https://github.com/jl917/eapp/commit/47be1e1acba3e9d03a064322d2d0020279cd1612))
+* 서명 오류 해결 ([a7518e8](https://github.com/jl917/eapp/commit/a7518e8d27611c52dbf33debaad5eebb412113d8))
+
 # [1.0.0-beta.85](https://github.com/jl917/eapp/compare/v1.0.0-beta.84...v1.0.0-beta.85) (2025-01-13)
 
 
