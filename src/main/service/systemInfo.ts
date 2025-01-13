@@ -21,7 +21,7 @@ export const systemInfo = async () => {
   //   return store.get('systemInfo');
   // }
 
-  const defaultData = await si.getAllData();
+  // const defaultData = await si.getAllData();
   // const audio = await si.audio();
   // const usb = await si.usb();
   // const printer = await si.printer();
@@ -29,7 +29,7 @@ export const systemInfo = async () => {
   // const bluetoothDevices = await si.bluetoothDevices();
 
   const result = {
-    ...defaultData,
+    // ...defaultData,
     // audio,
     // usb,
     // printer,
