@@ -14,6 +14,7 @@ import { RSBUILD_MODE } from '@/common/constant';
 
 const powerService = powerSystem();
 
+// windows처리 필요
 // Set userData path
 app.setPath('userData', path.join(app.getPath('userData'), RSBUILD_MODE));
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
