@@ -1,3 +1,10 @@
+# [1.0.0-beta.89](https://github.com/jl917/eapp/compare/v1.0.0-beta.88...v1.0.0-beta.89) (2025-01-21)
+
+
+### Bug Fixes
+
+* Update index.html ([7f93dfa](https://github.com/jl917/eapp/commit/7f93dfa3e28bc758fc3fe15b878b2dc6900bcd5b))
+
 # [1.0.0-beta.88](https://github.com/jl917/eapp/compare/v1.0.0-beta.87...v1.0.0-beta.88) (2025-01-21)
 
 
