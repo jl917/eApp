@@ -1,3 +1,10 @@
+# [1.0.0-beta.87](https://github.com/jl917/eapp/compare/v1.0.0-beta.86...v1.0.0-beta.87) (2025-01-21)
+
+
+### Bug Fixes
+
+* 오류 수정 ([62ea5e6](https://github.com/jl917/eapp/commit/62ea5e6e7c8b864f39aea90582ffa30a316d7170))
+
 # [1.0.0-beta.86](https://github.com/jl917/eapp/compare/v1.0.0-beta.85...v1.0.0-beta.86) (2025-01-13)
 
 
