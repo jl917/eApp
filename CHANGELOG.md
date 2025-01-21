@@ -1,3 +1,11 @@
+# [1.0.0-beta.88](https://github.com/jl917/eapp/compare/v1.0.0-beta.87...v1.0.0-beta.88) (2025-01-21)
+
+
+### Bug Fixes
+
+* 123123 ([3c59a83](https://github.com/jl917/eapp/commit/3c59a834697c8657ddf60e20d5e4704924b21a36))
+* title ([e273ac7](https://github.com/jl917/eapp/commit/e273ac72a2817ba202c1efefaee173e328d7bd01))
+
 # [1.0.0-beta.87](https://github.com/jl917/eapp/compare/v1.0.0-beta.86...v1.0.0-beta.87) (2025-01-21)
 
 
