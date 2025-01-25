@@ -3,6 +3,6 @@
   "compilerOptions": {
     "composite": true
   },
-  "include": ["src/renderer/**/*", "plugins"],
+  "include": ["src/renderer/**/*", "plugins", "src/types/*"],
   "exclude": ["node_modules"]
 }
