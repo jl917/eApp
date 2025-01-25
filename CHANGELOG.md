@@ -1,3 +1,12 @@
+# [1.0.0-beta.90](https://github.com/jl917/eapp/compare/v1.0.0-beta.89...v1.0.0-beta.90) (2025-01-25)
+
+
+### Bug Fixes
+
+* s3 환경 제거 ([d44328e](https://github.com/jl917/eapp/commit/d44328efc20fd2950cc7fcde0e1afc607b421875))
+* sync 맞추기 ([cef35a3](https://github.com/jl917/eapp/commit/cef35a30c8b691cb66db7bb09a8771b11f1123aa))
+* 오류 수정 ([37d9fcd](https://github.com/jl917/eapp/commit/37d9fcd3ac7623b25bab67a99cdcb01affb6a89e))
+
 # [1.0.0-beta.89](https://github.com/jl917/eapp/compare/v1.0.0-beta.88...v1.0.0-beta.89) (2025-01-21)
 
 
