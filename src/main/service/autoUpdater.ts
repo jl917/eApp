@@ -10,12 +10,7 @@ import { RSBUILD_MODE } from '@/common/constant';
 // });
 
 export const updateAction = () => {
-  updateElectronApp({
-    updateSource: {
-      type: UpdateSourceType.StaticStorage,
-      baseUrl: `https://eapp-beta.s3.ap-northeast-2.amazonaws.com/${RSBUILD_MODE}/${process.platform}/${process.arch}`, // 교체 필요
-    },
-  });
+  updateElectronApp();
   // // 업데이트 로그 설정
   // autoUpdater.logger = console;
 

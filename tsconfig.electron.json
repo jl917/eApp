@@ -15,7 +15,8 @@
     "rsbuild.preload.config.ts",
     "rsbuild.renderer.config.ts",
     "plugins",
-    "package.json"
+    "package.json",
+    "src/types/*"
   ],
   "exclude": ["node_modules"]
 }
