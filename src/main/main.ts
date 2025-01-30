@@ -11,6 +11,7 @@ import { initDeeplink } from './service/deeplink';
 import { genTrayMenu } from './service/trayMenu';
 // import { writeFileSync } from 'fs';
 import { RSBUILD_MODE } from '@/common/constant';
+import { genMenu } from './service/Menu';
 
 const powerService = powerSystem();
 
@@ -30,6 +31,7 @@ app.on('ready', () => {
   createWindow();
   getMainVersion();
   initDeeplink();
+  genMenu();
   genTrayMenu();
   powerService.start();
 });

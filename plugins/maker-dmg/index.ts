@@ -36,9 +36,9 @@ export default class MakerDMG extends MakerBase<MakerDMGConfig> {
 
     await this.ensureFile(outPath);
     // app에 대해서 강제 서명을 해줍니다.
-    execSync(
-      `codesign --deep --force --sign - ${path.resolve(dir, `${appName}.app`)}`
-    );
+    // execSync(
+    //   `codesign --deep --force --sign - ${path.resolve(dir, `${appName}.app`)}`
+    // );
     const dmgConfig = {
       overwrite: true,
       name: appName,
