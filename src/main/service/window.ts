@@ -45,6 +45,7 @@ export const createWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
+    autoHideMenuBar: true
   });
   windowProcess.mainWindow.loadURL(loadURL);
 

@@ -1,10 +1,18 @@
-import { Menu } from 'electron';
+import { Menu, MenuItemConstructorOptions, MenuItem } from 'electron';
 
 export const genMenu = () => {
-  const mainMenu = Menu.buildFromTemplate([
-    { label: 'Item1', submenu: [{ label: 'menu1-1', role: 'about' }, { label: 'menu1-2' }] },
+  const menus: (MenuItemConstructorOptions | MenuItem)[] = [
+    {
+      label: 'Item1',
+      submenu: [{ label: 'about', role: 'about' }, { label: 'close', role: 'close' }, { label: 'quit', role: 'quit' }],
+    },
     { type: 'separator' },
     { label: 'Item2', submenu: [{ label: 'menu2-1' }, { label: 'menu2-2' }] },
-  ]);
-  Menu.setApplicationMenu(mainMenu);
+  ];
+
+  if (process.platform === 'darwin') {
+    menus.unshift({ label: '' });
+  }
+
+  Menu.setApplicationMenu(Menu.buildFromTemplate(menus));
 };
