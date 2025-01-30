@@ -26,6 +26,10 @@ if (started) {
 
 initSentry();
 
+// setTimeout(()=> {
+//   process.crash();
+// }, 5000)
+
 app.on('ready', () => {
   updateAction();
   createWindow();
