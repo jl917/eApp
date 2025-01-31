@@ -48,7 +48,16 @@ export const createWindow = () => {
     },
     autoHideMenuBar: true,
   });
-  windowProcess.mainWindow.loadURL(loadURL);
+  console.log(MAIN_WINDOW_RSBUILD_NAME);
+  console.log(path.join(__dirname));
+
+  if (MAIN_WINDOW_RSBUILD_DEV_SERVER_URL) {
+    windowProcess.mainWindow.loadURL(MAIN_WINDOW_RSBUILD_DEV_SERVER_URL);
+  } else {
+    windowProcess.mainWindow.loadFile(
+      path.join(__dirname, `../renderer/${MAIN_WINDOW_RSBUILD_NAME}/index.html`)
+    );
+  }
 
   // 모니터가 추가, 삭제되면 mainWindow에 신호보내기
   screen.on('display-removed', getDisplays);
@@ -93,7 +102,14 @@ export function createExtWindow() {
     alwaysOnTop: true,
   });
 
-  windowProcess.extWindow.loadURL(`${loadURL}/subMonitor`);
+  windowProcess.extWindow.loadFile(
+    path.join(__dirname, `../renderer/${MAIN_WINDOW_RSBUILD_NAME}/index.html`)
+  );
+  windowProcess.extWindow.webContents.on('did-finish-load', () => {
+    windowProcess.extWindow.webContents.executeJavaScript(`
+        window.history.pushState({}, "","/subMonitor");
+    `);
+  });
 
   windowProcess.extWindow.setFullScreenable(false);
   windowProcess.extWindow.on('closed', () => {
