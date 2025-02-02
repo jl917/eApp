@@ -12,6 +12,7 @@ import { genTrayMenu } from './service/trayMenu';
 // import { writeFileSync } from 'fs';
 import { RSBUILD_MODE } from '@/common/constant';
 import { genMenu } from './service/Menu';
+import { initShortCut } from './service/shortCut';
 
 const powerService = powerSystem();
 
@@ -35,6 +36,7 @@ app.on('ready', () => {
   createWindow();
   getMainVersion();
   initDeeplink();
+  initShortCut();
   genMenu();
   genTrayMenu();
   powerService.start();
