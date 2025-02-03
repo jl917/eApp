@@ -1,7 +1,7 @@
 import si from 'systeminformation';
 import Store from 'electron-store';
 
-const store = new Store();
+const store = new Store({ encryptionKey: 'blabla' });
 
 const sortObjectByKeys = (obj: Record<string, any>) => {
   const sortedKeys = Object.keys(obj).sort(); // 키를 알파벳 순으로 정렬

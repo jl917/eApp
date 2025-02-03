@@ -39,9 +39,7 @@ const config: ForgeConfig = {
   makers: [
     {
       name: '@electron-forge/maker-zip',
-      config: () => ({
-        macUpdateManifestBaseUrl: `https://eapp-beta.s3.ap-northeast-2.amazonaws.com/${process.env.MODE}/${process.platform}/${process.arch}`,
-      }),
+      config: () => ({}),
       platforms: ['darwin'],
     },
     new MakerDMG({ icon: `src/renderer/public/${productName}.icns` } as any),
@@ -105,14 +103,10 @@ const config: ForgeConfig = {
         },
       ],
       renderer: [
-        ...(process.env.MODE === 'dev'
-          ? [
-              {
-                name: 'main_window',
-                config: 'rsbuild.renderer.config.ts',
-              },
-            ]
-          : []),
+        {
+          name: 'main_window',
+          config: 'rsbuild.renderer.config.ts',
+        },
       ],
     }),
     // Fuses are used to enable/disable various Electron functionality

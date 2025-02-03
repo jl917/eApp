@@ -1,4 +1,4 @@
-import { BrowserWindow, screen } from 'electron';
+import { app, BrowserWindow, dialog, screen } from 'electron';
 import path from 'path';
 import { showNotification } from '@/main/utils/notification';
 import { RSBUILD_ENTRY_URL } from '@/common/constant';
@@ -44,16 +44,41 @@ export const createWindow = () => {
     y: mainDisplay.bounds.y,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
+      devTools: isDev,
     },
+    autoHideMenuBar: true,
   });
-  windowProcess.mainWindow.loadURL(loadURL);
+  console.log(MAIN_WINDOW_RSBUILD_NAME);
+  console.log(path.join(__dirname));
+
+  if (MAIN_WINDOW_RSBUILD_DEV_SERVER_URL) {
+    windowProcess.mainWindow.loadURL(MAIN_WINDOW_RSBUILD_DEV_SERVER_URL);
+  } else {
+    windowProcess.mainWindow.loadFile(
+      path.join(__dirname, `../renderer/${MAIN_WINDOW_RSBUILD_NAME}/index.html`)
+    );
+  }
 
   // 모니터가 추가, 삭제되면 mainWindow에 신호보내기
   screen.on('display-removed', getDisplays);
   screen.on('display-added', getDisplays);
-
   // Open the DevTools.
   // isDev && mainWindow.webContents.openDevTools();
+
+  // windowProcess.mainWindow.webContents.on(
+  //   'plugin-crashed',
+  //   async (e, killed) => {
+  //     // 应加入收集日志的逻辑
+  //     let result = await dialog.showMessageBox({
+  //       type: 'error',
+  //       title: '应用程序崩溃',
+  //       message: '当前程序发生异常，是否要重新加载应用程序？',
+  //       buttons: ['#', 'I'],
+  //     });
+  //     if ((result.response = 0)) windowProcess.mainWindow.webContents.reload();
+  //     else app.quit();
+  //   }
+  // );
 };
 
 export function createExtWindow() {
@@ -69,15 +94,22 @@ export function createExtWindow() {
     width: externalDisplay.bounds.width,
     height: externalDisplay.bounds.height,
     webPreferences: {
-      nodeIntegration: true,
       contextIsolation: false,
+      devTools: isDev,
     },
     frame: false,
     fullscreen: true,
     alwaysOnTop: true,
   });
 
-  windowProcess.extWindow.loadURL(`${loadURL}/subMonitor`);
+  windowProcess.extWindow.loadFile(
+    path.join(__dirname, `../renderer/${MAIN_WINDOW_RSBUILD_NAME}/index.html`)
+  );
+  windowProcess.extWindow.webContents.on('did-finish-load', () => {
+    windowProcess.extWindow.webContents.executeJavaScript(`
+        window.history.pushState({}, "","/subMonitor");
+    `);
+  });
 
   windowProcess.extWindow.setFullScreenable(false);
   windowProcess.extWindow.on('closed', () => {

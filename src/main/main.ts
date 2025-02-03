@@ -11,6 +11,8 @@ import { initDeeplink } from './service/deeplink';
 import { genTrayMenu } from './service/trayMenu';
 // import { writeFileSync } from 'fs';
 import { RSBUILD_MODE } from '@/common/constant';
+import { genMenu } from './service/Menu';
+import { initShortCut } from './service/shortCut';
 
 const powerService = powerSystem();
 
@@ -25,11 +27,17 @@ if (started) {
 
 initSentry();
 
+// setTimeout(()=> {
+//   process.crash();
+// }, 5000)
+
 app.on('ready', () => {
   updateAction();
   createWindow();
   getMainVersion();
   initDeeplink();
+  initShortCut();
+  genMenu();
   genTrayMenu();
   powerService.start();
 });
