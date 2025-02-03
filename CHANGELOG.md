@@ -1,3 +1,14 @@
+# [1.0.0-beta.91](https://github.com/jl917/eapp/compare/v1.0.0-beta.90...v1.0.0-beta.91) (2025-02-03)
+
+
+### Bug Fixes
+
+* 메뉴 보완 ([e47a833](https://github.com/jl917/eapp/commit/e47a8331806080058a5ab74cee0dd9093907d160))
+* 메뉴 추가 ([dfa84ae](https://github.com/jl917/eapp/commit/dfa84ae8ee7c446649ac3f33b61766792fefaeb2))
+* 인앱으로 변경 ([369a32b](https://github.com/jl917/eapp/commit/369a32b7987c1a9c1fca482bae48671ee97054ca))
+* 코드 정리 ([7295632](https://github.com/jl917/eapp/commit/7295632ca1ab35b694a5c3704f68c61fe8543f94))
+* 키보드 감지 ([89aa697](https://github.com/jl917/eapp/commit/89aa69701fc6968842ccba22a120b03fd9242e13))
+
 # [1.0.0-beta.90](https://github.com/jl917/eapp/compare/v1.0.0-beta.89...v1.0.0-beta.90) (2025-01-25)
 
 
