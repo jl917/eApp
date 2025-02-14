@@ -6,7 +6,7 @@ import { getDefine } from './build/utils';
 import { version } from './package.json';
 
 const mode = process.env.MODE;
-const isSourceMap = mode === 'beta' || mode === 'production';
+const isSourceMap = mode !== 'beta' && mode !== 'production';
 
 export default defineConfig({
   source: {

@@ -1,6 +1,7 @@
 import { app, BrowserWindow, dialog, ipcMain } from 'electron';
 import path from 'path';
 import started from 'electron-squirrel-startup';
+import sourceMapSupport from 'source-map-support';
 import { updateAction } from '@main/service/autoUpdater';
 import { createWindow } from '@main/service/window';
 import { getMainVersion } from './service/version';
@@ -15,6 +16,8 @@ import { genMenu } from './service/Menu';
 import { initShortCut } from './service/shortCut';
 
 const powerService = powerSystem();
+
+sourceMapSupport.install();
 
 // windows처리 필요
 // Set userData path
