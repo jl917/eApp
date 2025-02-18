@@ -20,7 +20,7 @@ function Main() {
   return (
     <Space direction="vertical">
       <button onClick={() => window.localStorage.setItem("bgcolor", "red")}>set localstorage</button>
-      <button onClick={() => alert(window.localStorage.getItem("bgcolor")}>set localstorage</button>
+      <button onClick={() => alert(window.localStorage.getItem("bgcolor"))}>set localstorage</button>
       <Version />
       <Message />
       <Space direction="vertical" style={{ width: 1000 }}>
