@@ -1,3 +1,11 @@
+# [1.0.0-beta.93](https://github.com/jl917/eapp/compare/v1.0.0-beta.92...v1.0.0-beta.93) (2025-02-18)
+
+
+### Bug Fixes
+
+* Update index.tsx ([49204d9](https://github.com/jl917/eapp/commit/49204d9e559a369a11d7fbf217403e038244e338))
+* Update index.tsx ([1576aa9](https://github.com/jl917/eapp/commit/1576aa96bb7cbbdc430d78092f5053561b8c3029))
+
 # [1.0.0-beta.92](https://github.com/jl917/eapp/compare/v1.0.0-beta.91...v1.0.0-beta.92) (2025-02-18)
 
 
