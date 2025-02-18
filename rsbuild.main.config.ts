@@ -6,7 +6,7 @@ import { getDefine } from './build/utils';
 import { version } from './package.json';
 
 const mode = process.env.MODE;
-const isSourceMap = mode === 'beta' || mode === 'production';
+const isMonitoring = mode === 'beta' || mode === 'production';
 
 export default defineConfig({
   source: {
@@ -18,9 +18,6 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
       '@main': path.resolve(__dirname, './src/main'),
     },
-  },
-  output: {
-    sourceMap: isSourceMap,
   },
   tools: {
     rspack(config, { appendPlugins }) {
@@ -36,7 +33,7 @@ export default defineConfig({
         );
       }
 
-      if (isSourceMap) {
+      if (isMonitoring) {
         appendPlugins(
           sentryWebpackPlugin({
             org: 'julong',
