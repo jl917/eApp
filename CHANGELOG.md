@@ -1,3 +1,15 @@
+# [1.0.0-beta.95](https://github.com/jl917/eapp/compare/v1.0.0-beta.94...v1.0.0-beta.95) (2025-02-22)
+
+
+### Bug Fixes
+
+* 1 ([d6bbf24](https://github.com/jl917/eapp/commit/d6bbf24641af2d48544601cd1d55916fc2cae4b4))
+* squash 테스트 ([638be4b](https://github.com/jl917/eapp/commit/638be4bf8d5fe6c349124a5841cb8861b410ce1f))
+* test commit1 ([54b8eb0](https://github.com/jl917/eapp/commit/54b8eb0b26dc779596a62dce210f3ad6cee94bff))
+* update test ([a968823](https://github.com/jl917/eapp/commit/a968823ea724da01ca8f6c1eafe3ff26b4451b4e))
+* 자동 업데이트 추가 ([2d17dbc](https://github.com/jl917/eapp/commit/2d17dbc745351232612784b1becdf148862df178))
+* 테스트 커밋 2 ([b848dfe](https://github.com/jl917/eapp/commit/b848dfea31dc25aeea23a53c7aa4735db434b42d))
+
 # [1.0.0-beta.94](https://github.com/jl917/eapp/compare/v1.0.0-beta.93...v1.0.0-beta.94) (2025-02-22)
 
 
