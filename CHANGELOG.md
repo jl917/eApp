@@ -1,3 +1,10 @@
+# [1.0.0-beta.94](https://github.com/jl917/eapp/compare/v1.0.0-beta.93...v1.0.0-beta.94) (2025-02-22)
+
+
+### Bug Fixes
+
+* squash 테스트 ([5b39cac](https://github.com/jl917/eapp/commit/5b39cacbf6c0c1580a0671acf519961b704068f0))
+
 # [1.0.0-beta.93](https://github.com/jl917/eapp/compare/v1.0.0-beta.92...v1.0.0-beta.93) (2025-02-18)
 
 
