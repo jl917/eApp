@@ -57,17 +57,17 @@ const config: ForgeConfig = {
     isPublish && mode === 'dev'
       ? []
       : [
-          // {
-          //   name: '@electron-forge/publisher-s3',
-          //   config: {
-          //     region: 'ap-northeast-2',
-          //     bucket: 'eapp-beta', // 버켓 이름
-          //     public: true,
-          //     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-          //     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-          //     folder: process.env.MODE,
-          //   },
-          // },
+          {
+            name: '@electron-forge/publisher-s3',
+            config: {
+              region: 'ap-northeast-2',
+              bucket: 'eapp-beta', // 버켓 이름
+              public: true,
+              accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+              secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+              folder: process.env.MODE,
+            },
+          },
           {
             name: '@electron-forge/publisher-github',
             config: {
