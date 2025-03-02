@@ -18,6 +18,15 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
+    [
+      "semantic-release-github-pullrequest",
+      {
+        "assets": [
+          "CHANGELOG.md"
+        ],
+        "baseRef": "main"
+      }
+    ],
     "@semantic-release/changelog",
     [
       "@semantic-release/npm",
