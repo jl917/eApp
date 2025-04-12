@@ -19,8 +19,16 @@ function Main() {
 
   return (
     <Space direction="vertical">
-      <button onClick={() => window.localStorage.setItem("bgcolor", "red")}>set localstorage</button>
-      <button onClick={() => alert(window.localStorage.getItem("bgcolor"))}>get localstorage</button>
+      <button onClick={() => window.localStorage.setItem('bgcolor', 'red')}>
+        set localstorage
+      </button>
+      <button onClick={() => alert(window.localStorage.getItem('bgcolor'))}>
+        get localstorage
+      </button>
+
+      <button onClick={() => window.api.sendMessage('crash')}>
+        on crash
+      </button>
       <Version />
       <Message />
       <Space direction="vertical" style={{ width: 1000 }}>

@@ -12,6 +12,7 @@ interface ChannelCommunicationFaild {
 }
 
 type Channel =
+  | 'crash'
   | 'version'
   | 'displays'
   | 'openExtWindow'
