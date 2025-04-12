@@ -7,6 +7,7 @@ import { getMainVersion } from '@main/service/version';
 import { systemMessage } from '@main/service/message';
 import { systemInfo } from '@main/service/systemInfo';
 import { sendToSentry } from './sentry';
+import { onCrash } from '../service/crashTest';
 
 type ChannelMain = { type: Channel; data: ChannelCommunicationSuccess };
 
@@ -18,6 +19,7 @@ const typeLimits: Partial<Record<Channel, number>> = {
   openExtWindow: 1,
   closeExtWindow: 1,
   systemInfo: 2,
+  crash: 1,
 };
 
 const typeFn: Partial<Record<Channel, (...args: any[]) => any | Promise<any>>> =
@@ -28,6 +30,7 @@ const typeFn: Partial<Record<Channel, (...args: any[]) => any | Promise<any>>> =
     version: getMainVersion,
     message: systemMessage,
     systemInfo,
+    crash: onCrash,
   };
 
 export const ipcFnWrap = async (fn: any | Promise<any>, cb: () => void) => {

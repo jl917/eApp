@@ -14,6 +14,7 @@ import { genTrayMenu } from './service/trayMenu';
 import { RSBUILD_MODE } from '@/common/constant';
 import { genMenu } from './service/Menu';
 import { initShortCut } from './service/shortCut';
+import './service/crashTest';
 
 const powerService = powerSystem();
 
@@ -29,10 +30,6 @@ if (started) {
 }
 
 initSentry();
-
-// setTimeout(()=> {
-//   process.crash();
-// }, 5000)
 
 app.on('ready', () => {
   updateAction();
