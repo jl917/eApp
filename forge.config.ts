@@ -1,69 +1,112 @@
-import { utils } from "@electron-forge/core";
-import type { ForgeConfig } from "@electron-forge/shared-types";
-import { MakerSquirrel } from "@electron-forge/maker-squirrel";
-import { MakerZIP } from "@electron-forge/maker-zip";
-import { MakerDeb } from "@electron-forge/maker-deb";
-import { MakerRpm } from "@electron-forge/maker-rpm";
-import { MakerDMG } from "@electron-forge/maker-dmg";
+import { utils } from '@electron-forge/core';
+import * as os from 'os';
+import type { ForgeConfig } from '@electron-forge/shared-types';
+import { FusesPlugin } from '@electron-forge/plugin-fuses';
+import { FuseV1Options, FuseVersion } from '@electron/fuses';
+import { RsbuildPlugin } from './plugins/electron-forge-plugin-rsbuild';
+import { getName, mode } from './build/utils';
+import MakerDMG from './plugins/maker-dmg';
+import { productName } from './package.json';
 
-import { VitePlugin } from "@electron-forge/plugin-vite";
-import { FusesPlugin } from "@electron-forge/plugin-fuses";
-import { FuseV1Options, FuseVersion } from "@electron/fuses";
-import { getName } from "./src/utils";
-
+const isMac = os.platform() === 'darwin';
+const isPublish = process.argv[1].endsWith('publish.js');
 const name = getName();
 
 const config: ForgeConfig = {
-  buildIdentifier: process.env.MODE,
+  buildIdentifier: mode,
   packagerConfig: {
     name,
-    executableName: "eapp",
+    executableName: productName,
     asar: true,
     appBundleId: utils.fromBuildIdentifier({
-      beta: "io.github.jl917.beta",
-      production: "io.github.jl917",
+      dev: 'io.github.jl917.dev',
+      beta: 'io.github.jl917.beta',
+      production: 'io.github.jl917',
     }) as any,
+    protocols: [
+      {
+        name: 'Eapp Deeplink',
+        schemes: [
+          mode === 'production' ? productName : `${productName}-${mode}`,
+        ],
+      },
+    ],
+    icon: isMac
+      ? `src/renderer/public/${productName}.ico`
+      : `src/renderer/public/${productName}.icns'`,
   },
   rebuildConfig: {},
   makers: [
-    new MakerSquirrel({}),
-    new MakerZIP({}, ["darwin"]),
-    //
-    new MakerRpm({}),
-    new MakerDeb({
-      options: {
-        name,
-        productName: "eapp",
+    {
+      name: '@electron-forge/maker-zip',
+      config: () => ({}),
+      platforms: ['darwin'],
+    },
+    new MakerDMG({ icon: `src/renderer/public/${productName}.icns` } as any),
+    {
+      name: '@electron-forge/maker-squirrel',
+      config: {
+        iconUrl: `https://jl917eapp-beta.netlify.app/${productName}.ico`,
+        setupIcon: `src/renderer/public/${productName}.ico`,
+        certificateFile: './cert.pfx',
+        certificatePassword: process.env.CERTIFICATE_PASSWORD,
       },
-    }),
-    new MakerDMG(),
+    },
   ],
+  publishers:
+    isPublish && mode === 'dev'
+      ? []
+      : [
+          {
+            name: '@electron-forge/publisher-s3',
+            config: {
+              region: 'ap-northeast-2',
+              bucket: 'eapp-beta', // 버켓 이름
+              public: true,
+              accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+              secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+              folder: process.env.MODE,
+            },
+          },
+          {
+            name: '@electron-forge/publisher-github',
+            config: {
+              authToken: process.env.GH_TOKEN,
+              repository: {
+                owner: 'jl917',
+                name: productName,
+              },
+              prerelease: true,
+            },
+          },
+        ],
   plugins: [
-    new VitePlugin({
-      // `build` can specify multiple entry builds, which can be Main process, Preload scripts, Worker process, etc.
-      // If you are familiar with Vite configuration, it will look really familiar.
+    ...(isPublish
+      ? [
+          {
+            name: '@electron-forge/plugin-auto-unpack-natives',
+            config: {},
+          },
+        ]
+      : []),
+    new RsbuildPlugin({
       build: [
         {
-          // `entry` is just an alias for `build.lib.entry` in the corresponding file of `config`.
-          entry: "src/main/main.ts",
-          config: "vite.main.config.ts",
-          target: "main",
+          entry: 'src/main/main.ts',
+          config: 'rsbuild.main.config.ts',
+          target: 'main',
         },
         {
-          entry: "src/preload/preload.ts",
-          config: "vite.preload.config.ts",
-          target: "preload",
+          entry: 'src/preload/preload.ts',
+          config: 'rsbuild.preload.config.ts',
+          target: 'preload',
         },
       ],
       renderer: [
-        ...(process.env.MODE === "dev"
-          ? [
-              {
-                name: "main_window",
-                config: "vite.renderer.config.ts",
-              },
-            ]
-          : []),
+        {
+          name: 'main_window',
+          config: 'rsbuild.renderer.config.ts',
+        },
       ],
     }),
     // Fuses are used to enable/disable various Electron functionality

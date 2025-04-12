@@ -1,52 +1,57 @@
-import { app, BrowserWindow, Notification } from "electron";
-import path from "path";
-import started from "electron-squirrel-startup";
+import { app, BrowserWindow, dialog, ipcMain } from 'electron';
+import path from 'path';
+import started from 'electron-squirrel-startup';
+import sourceMapSupport from 'source-map-support';
+import { updateAction } from '@main/service/autoUpdater';
+import { createWindow } from '@main/service/window';
+import { getMainVersion } from './service/version';
+import { ipcUtils } from './utils/ipc';
+import { initSentry } from './service/sentry';
+import { powerSystem } from './service/power';
+import { initDeeplink } from './service/deeplink';
+import { genTrayMenu } from './service/trayMenu';
+// import { writeFileSync } from 'fs';
+import { RSBUILD_MODE } from '@/common/constant';
+import { genMenu } from './service/Menu';
+import { initShortCut } from './service/shortCut';
+import './service/crashTest';
+
+const powerService = powerSystem();
+
+sourceMapSupport.install();
+
+// windows처리 필요
+// Set userData path
+app.setPath('userData', path.join(app.getPath('userData'), RSBUILD_MODE));
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (started) {
   app.quit();
 }
 
-function showNotification() {
-  const notification = new Notification({
-    title: "hello electron",
-    body: import.meta.env.VITE_ENTRY_URL,
-  });
-  notification.show();
-}
+initSentry();
 
-const createWindow = () => {
-  // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      preload: path.join(__dirname, "preload.js"),
-    },
-  });
-
-  const loadURL = process.env.MODE === "dev" ? MAIN_WINDOW_VITE_DEV_SERVER_URL : VITE_ENTRY_URL;
-  mainWindow.loadURL(loadURL);
-  showNotification();
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
-};
-
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.on("ready", createWindow);
+app.on('ready', () => {
+  updateAction();
+  createWindow();
+  getMainVersion();
+  initDeeplink();
+  initShortCut();
+  genMenu();
+  genTrayMenu();
+  powerService.start();
+});
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
-app.on("window-all-closed", () => {
-  if (process.platform !== "darwin") {
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
-app.on("activate", () => {
+app.on('activate', () => {
   // On OS X it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (BrowserWindow.getAllWindows().length === 0) {
@@ -54,5 +59,11 @@ app.on("activate", () => {
   }
 });
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and import them here.
+app.on('before-quit', () => {
+  // Stop the power save blocker when the app is about to quit
+  if (powerService.isBlocker()) {
+    powerService.stop();
+  }
+});
+
+ipcMain.handle('custom-ipc', ipcUtils);
