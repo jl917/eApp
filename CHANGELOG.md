@@ -1,3 +1,16 @@
+# [1.0.0-beta.96](https://github.com/jl917/eapp/compare/v1.0.0-beta.95...v1.0.0-beta.96) (2025-04-12)
+
+
+### Bug Fixes
+
+* release 파일 변경 ([c73b730](https://github.com/jl917/eapp/commit/c73b730c3bbfbddc5c1e5f13cdf5043f952b2ab5))
+* 롤백 ([cf23cd4](https://github.com/jl917/eapp/commit/cf23cd4b2787bb5fc3401dc31be0928f0bc30be8))
+
+
+### Features
+
+* crash추가 ([4d7664f](https://github.com/jl917/eapp/commit/4d7664f97290c13a9f167908f543acbc3ab6fd1a))
+
 # [1.0.0-beta.95](https://github.com/jl917/eapp/compare/v1.0.0-beta.94...v1.0.0-beta.95) (2025-02-22)
 
 
